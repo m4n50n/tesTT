@@ -20,6 +20,11 @@ def login():
     if email and password:
         if User.query.filter_by(email=email).first()==None:
             user = User(email=email, password=password)
+        else:
+            return jsonify({"msg":"usuario incorrecto", "loged":False})
+    else:
+        return jsonify({"msg":"contraseña incorrecta", "loged":False})
+        
 
 @api.route('/register', methods=['POST'])
 def register():
@@ -41,11 +46,6 @@ def register():
             token = create_access_token(identity=user.id)
             return jsonify({"user":user.serialize(), "loged":True, "token":token})
         else:
-
-            return jsonify({"msg":"usuario incorrecto", "loged":False})
-    else:
-        return jsonify({"msg":"contraseña incorrecta", "loged":False})
-
             return jsonify({"msg":"este usuario ya existe", "loged":False})
     else:
         return jsonify({"msg":"usuario no creado, revisa la información", "loged":False})
