@@ -9,6 +9,18 @@ from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_tok
 api = Blueprint('api', __name__)
 
 
+
+@api.route('/login', methods=['POST'])
+def login():
+    email = request.json.get("email")
+    password = request.json.get("password")
+    
+
+    print(email)
+    if email and password:
+        if User.query.filter_by(email=email).first()==None:
+            user = User(email=email, password=password)
+
 @api.route('/register', methods=['POST'])
 def register():
     email = request.json.get("email")
@@ -23,23 +35,20 @@ def register():
     if email and password and adresses and phone and name and rol:
         if User.query.filter_by(email=email).first()==None:
             user = User(email=email, password=password, adresses=adresses, phone=phone, name=name, rol=rol)
+
             db.session.add(user)
             db.session.commit()
             token = create_access_token(identity=user.id)
             return jsonify({"user":user.serialize(), "loged":True, "token":token})
         else:
+
+            return jsonify({"msg":"usuario incorrecto", "loged":False})
+    else:
+        return jsonify({"msg":"contraseña incorrecta", "loged":False})
+
             return jsonify({"msg":"este usuario ya existe", "loged":False})
     else:
         return jsonify({"msg":"usuario no creado, revisa la información", "loged":False})
 
 
 
-# @api.route('/private', methods=['GET'])
-# @jwt_required()
-# def private():
-#     user_id=get_jwt_identity()
-#     user=User.query.get(user_id)
-#     if not user:
-#         return jsonify({"msg":"inicie sesión", "loged":False})
-#     else:
-#         return jsonify({"loged":True, "user":user.serialize()})
