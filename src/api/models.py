@@ -14,7 +14,7 @@ class Organizacion(db.Model):
     rol_id = db.Column(db.Integer, db.ForeignKey('rol.id'),
         nullable=False)
     pets = db.relationship('Pets', backref='organizacion', lazy=True)
-    
+  
     
 
     def __repr__(self):
