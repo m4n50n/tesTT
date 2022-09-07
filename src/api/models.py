@@ -51,10 +51,10 @@ class Pets(db.Model):
         nullable=False)
 
     def __repr__(self):
-        return f'<Pets {self.name}>'
+        return '<Pets {self.name}>'
 
     def serialize(self):
-        return {
+        return  {
             "id": self.id,
             "name": self.name,
             "yearsofbirth": self.yearsofbirth,
