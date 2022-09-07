@@ -5,9 +5,10 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 
 from api.models import db, Organizacion, Rol
 
-from api.models import db, User, Rol 
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token
+import cloudinary
+import cloudinary.uploader
 
 api = Blueprint('api', __name__)
 
@@ -59,5 +60,29 @@ def rol():
     roles= Rol.query.all()
     data=[rol.serialize() for rol in roles]
     return jsonify(data)
+
+
+@api.route('/pets', methods=['POST'])
+@jwt_required()
+def pets():
+    protectora_id= get_jwt_identity()
+    name = request.form.get("name")
+    yearofbirth = request.form.get("yearofbirth")
+    race = request.form.get("race")
+
+    if 'photo' in request.files:
+        # upload file to uploadcare
+        photo = cloudinary.uploader.upload(request.files['photo'])
+        photo_url= upload_result["secure_url"]
+    pets=Pets(organizacion_id=protectora_id, name=name, yearofbirth=yearofbirth,race=race,photo=
+    photo)
+    db.session.app(pets)
+    db.session.commit()
+    return jsonify({
+        "pets":pets.serialize()
+    })
+    
+
+    
 
 
