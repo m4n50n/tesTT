@@ -7,6 +7,7 @@ export const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [instagram, setInstagram] = useState("");
   const [password, setPassword] = useState("");
   const [city, setCity] = useState("");
   const [rol, setRol] = useState("");
@@ -70,6 +71,20 @@ export const Register = () => {
             placeholder="Phone"
           />
         </div>
+        {rol == 1 ? (
+          <div className="form-group">
+            <label>instagram</label>
+            <input
+              type="text"
+              value={instagram}
+              onChange={(e) => setInstagram(e.target.value)}
+              className="form-control"
+              placeholder="Instagram"
+            />
+          </div>
+        ) : (
+          ""
+        )}
         <div className="form-group">
           <label>Contraseña</label>
           <input
@@ -90,7 +105,7 @@ export const Register = () => {
             placeholder="City"
           />
         </div>
-        {rol == 1 ? (
+        {rol == 2 ? (
           <div className="form-group">
             <label>avaiability</label>
             <input
@@ -105,7 +120,7 @@ export const Register = () => {
           ""
         )}
         ,
-        {rol == 1 ? (
+        {rol == 2 ? (
           <div className="form-group">
             <label>animals</label>
             <input

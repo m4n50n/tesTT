@@ -9,6 +9,7 @@ class Organizacion(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     city = db.Column(db.String(80), unique=False, nullable=False)
     phone = db.Column(db.Integer, unique=False, nullable=False)
+    instagram = db.Column(db.Integer, unique=True, nullable=True)
     avaiability = db.Column(db.Integer, unique=False, nullable=True)
     animals = db.Column(db.Integer, unique=False, nullable=True)
     rol_id = db.Column(db.Integer, db.ForeignKey('rol.id'),
@@ -44,6 +45,7 @@ class Pets(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     name= db.Column(db.String(120), unique=True, nullable=False)
     yearsofbirth= db.Column(db.String(120), unique=True, nullable=False)
+    photo= db.Column(db.String(250), nullable=True)
     race= db.Column(db.String(120), unique=True, nullable=False)
     organizacion_id = db.Column(db.Integer, db.ForeignKey('organizacion.id'),
         nullable=False)
@@ -57,9 +59,13 @@ class Pets(db.Model):
             "name": self.name,
             "yearsofbirth": self.yearsofbirth,
             "race": self.race,
+            "photo": self.photo,
 
             # do not serialize the password, its a security breach
         }
+
+
+    
     
 
 
