@@ -42,7 +42,7 @@ export const Register = () => {
           </select>
         </div>
         <div className="form-group">
-          <label>Nombre</label>
+          <label></label>
           <input
             type="text"
             value={name}
@@ -52,7 +52,7 @@ export const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Correo Electrónico</label>{" "}
+          <label></label>{" "}
           <input
             type="text"
             value={email}
@@ -62,7 +62,7 @@ export const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Teléfono</label>
+          <label></label>
           <input
             type="text"
             value={phone}
@@ -73,7 +73,7 @@ export const Register = () => {
         </div>
         {rol == 1 ? (
           <div className="form-group">
-            <label>instagram</label>
+            <label></label>
             <input
               type="text"
               value={instagram}
@@ -82,11 +82,9 @@ export const Register = () => {
               placeholder="Instagram"
             />
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
         <div className="form-group">
-          <label>Contraseña</label>
+          <label></label>
           <input
             type="password"
             value={password}
@@ -96,7 +94,7 @@ export const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>city</label>
+          <label></label>
           <input
             type="text"
             value={city}
