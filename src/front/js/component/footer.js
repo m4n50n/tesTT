@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 export const Footer = () => (
 	<footer>
 	    <div className="footer pt-5 pb-5 col-4 text-center">
