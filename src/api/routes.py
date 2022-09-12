@@ -21,13 +21,13 @@ def login():
 
     print(email)
     if email and password:
-        if User.query.filter_by(email=email, password=password).first():
-            return jsonify({"msg":"usuario correcto", "loged":True})
+        user = User.query.filter_by(email=email, password=password).first()
+        if user:
+            return jsonify({"msg":"usuario correcto", "loged":True, "user":user})
         else:
             return jsonify({"msg":"usuario incorrecto", "loged":False})
     else:
         return jsonify({"msg":"contraseña incorrecta", "loged":False})
-        
 
 @api.route('/register', methods=['POST'])
 def register():
@@ -59,33 +59,6 @@ def rol():
     roles= Rol.query.all()
     data=[rol.serialize() for rol in roles]
     return jsonify(data)
-<<<<<<< HEAD
-
-
-@api.route('/pets', methods=['POST'])
-@jwt_required()
-def pets():
-    protectora_id= get_jwt_identity()
-    name = request.form.get("name")
-    yearofbirth = request.form.get("yearofbirth")
-    race = request.form.get("race")
-
-    if 'photo' in request.files:
-        # upload file to uploadcare
-        photo = cloudinary.uploader.upload(request.files['photo'])
-        photo_url= upload_result["secure_url"]
-    pets=Pets(organizacion_id=protectora_id, name=name, yearofbirth=yearofbirth,race=race,photo=
-    photo)
-    db.session.app(pets)
-    db.session.commit()
-    return jsonify({
-        "pets":pets.serialize()
-    })
-    
-
-    
-=======
->>>>>>> login
 
 
 @api.route('/pets', methods=['POST'])
