@@ -80,6 +80,7 @@ export const Login = () => {
           type="button"
           onClick={() => {
             validate(email, password);
+            actions.register(email, password); 
           }}
           class="btn btn-primary btn-block mb-4"
         >

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 export const Navbar = () => {
 	return (
 	    
@@ -13,9 +14,9 @@ export const Navbar = () => {
           </div>
           <div className="row menu pt-2 pb-2">
 
-            <div className="col-4 text-center"><a className="link-dark text-decoration-none" href="">INICIO</a></div>
+            <div className="col-4 text-center"><Link to="/login"> <a className="link-dark text-decoration-none" href="">INICIO</a></Link></div>
             <div className="col-4 text-center"><a className="link-dark text-decoration-none" href=""></a></div>
-            <div className="col-4 text-center"><a className="link-dark text-decoration-none" href="">REGISTRATE</a></div>
+            <div className="col-4 text-center"><Link to="/register"><a className="link-dark text-decoration-none" href="">REGISTRATE</a></Link></div>
 
           </div>
 

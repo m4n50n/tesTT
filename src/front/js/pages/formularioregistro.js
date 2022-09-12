@@ -138,7 +138,7 @@ export const Register = () => {
         ) : (
           <div>
             <button
-              onClick={() => register()}
+              onClick={() =>actions.register(email, password, name, phone, city, rol)} 
               type="submit"
               className="btn  sub btn-secondary"
             >
