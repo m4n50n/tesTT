@@ -6,6 +6,8 @@ import Protectoralogin from "./pages/protectoralogin";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import Accesologin from "./pages/accesologin";
+import Vistamodificaciondatos from "./pages/vistamodificaciondatos";
+import Recuperacioncontraseña from "./pages/recuperacioncontraseña";
 import { Single } from "./pages/single";
 import { Register } from "./pages/formularioregistro";
 import injectContext from "./store/appContext";
@@ -31,6 +33,8 @@ const Layout = () => {
             <Route element={<Register />} path="/register" />
             <Route element={<Accesologin />} path="/accesologin" />
             <Route element={<Protectoralogin />} path="/protectoralogin" />
+            <Route element={<Vistamodificaciondatos />} path="/vistamodificaciondatos" />
+            <Route element={<Recuperacioncontraseña />} path="/recuperacioncontraseña" />
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
