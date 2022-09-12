@@ -80,4 +80,8 @@ def pets():
     return jsonify({
         "pets":pets.serialize()
     })
+
+@api.route('/accesologin', methods=['GET'])
+def accesologin():
+    return jsonify(data)
     
