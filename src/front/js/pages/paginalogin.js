@@ -73,7 +73,7 @@ export const Login = () => {
             </div>
           </div>
           <div class="col">
-            <a href="#!">Has olvidado tu contraseña?</a>
+            <a href="https://3000-carmencami-proyectofina-2bzczlwqvuu.ws-eu64.gitpod.io/recuperacioncontrase%C3%B1a/">Has olvidado tu contraseña?</a>
           </div>
         </div>
         <button
