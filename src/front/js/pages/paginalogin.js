@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { validate } from "schema-utils";
 import { Context } from "../store/appContext";
 
@@ -6,7 +7,7 @@ export const Login = () => {
   const { store, actions } = useContext(Context);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [erorrMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const validate = (email, password) => {
     setErrorMessage ("")
@@ -54,7 +55,7 @@ export const Login = () => {
             </label>
           </div>
         </div>
-        <p className="text-danger">{erorrMessage}</p>
+        <p className="text-danger">{errorMessage}</p>
         <div class="row mb-4">
           <div class="col d-flex justify-content-center">
             <div class="form-check">
@@ -73,7 +74,7 @@ export const Login = () => {
             </div>
           </div>
           <div class="col">
-            <a href="#!">Has olvidado tu contraseña?</a>
+            <a href="#!"><Link to="/recuperacioncontraseña">Has olvidado tu contraseña?</Link></a>
           </div>
         </div>
         <button
@@ -88,7 +89,7 @@ export const Login = () => {
         </button>
         <div class="text-center">
           <p>
-          ¿Aun no te has registrado? <a href="#!">Registrate</a>
+          ¿Aun no te has registrado? <a href="#!"><Link to="/register" >Registrate</Link></a>
           </p>
           <p></p>
           <button type="button" class="btn btn-link btn-floating mx-1">

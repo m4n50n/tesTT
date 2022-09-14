@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify, url_for, Blueprint
 
-from api.models import db, Organizacion, Rol
+from api.models import db, Organizacion, Rol, Pets
 
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token
@@ -61,25 +61,43 @@ def rol():
     return jsonify(data)
 
 
-@api.route('/pets', methods=['POST'])
+
+
+@api.route('/pet', methods=['POST'])
 @jwt_required()
-def pets():
+def newpet():
     protectora_id= get_jwt_identity()
     name = request.form.get("name")
-    yearofbirth = request.form.get("yearofbirth")
+    years = request.form.get("years")
+    photo = request.form.get("photo")
+    sexo =  request.form.get("sexo")
+    convivencia = request.form.get("convivencia")
     race = request.form.get("race")
 
     if 'photo' in request.files:
         # upload file to uploadcare
         photo = cloudinary.uploader.upload(request.files['photo'])
         photo_url= upload_result["secure_url"]
-    pets=Pets(organizacion_id=protectora_id, name=name, yearofbirth=yearofbirth,race=race,photo=
-    photo)
+    pets=Pets(organizacion_id=protectora_id, name=name, years=years,race=race,photo=
+    photo,sexo=sexo,convivencia=convivencia)
     db.session.app(pets)
     db.session.commit()
     return jsonify({
         "pets":pets.serialize()
     })
+
+
+
+
+@api.route('/pets', methods=['GET'])
+
+def pets():
+ 
+    pets= Pets.query.all()
+    pets_list=list(map(lambda pets:pets.serialize(),pets))
+    return jsonify(pets_list)
+
+
 
 @api.route('/accesologin', methods=['GET'])
 def accesologin():

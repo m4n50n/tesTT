@@ -8,8 +8,8 @@ class Organizacion(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     city = db.Column(db.String(80), unique=False, nullable=False)
-    phone = db.Column(db.Integer, unique=False, nullable=False)
-    instagram = db.Column(db.Integer, unique=True, nullable=True)
+    phone = db.Column(db.String(9), unique=False, nullable=False)
+    instagram = db.Column(db.String(80), unique=True, nullable=True)
     avaiability = db.Column(db.Integer, unique=False, nullable=True)
     animals = db.Column(db.Integer, unique=False, nullable=True)
     rol_id = db.Column(db.Integer, db.ForeignKey('rol.id'),
@@ -46,7 +46,7 @@ class Pets(db.Model):
     name= db.Column(db.String(120), unique=True, nullable=False)
     years= db.Column(db.String(120), unique=True, nullable=False)
     convivencia= db.Column(db.String(120), unique=True, nullable=False)
-    Sexo= db.Column(db.String(120), unique=True, nullable=False)
+    sexo= db.Column(db.String(120), unique=True, nullable=False)
     photo= db.Column(db.String(250), nullable=True)
     race= db.Column(db.String(120), unique=True, nullable=False)
     organizacion_id = db.Column(db.Integer, db.ForeignKey('organizacion.id'),

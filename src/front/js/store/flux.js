@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ roles: response });
           });
       },
-      register: (email, password, name, phone, address, rol) => {
+      register: (email, password, name, phone, rol) => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/register", {
@@ -96,6 +96,35 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
+
+      pets: (pets) => {
+        let body = new FormData();
+        for (let key in pets) {
+          body.append(key, pets[key]);
+        }
+        const store = getStore();
+        fetch(process.env.BACKEND_URL + "/api/pets", {
+          method: "GET",
+          body: body,
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then(console.log(json))
+        
+          
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
+
+
+
     },
   };
 };
