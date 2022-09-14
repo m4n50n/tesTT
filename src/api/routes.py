@@ -40,7 +40,7 @@ def register():
 
     
     print(email)
-    if email and password and address and phone and name and rol:
+    if email and password and city and phone and name and rol:
         if organizacion.query.filter_by(email=email).first()==None:
 
             organizacion = Organizacion(email=email, password=password, city=city, phone=phone, name=name, rol=rol)

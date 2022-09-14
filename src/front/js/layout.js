@@ -11,9 +11,11 @@ import Recuperacioncontraseña from "./pages/recuperacioncontraseña";
 import { Single } from "./pages/single";
 import { Register } from "./pages/formularioregistro";
 import injectContext from "./store/appContext";
+import CasaAcogida from "./pages/vistacaacogida";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { FormularioPets } from "./pages/formulariopets";
 
 //create your first component
 const Layout = () => {
@@ -33,12 +35,20 @@ const Layout = () => {
             <Route element={<Register />} path="/register" />
             <Route element={<Accesologin />} path="/accesologin" />
             <Route element={<Protectoralogin />} path="/protectoralogin" />
-            <Route element={<Vistamodificaciondatos />} path="/vistamodificaciondatos" />
-            <Route element={<Recuperacioncontraseña />} path="/recuperacioncontraseña" />
+            <Route
+              element={<Vistamodificaciondatos />}
+              path="/vistamodificaciondatos"
+            />
+            <Route
+              element={<Recuperacioncontraseña />}
+              path="/recuperacioncontraseña"
+            />
+            <Route element={<CasaAcogida />} path="/casaacogida" />
+            <Route element={<FormularioPets />} path="/formulariopets" />
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </ScrollToTop>
       </BrowserRouter>
     </div>
