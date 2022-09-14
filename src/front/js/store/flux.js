@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ roles: response });
           });
       },
-      register: (email, password, name, phone, rol) => {
+      register: (email, password, name, phone, city, rol) => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/register", {
@@ -23,7 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             password: password,
             name: name,
             phone: phone,
-            adreses: address,
+            city: city,
             rol: rol,
           }),
           headers: {
