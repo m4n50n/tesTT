@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       roles: [],
       user: {},
-      isAuthenticate:false,
+      isAuthenticate: false,
     },
     actions: {
       roles: () => {
@@ -41,7 +41,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ isAuthenticate: data.loged });
           })
           .catch((error) => {
-            setStore({ isAuthenticate: data.loged, msg: data.msg });
             console.error("[ERROR IN LOGIN]", error);
           });
       },
@@ -63,7 +62,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
-
             localStorage.setItem("token", data.token);
             setStore({ isAuthenticate: data.loged });
             setStore({ user: data.user });

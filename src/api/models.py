@@ -44,7 +44,9 @@ class Rol(db.Model):
 class Pets(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     name= db.Column(db.String(120), unique=True, nullable=False)
-    yearsofbirth= db.Column(db.String(120), unique=True, nullable=False)
+    years= db.Column(db.String(120), unique=True, nullable=False)
+    convivencia= db.Column(db.String(120), unique=True, nullable=False)
+    Sexo= db.Column(db.String(120), unique=True, nullable=False)
     photo= db.Column(db.String(250), nullable=True)
     race= db.Column(db.String(120), unique=True, nullable=False)
     organizacion_id = db.Column(db.Integer, db.ForeignKey('organizacion.id'),
@@ -57,7 +59,8 @@ class Pets(db.Model):
         return  {
             "id": self.id,
             "name": self.name,
-            "yearsofbirth": self.yearsofbirth,
+            "years": self.years,
+            "sexo": self.sexo,
             "race": self.race,
             "photo": self.photo,
 
