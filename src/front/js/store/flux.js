@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       roles: [],
-      user: {},
+      organizacion: {},
       isAuthenticate: false,
     },
     actions: {
@@ -37,13 +37,23 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .then((data) => {
             localStorage.setItem("token", data.token);
-            localStorage.setItem("rol", data.rol);
+            localStorage.setItem("rol", data.organizacion.rol);
+            console.log (data)
             setStore({ isAuthenticate: data.loged });
+            setStore({ organizacion: data.organizacion });
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
+      logout:() => {
+      localStorage.clear()
+      setStore({isAuthenticate:false,organizacion:{}})
+
+    
+
+      },
+
       login: (email, password) => {
         const store = getStore();
         fetch(process.env.BACKEND_URL + "/api/login", {
@@ -63,8 +73,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .then((data) => {
             localStorage.setItem("token", data.token);
+            localStorage.setItem("rol", data.organizacion.rol);
             setStore({ isAuthenticate: data.loged });
-            setStore({ user: data.user });
+            setStore({ organizacion: data.organizacion });
           })
           .catch((error) => {
             setStore({ isAuthenticate: data.loged, msg: data.msg });

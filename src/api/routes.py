@@ -21,9 +21,10 @@ def login():
 
     print(email)
     if email and password:
-        user = User.query.filter_by(email=email, password=password).first()
-        if user:
-            return jsonify({"msg":"usuario correcto", "loged":True, "user":user})
+        organizacion = Organizacion.query.filter_by(email=email, password=password).first()
+        if organizacion:
+            token = create_access_token(identity=organizacion.id)
+            return jsonify({"msg":"usuario correcto", "loged":True,"token":token, "organizacion":organizacion.serialize()})
         else:
             return jsonify({"msg":"usuario incorrecto", "loged":False})
     else:
@@ -36,19 +37,20 @@ def register():
     city = request.json.get("city")
     phone = request.json.get("phone")
     name = request.json.get("name")
-    rol = request.json.get("rol")
-
+    rol =  request.json.get("rol")
     
-    print(email)
-    if email and password and city and phone and name and rol:
-        if organizacion.query.filter_by(email=email).first()==None:
+    rol_id= db.session.query(Rol).filter_by(id=rol).first()
 
-            organizacion = Organizacion(email=email, password=password, city=city, phone=phone, name=name, rol=rol)
+
+    if email and password and city and phone and name and rol_id:
+        if Organizacion.query.filter_by(email=email).first()==None:
+
+            organizacion = Organizacion(email=email, password=password, city=city, phone=phone, name=name, rol=rol_id)
 
             db.session.add(organizacion)
             db.session.commit()
             token = create_access_token(identity=organizacion.id)
-            return jsonify({"user":user.serialize(), "loged":True, "token":token})
+            return jsonify({"organizacion":organizacion.serialize(), "loged":True, "token":token})
         else:
             return jsonify({"msg":"este usuario ya existe", "loged":False})
     else:
@@ -102,4 +104,7 @@ def pets():
 @api.route('/accesologin', methods=['GET'])
 def accesologin():
     return jsonify(data)
+
+
+
     
