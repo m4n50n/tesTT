@@ -14,8 +14,8 @@ import injectContext from "./store/appContext";
 import CasaAcogida from "./pages/vistacaacogida";
 
 import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
-import { FormularioPets } from "./pages/formulariopets";
+
+import { FormularioPets } from "./component/formulariopets";
 
 //create your first component
 const Layout = () => {

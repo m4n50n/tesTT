@@ -10,8 +10,8 @@ class Organizacion(db.Model):
     city = db.Column(db.String(80), unique=False, nullable=False)
     phone = db.Column(db.String(9), unique=False, nullable=False)
     instagram = db.Column(db.String(80), unique=True, nullable=True)
-    avaiability = db.Column(db.Integer, unique=False, nullable=True)
-    animals = db.Column(db.Integer, unique=False, nullable=True)
+    avaiability = db.Column(db.String(30), unique=False, nullable=True)
+    animals = db.Column(db.String(30), unique=False, nullable=True)
     rol_id = db.Column(db.Integer, db.ForeignKey('rol.id'),
         nullable=False)
     pets = db.relationship('Pets', backref='organizacion', lazy=True)
@@ -27,6 +27,7 @@ class Organizacion(db.Model):
             "id": self.id,
             "email": self.email,
             "rol":self.rol_id
+
             # do not serialize the password, its a security breach
         }
 class Rol(db.Model):
@@ -40,6 +41,7 @@ class Rol(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "organizacion": self.organizacion,
             # do not serialize the password, its a security breach
         }
 
@@ -65,6 +67,8 @@ class Pets(db.Model):
             "sexo": self.sexo,
             "race": self.race,
             "photo": self.photo,
+            "organizacion": self.organizacion_id,
+
 
             # do not serialize the password, its a security breach
         }

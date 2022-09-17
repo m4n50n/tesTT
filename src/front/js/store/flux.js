@@ -108,7 +108,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      pets: (pets) => {
+      getpets: (pets) => {
         let body = new FormData();
         for (let key in pets) {
           body.append(key, pets[key]);
@@ -127,15 +127,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then(console.log(json))
-        
-          
+
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-
-
-
     },
   };
 };

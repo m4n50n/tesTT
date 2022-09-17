@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
+import { Link, useNavigate } from "react-router-dom";
 import { Link,useNavigate } from "react-router-dom";
+
 
 export const Register = () => {
   const { store, actions } = useContext(Context);
@@ -40,15 +42,17 @@ export const Register = () => {
 
 
 
-
-
-
   useEffect(() => {
     actions.roles();
   }, []);
 
   const register = () => {
     actions.register(email, password, name, phone, city, rol);
+    if (localStorage.getItem("rol") == 1) {
+      navigate("/casaacogida");
+    } else if (localStorage.getItem("rol") == 2) {
+      navigate("/protectoralogin");
+    }
   };
 
   return (
@@ -100,7 +104,7 @@ export const Register = () => {
             placeholder="Phone"
           />
         </div>
-        {rol == 1 ? (
+        {rol == 2 ? (
           <div className="form-group">
             <label></label>
             <input
@@ -132,7 +136,7 @@ export const Register = () => {
             placeholder="City"
           />
         </div>
-        {rol == 2 ? (
+        {rol == 1 ? (
           <div className="form-group">
             <label>avaiability</label>
             <input
@@ -146,8 +150,7 @@ export const Register = () => {
         ) : (
           ""
         )}
-        ,
-        {rol == 2 ? (
+        {rol == 1 ? (
           <div className="form-group">
             <label>animals</label>
             <input
@@ -167,7 +170,11 @@ export const Register = () => {
         ) : (
           <div>
             <button
-              onClick= { buttonRegister}
+
+              onClick={() => {
+                register();
+              }}
+
               type="submit"
               className="btn  sub btn-secondary"
             >
