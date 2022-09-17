@@ -10,7 +10,7 @@ export const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const validate = (email, password) => {
-    setErrorMessage ("")
+    setErrorMessage("");
     if (!email.includes("@")) {
       setErrorMessage("email is not correct");
     }
@@ -66,22 +66,25 @@ export const Login = () => {
                 id="form2Example31"
                 checked
               />
-           
+
               <label class="form-check-label" for="form2Example31">
-                {" "}
                 {" "}
               </label>
             </div>
           </div>
           <div class="col">
-            <a href="#!"><Link to="/recuperacioncontraseña">Has olvidado tu contraseña?</Link></a>
+            <a href="#!">
+              <Link to="/recuperacioncontraseña">
+                Has olvidado tu contraseña?
+              </Link>
+            </a>
           </div>
         </div>
         <button
           type="button"
           onClick={() => {
             validate(email, password);
-            actions.register(email, password); 
+            actions.login(email, password);
           }}
           class="btn btn-primary btn-block mb-4"
         >
@@ -89,7 +92,10 @@ export const Login = () => {
         </button>
         <div class="text-center">
           <p>
-          ¿Aun no te has registrado? <a href="#!"><Link to="/register" >Registrate</Link></a>
+            ¿Aun no te has registrado?{" "}
+            <a href="#!">
+              <Link to="/register">Registrate</Link>
+            </a>
           </p>
           <p></p>
           <button type="button" class="btn btn-link btn-floating mx-1">

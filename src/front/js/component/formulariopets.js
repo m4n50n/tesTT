@@ -78,7 +78,9 @@ export const FormularioPets = () => {
         </div>
         <div>
           <button
-            onClick={() => actions.pet(pet)}
+            onClick={() => {
+              actions.pets(pet);
+            }}
             type="submit"
             className="btn  sub btn-secondary"
           >

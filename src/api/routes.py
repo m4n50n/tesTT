@@ -21,9 +21,9 @@ def login():
 
     print(email)
     if email and password:
-        user = User.query.filter_by(email=email, password=password).first()
-        if user:
-            return jsonify({"msg":"usuario correcto", "loged":True, "user":user})
+        organizacion = Organizacion.query.filter_by(email=email, password=password).first()
+        if organizacion:
+            return jsonify({"msg":"usuario correcto", "loged":True, "organizacion":organizacion.serialize()})
         else:
             return jsonify({"msg":"usuario incorrecto", "loged":False})
     else:
@@ -41,7 +41,7 @@ def register():
     
     print(email)
     if email and password and city and phone and name and rol:
-        if organizacion.query.filter_by(email=email).first()==None:
+        if Organizacion.query.filter_by(email=email).first()==None:
 
             organizacion = Organizacion(email=email, password=password, city=city, phone=phone, name=name, rol=rol)
 
@@ -59,8 +59,6 @@ def rol():
     roles= Rol.query.all()
     data=[rol.serialize() for rol in roles]
     return jsonify(data)
-
-
 
 
 @api.route('/pet', methods=['POST'])
