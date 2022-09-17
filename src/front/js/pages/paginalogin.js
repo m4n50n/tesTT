@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { validate } from "schema-utils";
 import { Context } from "../store/appContext";
 
@@ -9,6 +9,22 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const navigate= useNavigate ()
+
+
+  const buttonSubmit = () =>{
+    validate(email, password);
+            actions.login(email, password);
+            if(localStorage.getItem("rol")==2){ 
+             
+            navigate("protectoralogin/")
+            
+            }else if (localStorage.getItem("rol")==1){
+              navigate("casaacogida/")
+             } 
+    
+  }
+
   const validate = (email, password) => {
     setErrorMessage ("")
     if (!email.includes("@")) {
@@ -17,7 +33,10 @@ export const Login = () => {
   };
 
   return (
-    <login className="footer mt-auto py-3 text-center">
+    <div className="footer mt-auto py-3 text-center">
+
+  
+
       <form
         onSubmit={(ev) => {
           ev.preventDefault();
@@ -59,13 +78,13 @@ export const Login = () => {
         <div class="row mb-4">
           <div class="col d-flex justify-content-center">
             <div class="form-check">
-              <input
+          {/*    //<input
                 class="form-check-input"
                 type="checkbox"
                 value=""
                 id="form2Example31"
                 checked
-              />
+              />// */}
            
               <label class="form-check-label" for="form2Example31">
                 {" "}
@@ -80,8 +99,7 @@ export const Login = () => {
         <button
           type="button"
           onClick={() => {
-            validate(email, password);
-            actions.register(email, password); 
+             buttonSubmit()
           }}
           class="btn btn-primary btn-block mb-4"
         >
@@ -103,6 +121,6 @@ export const Login = () => {
           </button>
         </div>
       </form>
-    </login>
+</div>
   );
 };
