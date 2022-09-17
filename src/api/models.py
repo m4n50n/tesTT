@@ -22,10 +22,11 @@ class Organizacion(db.Model):
         return f'<Organizacion {self.email}>'
 
     def serialize(self):
+
         return {
             "id": self.id,
             "email": self.email,
-            "rol": self.rol_id,
+            "rol":self.rol_id
 
             # do not serialize the password, its a security breach
         }
@@ -73,7 +74,6 @@ class Pets(db.Model):
         }
 
 
-    
     
 
 
