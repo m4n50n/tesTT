@@ -7,12 +7,12 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import Accesologin from "./pages/accesologin";
 import Vistamodificaciondatos from "./pages/vistamodificaciondatos";
+import Casaacogida from "./pages/casaacogida";
 import Recuperacioncontraseña from "./pages/recuperacioncontraseña";
 import { Single } from "./pages/single";
 import { Register } from "./pages/formularioregistro";
 import injectContext from "./store/appContext";
-import CasaAcogida from "./pages/vistacaacogida";
-
+import { Contacto } from "./pages/formulariocontacto";
 import { Navbar } from "./component/navbar";
 
 import { FormularioPets } from "./component/formulariopets";
@@ -33,6 +33,7 @@ const Layout = () => {
             <Route element={<Demo />} path="/demo" />
             <Route element={<Login />} path="/login" />
             <Route element={<Register />} path="/register" />
+            <Route element={<Contacto/>} path="/contacto"/>
             <Route element={<Accesologin />} path="/accesologin" />
             <Route element={<Protectoralogin />} path="/protectoralogin" />
             <Route
@@ -43,7 +44,7 @@ const Layout = () => {
               element={<Recuperacioncontraseña />}
               path="/recuperacioncontraseña"
             />
-            <Route element={<CasaAcogida />} path="/casaacogida" />
+            <Route element={<Casaacogida />} path="/casaacogida" />
             
             <Route element={<FormularioPets />} path="/formulariopets" />
             <Route element={<Single />} path="/single/:theid" />

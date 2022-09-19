@@ -54,6 +54,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       },
 
+
+
+
+
+
+
       login: (email, password) => {
         const store = getStore();
         fetch(process.env.BACKEND_URL + "/api/login", {
@@ -132,6 +138,58 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
+
+
+
+
+     formulariocontacto: (email,text) => {
+        const store= getStore();
+
+        fetch(process.env.BACKEND_URL + "/api/formulariocontacto", {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+            text: text,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("rol", data.organizacion.rol);
+            console.log (data)
+            setStore({ isAuthenticate: data.loged });
+            setStore({ organizacion: data.organizacion });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
+      logout:() => {
+      localStorage.clear()
+      setStore({isAuthenticate:false,organizacion:{}})
+
+    
+
+      },
+
+
+
+
+
+
+
+
+
+
+
+
     },
   };
 };
