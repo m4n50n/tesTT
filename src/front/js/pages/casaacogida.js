@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Cardperros from "../component/card.pet";
+import Cardperros from "../component/card_pet";
 
 
 
