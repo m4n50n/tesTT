@@ -7,8 +7,12 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import Accesologin from "./pages/accesologin";
 import Vistamodificaciondatos from "./pages/vistamodificaciondatos";
+<<<<<<< HEAD
+import Recuperacioncontrasena from "./pages/recuperacioncontrasena";
+=======
 import Casaacogida from "./pages/casaacogida";
 import Recuperacioncontraseña from "./pages/recuperacioncontraseña";
+>>>>>>> dev
 import { Single } from "./pages/single";
 import { Register } from "./pages/formularioregistro";
 import injectContext from "./store/appContext";
@@ -27,7 +31,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-         <Navbar/>
+          <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
@@ -41,16 +45,20 @@ const Layout = () => {
               path="/vistamodificaciondatos"
             />
             <Route
-              element={<Recuperacioncontraseña />}
-              path="/recuperacioncontraseña"
+              element={<Recuperacioncontrasena />}
+              path="/recuperacioncontrasena"
             />
+<<<<<<< HEAD
+            <Route element={<CasaAcogida />} path="/casaacogida" />
+
+=======
             <Route element={<Casaacogida />} path="/casaacogida" />
             
+>>>>>>> dev
             <Route element={<FormularioPets />} path="/formulariopets" />
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
-       
         </ScrollToTop>
       </BrowserRouter>
     </div>
