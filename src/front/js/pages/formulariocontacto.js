@@ -11,14 +11,16 @@ export const Contacto= () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-      .then(() => {
-      }).done(function() {
-        alert('Correo enviado');
-    }).fail(function(error) {
-        alert('Correo no enviado.. ' + JSON.stringify(error));
-    });
+    emailjs.sendForm('service_0lcpisi', 'template_0tne4pu', form.current, 'd1qvpD644gnPtSeP0')
+    .then((result) => {
+     alert("mensaje enviado");
+  }, (error) => {
+      console.log(error.text);
+  });
   };
+
+
+
 
   return (
     <form ref={form} onSubmit={sendEmail}>
@@ -33,8 +35,10 @@ export const Contacto= () => {
       <textarea name="message" />
       </div>
 
-      <button onClick={ Contacto} type="submit"className="btn  sub btn-secondary">Enviar</button>
-
+      <input type="submit" value="Enviar" />
+     
     </form>
+     
+   
   );
 };
