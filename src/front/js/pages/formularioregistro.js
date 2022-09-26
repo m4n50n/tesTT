@@ -49,9 +49,9 @@ export const Register = () => {
   };
 
   return (
-    <div className="principal-container text-center">
+    <div className="form-outline mb-4">
       <div className="myform">
-        <h4>Registrate!</h4>
+        <h4>Regístrate!</h4>
         <div className="form-group">
           <label>Rol</label>
           <select
@@ -161,7 +161,6 @@ export const Register = () => {
         ) : (
           ""
         )}
-        ,
         {store.isLoading ? (
           <Loader type="" color="#F3C766" height={80} width={80} />
         ) : (
@@ -173,11 +172,11 @@ export const Register = () => {
               type="submit"
               className="btn  sub btn-secondary"
             >
-              Ingresar
+              Registar
             </button>
           </div>
         )}
-        ¿Ya estás registrado? <Link to={"/"}>Inicia Sesión!</Link>{" "}
+        ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
       </div>
     </div>
   );

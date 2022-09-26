@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { validate } from "schema-utils";
 import { Context } from "../store/appContext";
 
@@ -9,21 +9,17 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate= useNavigate ()
+  const navigate = useNavigate();
 
-
-  const buttonSubmit = () =>{
+  const buttonSubmit = () => {
     validate(email, password);
-            actions.login(email, password);
-            if(localStorage.getItem("rol")==2){ 
-             
-            navigate("protectoralogin/")
-            
-            }else if (localStorage.getItem("rol")==1){
-              navigate("casaacogida/")
-             } 
-    
-  }
+    actions.login(email, password);
+    if (localStorage.getItem("rol") == 2) {
+      navigate("protectoralogin/");
+    } else if (localStorage.getItem("rol") == 1) {
+      navigate("casaacogida/");
+    }
+  };
 
   const validate = (email, password) => {
     setErrorMessage("");
@@ -34,9 +30,6 @@ export const Login = () => {
 
   return (
     <div className="footer mt-auto py-3 text-center">
-
-  
-
       <form
         onSubmit={(ev) => {
           ev.preventDefault();
@@ -55,7 +48,7 @@ export const Login = () => {
           ></input>
           <div>
             <label class="form-label" for="form2Example1">
-              Correo electronico
+              Correo electrónico
             </label>
           </div>
         </div>
@@ -78,7 +71,7 @@ export const Login = () => {
         <div class="row mb-4">
           <div class="col d-flex justify-content-center">
             <div class="form-check">
-          {/*    //<input
+              {/*    //<input
                 class="form-check-input"
                 type="checkbox"
                 value=""
@@ -88,7 +81,7 @@ export const Login = () => {
 
 
               />// */}
-           
+
               <label class="form-check-label" for="form2Example31">
                 {" "}
               </label>
@@ -96,7 +89,7 @@ export const Login = () => {
           </div>
           <div class="col">
             <a href="#!">
-              <Link to="/recuperacioncontraseña">
+              <Link to="/recuperacioncontrasena">
                 Has olvidado tu contraseña?
               </Link>
             </a>
@@ -105,16 +98,14 @@ export const Login = () => {
         <button
           type="button"
           onClick={() => {
-
             validate(email, password);
             actions.login(email, password);
 
-             buttonSubmit()
-
+            buttonSubmit();
           }}
           class="btn btn-primary btn-block mb-4"
         >
-          Sign in
+          Acceder
         </button>
         <div class="text-center">
           <p>
@@ -135,6 +126,6 @@ export const Login = () => {
           </button>
         </div>
       </form>
-</div>
+    </div>
   );
 };

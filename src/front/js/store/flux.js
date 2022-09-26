@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(process.env.BACKEND_URL + "/api/roles")
           .then((response) => response.json())
           .then((response) => {
+            console.log(response);
             setStore({ roles: response });
           });
       },

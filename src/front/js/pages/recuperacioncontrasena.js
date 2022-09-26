@@ -9,16 +9,16 @@ const Recuperacioncontrasena = () => {
   };
 
   return (
-    <div>
+    <div className="text-center">
       <div>
         {" "}
-        <h1>¿Has olvidado tu contraseña? </h1>
+        <h2>¿Has olvidado tu contraseña? </h2>
       </div>
       <div>
         {" "}
-        <h3>Por favor introduce la cuenta de email usada para el registro. </h3>
+        <h4>Por favor introduce la cuenta de email usada para el registro. </h4>
       </div>
-      <div class="col-sm-10">
+      <div className="col-sm-10">
         <input
           onChange={(e) => {
             setEmail(e.target.value);
@@ -26,6 +26,7 @@ const Recuperacioncontrasena = () => {
           type="email"
           class="form-control"
           id="inputEmail"
+          placeholder="email"
         />
         <button
           onClick={() => {

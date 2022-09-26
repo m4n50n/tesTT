@@ -70,6 +70,7 @@ def register():
 def rol():
     roles = Rol.query.all()
     data = [rol.serialize() for rol in roles]
+    print(data)
     return jsonify(data)
 
 
