@@ -1,11 +1,14 @@
 import React from "react";
-import { FormularioPets } from "../component/formulariopets";
+import FormularioPets from "../component/formulariopets";
 
 const Protectoralogin = () => {
   return (
     <div>
-      <button type="button" class="btn btn-primary btn-lg btn">
-        {" "}
+      <button type="button" class="btn btn btn-lg">
+        <Link to="/formulariopets">
+          {" "}
+          <a className="link-dark text-decoration-none" href=""></a>
+        </Link>
         Registra a la mascota que necesite hogar
       </button>
       <h1>

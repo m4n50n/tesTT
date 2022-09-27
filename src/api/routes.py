@@ -24,10 +24,10 @@ def login():
         organizacion = Organizacion.query.filter_by(
             email=email, password=password).first()
         if organizacion:
-            return jsonify({"msg": "usuario correcto", "loged": True, "organizacion": organizacion.serialize()})
+            # return jsonify({"msg": "usuario correcto", "loged": True, "organizacion": organizacion.serialize()})
 
-        token = create_access_token(identity=organizacion.id)
-        return jsonify({"msg": "usuario correcto", "loged": True, "token": token, "organizacion": organizacion.serialize()})
+            token = create_access_token(identity=organizacion.id)
+            return jsonify({"msg": "usuario correcto", "loged": True, "token": token, "organizacion": organizacion.serialize()})
 
     else:
         return jsonify({"msg": "usuario incorrecto", "loged": False})
@@ -70,6 +70,7 @@ def register():
 def rol():
     roles = Rol.query.all()
     data = [rol.serialize() for rol in roles]
+    print(data)
     return jsonify(data)
 
 
@@ -143,3 +144,16 @@ def recuperacioncontraseña():
         return jsonify({
             "msg": "Mensaje no enviado"
         })
+
+
+# @api.route('/perfilusuario', methods=['GET'])
+# @jwt_required()
+# def perfilusuario():
+#     organizacion_id = get_jwt_identity()
+#     organizacion = Organizacion.query.filter_by(id=organizacion_id)
+#     response = {
+#         "name": organizacion.name,
+#         "email": organizacion.email,
+
+#     }
+#     return jsonify(response), 200

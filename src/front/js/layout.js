@@ -44,6 +44,7 @@ const Layout = () => {
               element={<Recuperacioncontrasena />}
               path="/recuperacioncontrasena"
             />
+
             <Route element={<Casaacogida />} path="/casaacogida" />
 
             <Route element={<FormularioPets />} path="/formulariopets" />
