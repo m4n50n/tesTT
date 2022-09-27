@@ -49,11 +49,14 @@ export const Register = () => {
   };
 
   return (
-    <div className="form-outline mb-4">
+    <div className="form-outline mb-4 text-center">
       <div className="myform">
-        <h4>Regístrate!</h4>
+        <h4 className="protectoraocasa">
+          ¿Eres una protectora o casa de acogida?
+        </h4>
+        <h5 className="tituloregistrate">¡Regístrate!</h5>
         <div className="form-group">
-          <label>Rol</label>
+          <label></label>
           <select
             name="rol"
             value={rol}
@@ -71,111 +74,113 @@ export const Register = () => {
             })}
           </select>
         </div>
-        <div className="form-group">
-          <label></label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="form-control"
-            placeholder="Nombre"
-          />
-        </div>
-        <div className="form-group">
-          <label></label>{" "}
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="form-control"
-            placeholder="Email"
-          />
-        </div>
-        <div className="form-group">
-          <label></label>
-          <input
-            type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="form-control"
-            placeholder="Phone"
-          />
-        </div>
-        {rol == 2 ? (
+        <form className="col-sm-10 mx-auto">
           <div className="form-group">
             <label></label>
             <input
               type="text"
-              value={instagram}
-              onChange={(e) => setInstagram(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="form-control"
-              placeholder="Instagram"
+              placeholder="Nombre"
             />
           </div>
-        ) : null}
-        <div className="form-group">
-          <label></label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="form-control"
-            placeholder="Contraseña"
-          />
-        </div>
-        <div className="form-group">
-          <label></label>
-          <input
-            type="text"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            className="form-control"
-            placeholder="City"
-          />
-        </div>
-        {rol == 1 ? (
           <div className="form-group">
-            <label>avaiability</label>
+            <label></label>{" "}
             <input
               type="text"
-              value={avaiability}
-              onChange={(e) => setAvaiability(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="form-control"
-              placeholder="Avaiability"
+              placeholder="Email"
             />
           </div>
-        ) : (
-          ""
-        )}
-        {rol == 1 ? (
           <div className="form-group">
-            <label>animals</label>
+            <label></label>
             <input
               type="text"
-              value={animals}
-              onChange={(e) => setAnimals(e.target.value)}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="form-control"
-              placeholder="Animals"
+              placeholder="Teléfono"
             />
           </div>
-        ) : (
-          ""
-        )}
-        {store.isLoading ? (
-          <Loader type="" color="#F3C766" height={80} width={80} />
-        ) : (
-          <div>
-            <button
-              onClick={() => {
-                register();
-              }}
-              type="submit"
-              className="btn  sub btn-secondary"
-            >
-              Registar
-            </button>
+          {rol == 2 ? (
+            <div className="form-group">
+              <label></label>
+              <input
+                type="text"
+                value={instagram}
+                onChange={(e) => setInstagram(e.target.value)}
+                className="form-control"
+                placeholder="Instagram"
+              />
+            </div>
+          ) : null}
+          <div className="form-group">
+            <label></label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+              placeholder="Contraseña"
+            />
           </div>
-        )}
+          <div className="form-group">
+            <label></label>
+            <input
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className="form-control"
+              placeholder="Ciudad"
+            />
+          </div>
+          {rol == 1 ? (
+            <div className="form-group">
+              <label>avaiability</label>
+              <input
+                type="text"
+                value={avaiability}
+                onChange={(e) => setAvaiability(e.target.value)}
+                className="form-control"
+                placeholder="Disponibilidad de acogida"
+              />
+            </div>
+          ) : (
+            ""
+          )}
+          {rol == 1 ? (
+            <div className="form-group">
+              <label>animals</label>
+              <input
+                type="text"
+                value={animals}
+                onChange={(e) => setAnimals(e.target.value)}
+                className="form-control"
+                placeholder="¿Tienes más animales? ¿Cuáles?"
+              />
+            </div>
+          ) : (
+            ""
+          )}
+          {store.isLoading ? (
+            <Loader type="" color="#F3C766" height={80} width={80} />
+          ) : (
+            <div>
+              <button
+                onClick={() => {
+                  register();
+                }}
+                type="submit"
+                className="btn  sub btn-secondary"
+              >
+                Registrar
+              </button>
+            </div>
+          )}
+        </form>
         ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
       </div>
     </div>

@@ -8,7 +8,6 @@ export const FormularioPets = () => {
 
   useEffect(() => {}, []);
 
-  const FormularioPets = () => {};
   const PetPhoto = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       setPet({ ...pet, photo: e.target.files[0] });
@@ -19,10 +18,10 @@ export const FormularioPets = () => {
     <div>
       <div className="principal-container text-center">
         <div className="myform">
-          <h4>Registrate!</h4>
-          <div className="input-group mb-3" />
+          <h4>¡Registra a la mascota que necesite ayuda!</h4>
+          <div className="input-group mb-3 " />
           <label className="input-group-text" for="inputGroupFile01">
-            Upload
+            Subir
           </label>
           <input
             type="file"
@@ -46,7 +45,7 @@ export const FormularioPets = () => {
             type="text"
             onChange={(e) => setPet({ ...pet, years: e.target.value })}
             className="form-control"
-            placeholder="Years"
+            placeholder="Años"
           />
         </div>
         <div className="form-group">
@@ -55,7 +54,7 @@ export const FormularioPets = () => {
             type="text"
             onChange={(e) => setPet({ ...pet, race: e.target.value })}
             className="form-control"
-            placeholder="Race"
+            placeholder="Animal/raza"
           />
         </div>
         <div className="form-group">
@@ -73,7 +72,7 @@ export const FormularioPets = () => {
             type="text"
             onChange={(e) => setPet({ ...pet, convivencia: e.target.value })}
             className="form-control"
-            placeholder="Convivencia"
+            placeholder="¿Convivencia con otros animales?"
           />
         </div>
         <div>
@@ -87,7 +86,7 @@ export const FormularioPets = () => {
             Guardar
           </button>
         </div>
-        ¿Ya estás registrado? <Link to={"/"}>Guardar</Link>{" "}
+        <Link to={"/protectoralogin"}>Inicio</Link>{" "}
       </div>
     </div>
   );
