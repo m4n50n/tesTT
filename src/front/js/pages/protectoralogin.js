@@ -3,8 +3,10 @@ import { FormularioPets } from "../component/formulariopets";
 
 const Protectoralogin = () => {
   return (
+
+
     <div>
-      <button type="button" class="btn btn-primary btn-lg btn">
+      <button type="button" className="btn btn-primary btn-lg btn">
         {" "}
         Registra a la mascota que necesite hogar
       </button>
