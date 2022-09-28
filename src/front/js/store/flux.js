@@ -26,9 +26,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             phone: phone,
             city: city,
             rol: rol,
-            // aviability:aviability,
-            // animals:animals,
-            // instagram:instagram,
+            aviability: aviability,
+            animals: animals,
+            instagram: instagram,
           }),
           headers: {
             "Content-type": "application/json",
