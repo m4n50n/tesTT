@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(process.env.BACKEND_URL + "/api/roles")
           .then((response) => response.json())
           .then((response) => {
+            console.log(response);
             setStore({ roles: response });
           });
       },
@@ -25,6 +26,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             phone: phone,
             city: city,
             rol: rol,
+            // aviability:aviability,
+            // animals:animals,
+            // instagram:instagram,
           }),
           headers: {
             "Content-type": "application/json",
@@ -38,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            console.log (data)
+            console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -46,19 +50,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-      logout:() => {
-      localStorage.clear()
-      setStore({isAuthenticate:false,organizacion:{}})
-
-    
-
+      logout: () => {
+        localStorage.clear();
+        setStore({ isAuthenticate: false, organizacion: {} });
       },
-
-
-
-
-
-
 
       login: (email, password) => {
         const store = getStore();
@@ -78,6 +73,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
+            console.log(data);
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
             setStore({ isAuthenticate: data.loged });
@@ -138,13 +134,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-
-
-
-
-     formulariocontacto: (email,text) => {
-        const store= getStore();
-
+      formulariocontacto: (email, text) => {
+        const store = getStore();
         fetch(process.env.BACKEND_URL + "/api/formulariocontacto", {
           method: "POST",
           body: JSON.stringify({
@@ -163,7 +154,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            console.log (data)
+            console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -171,25 +162,76 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-      logout:() => {
-      localStorage.clear()
-      setStore({isAuthenticate:false,organizacion:{}})
-
-    
-
+      logout: () => {
+        localStorage.clear();
+        setStore({ isAuthenticate: false, organizacion: {} });
       },
 
+      // perfilusuario: (email, password, name, phone, city, rol) => {
+      //   const store = getStore();
 
+      //   fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
+      //     method: "PUT",
+      //     body: JSON.stringify({
+      //       email: email,
+      //       password: password,
+      //       name: name,
+      //       animals:animals,
+      //       aviability:aviability,
+      //       phone: phone,
+      //       city: city,
+      //       rol: rol,
+      //     }),
+      //     headers: {
+      //       "Content-type": "application/json",
+      //     },
+      //   })
+      //     .then((resp) => {
+      //       if (resp.ok) {
+      //         return resp.json();
+      //       }
+      //     })
+      //     .then((data) => {
+      //       localStorage.setItem("token", data.token);
+      //       localStorage.setItem("rol", data.organizacion.rol);
+      //       console.log(data);
+      //       setStore({ isAuthenticate: data.loged });
+      //       setStore({ organizacion: data.organizacion });
+      //     })
+      //     .catch((error) => {
+      //       console.error("[ERROR IN LOGIN]", error);
+      //     });
+      // },
+      // logout: () => {
+      //   localStorage.clear();
+      //   setStore({ isAuthenticate: false, organizacion: {} });
+      // },
 
-
-
-
-
-
-
-
-
-
+      recuperacioncontrasena: (email) => {
+        const store = getStore();
+        fetch(process.env.BACKEND_URL + "/api/recuperacioncontrasena", {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            setStore({
+              msg: data.msg,
+            });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
     },
   };
 };

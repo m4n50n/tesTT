@@ -27,7 +27,6 @@ export const Navbar = () => {
                 </a>
               </Link>
             </div>
-            
             <div className="col-4 text-center">
               <a className="link-dark text-decoration-none" href=""></a>
             </div>
