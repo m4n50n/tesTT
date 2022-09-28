@@ -147,14 +147,14 @@ def recuperacioncontraseña():
         })
 
 
-# @api.route('/perfilusuario', methods=['GET'])
-# @jwt_required()
-# def perfilusuario():
-#     organizacion_id = get_jwt_identity()
-#     organizacion = Organizacion.query.filter_by(id=organizacion_id)
-#     response = {
-#         "name": organizacion.name,
-#         "email": organizacion.email,
+@api.route('/perfilusuario', methods=['GET'])
+@jwt_required()
+def perfilusuario():
+    organizacion_id = get_jwt_identity()
+    organizacion = Organizacion.query.filter_by(id=organizacion_id)
+    response = {
+        "name": organizacion.name,
+        "email": organizacion.email,
 
-#     }
-#     return jsonify(response), 200
+    }
+    return jsonify(response), 200
