@@ -5,7 +5,7 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   return (
     <div className="container-fluid">
-      <div className="row">
+      {/* <div className="row">
         <div className="col-12">
           <div className="d-flex justify-content-center">
             <img
@@ -15,7 +15,7 @@ export const Navbar = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="row menu pt-2 pb-2">
         {!store.isAuthenticate ? (
           <div>

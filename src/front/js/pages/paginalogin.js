@@ -14,9 +14,9 @@ export const Login = () => {
   const buttonSubmit = () => {
     validate(email, password);
     actions.login(email, password);
-    if (localStorage.getItem("rol") == 2) {
+    if (localStorage.getItem("rol") == 1) {
       navigate("protectoralogin/");
-    } else if (localStorage.getItem("rol") == 1) {
+    } else if (localStorage.getItem("rol") == 2) {
       navigate("casaacogida/");
     }
   };
