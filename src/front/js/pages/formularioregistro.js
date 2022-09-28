@@ -14,17 +14,28 @@ export const Register = () => {
   const [avaiability, setAvaiability] = useState("");
   const [animals, setAnimals] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [login, setLogin] = useState("");
 
   const navigate = useNavigate();
 
-  const buttonRegister = () => {
-    console.log("hiceclick");
-    validate(email, password);
-    actions.register(email, password, name, phone, city, rol);
-    if (localStorage.getItem("rol") == 2) {
-      navigate("/protectoralogin/");
-    } else if (localStorage.getItem("rol") == 1) {
-      navigate("/casaacogida/");
+  const register = (e) => {
+    e.preventDefault();
+    if (
+      email !== "" &&
+      password !== "" &&
+      name !== "" &&
+      phone !== "" &&
+      city !== ""
+    ) {
+      actions.register(email, password, name, phone, city);
+      setLogin("Gracias por registrate en Kodu");
+      if (localStorage.getItem("rol") == 2) {
+        navigate("/protectoralogin/");
+      } else if (localStorage.getItem("rol") == 1) {
+        navigate("/casaacogida/");
+      }
+    } else {
+      setLogin("Introduzca los datos correctamente");
     }
   };
 
@@ -38,15 +49,6 @@ export const Register = () => {
   useEffect(() => {
     actions.roles();
   }, []);
-
-  const register = () => {
-    actions.register(email, password, name, phone, city, rol);
-    if (localStorage.getItem("rol") == 1) {
-      navigate("/casaacogida");
-    } else if (localStorage.getItem("rol") == 2) {
-      navigate("/protectoralogin");
-    }
-  };
 
   return (
     <div className="form-outline mb-4 text-center">
@@ -170,9 +172,7 @@ export const Register = () => {
           ) : (
             <div>
               <button
-                onClick={() => {
-                  register();
-                }}
+                onClick={register}
                 type="submit"
                 className="btn  sub btn-secondary"
               >
@@ -181,6 +181,7 @@ export const Register = () => {
             </div>
           )}
         </form>
+        <p>{login}</p>
         ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
       </div>
     </div>

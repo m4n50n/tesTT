@@ -69,7 +69,8 @@ def register():
 @api.route('/roles', methods=['GET'])
 def rol():
     roles = Rol.query.all()
-    data = [rol.serialize() for rol in roles]
+    data = list(map(lambda rol: rol.serialize(), roles))
+    # data = [rol.serialize() for rol in roles]
     print(data)
     return jsonify(data)
 
