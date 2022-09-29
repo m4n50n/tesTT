@@ -151,10 +151,16 @@ def recuperacioncontraseña():
 @jwt_required()
 def perfilusuario():
     organizacion_id = get_jwt_identity()
-    organizacion = Organizacion.query.filter_by(id=organizacion_id)
+    organizacion = Organizacion.query.filter_by(id=organizacion_id).first()
+    # print (list(map(lambda pets: pets.serialize(), pets)))
     response = {
-        "name": organizacion.name,
         "email": organizacion.email,
+        "name": organizacion.name,
+        "phone": organizacion.phone,
+        "aviability": organizacion.avaiability,
+        "animals": organizacion.animals,
+        "city": organizacion.city,
 
     }
+    # return jsonify({"msg": "Hola"}), 200
     return jsonify(response), 200

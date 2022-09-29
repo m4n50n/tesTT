@@ -24,7 +24,14 @@ class Organizacion(db.Model):
 
         return {
             "id": self.id,
+            "name": self.name,
             "email": self.email,
+            "phone": self.phone,
+            "password": self.password,
+            "avaiability": self.avaiability,
+            "animals": self.animals,
+            "instagram": self.instagram,
+            "city": self.city,
             "rol": self.rol_id
 
             # do not serialize the password, its a security breach
