@@ -27,7 +27,9 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+
           <Navbar/>
+
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
@@ -35,7 +37,10 @@ const Layout = () => {
             <Route element={<Register />} path="/register" />
             <Route element={<Contacto />} path="/contacto" />
             <Route element={<Accesologin />} path="/accesologin" />
-            <Route element={<Protectoralogin />} path="/protectoralogin" />
+            <Route
+              element={<Protectoralogin />}
+              path="/login/protectoralogin"
+            />
             <Route
               element={<Vistamodificaciondatos />}
               path="/vistamodificaciondatos"
@@ -44,7 +49,8 @@ const Layout = () => {
               element={<Recuperacioncontrasena />}
               path="/recuperacioncontrasena"
             />
-            <Route element={<Casaacogida />} path="/casaacogida" />
+
+            <Route element={<Casaacogida />} path="/login/casaacogida" />
 
             <Route element={<FormularioPets />} path="/formulariopets" />
             <Route element={<Single />} path="/single/:theid" />
