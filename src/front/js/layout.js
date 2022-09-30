@@ -6,7 +6,7 @@ import Protectoralogin from "./pages/protectoralogin";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import Accesologin from "./pages/accesologin";
-import Vistamodificaciondatos from "./pages/vistamodificaciondatos";
+import { Perfilusuario } from "./pages/perfilusuario";
 import Recuperacioncontrasena from "./pages/recuperacioncontrasena";
 import Casaacogida from "./pages/casaacogida";
 import { Single } from "./pages/single";
@@ -16,6 +16,7 @@ import { Contacto } from "./pages/formulariocontacto";
 import { Navbar } from "./component/navbar";
 
 import { FormularioPets } from "./component/formulariopets";
+import { perfilusuario } from "./pages/perfilusuario";
 
 //create your first component
 const Layout = () => {
@@ -38,10 +39,7 @@ const Layout = () => {
               element={<Protectoralogin />}
               path="/login/protectoralogin"
             />
-            <Route
-              element={<Vistamodificaciondatos />}
-              path="/vistamodificaciondatos"
-            />
+            <Route element={<Perfilusuario />} path="/perfilusuario" />
             <Route
               element={<Recuperacioncontrasena />}
               path="/recuperacioncontrasena"

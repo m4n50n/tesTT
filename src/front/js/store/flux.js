@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       roles: [],
       organizacion: {},
       isAuthenticate: false,
+      pet_list: [],
     },
     actions: {
       roles: () => {
@@ -167,45 +168,121 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ isAuthenticate: false, organizacion: {} });
       },
 
-      // perfilusuario: (email, password, name, phone, city, rol) => {
-      //   const store = getStore();
+      perfilusuario: (email, avaiability, name, phone, city, animals) => {
+        const store = getStore();
 
-      //   fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
-      //     method: "PUT",
-      //     body: JSON.stringify({
-      //       email: email,
-      //       password: password,
-      //       name: name,
-      //       animals:animals,
-      //       aviability:aviability,
-      //       phone: phone,
-      //       city: city,
-      //       rol: rol,
-      //     }),
-      //     headers: {
-      //       "Content-type": "application/json",
-      //     },
-      //   })
-      //     .then((resp) => {
-      //       if (resp.ok) {
-      //         return resp.json();
-      //       }
-      //     })
-      //     .then((data) => {
-      //       localStorage.setItem("token", data.token);
-      //       localStorage.setItem("rol", data.organizacion.rol);
-      //       console.log(data);
-      //       setStore({ isAuthenticate: data.loged });
-      //       setStore({ organizacion: data.organizacion });
-      //     })
-      //     .catch((error) => {
-      //       console.error("[ERROR IN LOGIN]", error);
-      //     });
-      // },
-      // logout: () => {
-      //   localStorage.clear();
-      //   setStore({ isAuthenticate: false, organizacion: {} });
-      // },
+        fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
+          method: "GET",
+          body: JSON.stringify({
+            email: email,
+            name: name,
+            animals: animals,
+            avaiability: avaiability,
+            phone: phone,
+            city: city,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("rol", data.organizacion.rol);
+            console.log(data);
+            setStore({ isAuthenticate: data.loged });
+            setStore({ organizacion: data.organizacion });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
+      logout: () => {
+        localStorage.clear();
+        setStore({ isAuthenticate: false, organizacion: {} });
+      },
+
+      editUser: (email, name, phone, animals, avaiability, city) => {
+        const store = getStore();
+
+        fetch(process.env.BACKEND_URL + "/api/edituser", {
+          method: "PUT",
+          body: JSON.stringify({
+            email: email,
+            name: name,
+            phone: phone,
+            animals: animals,
+            avaiability: avaiability,
+            city: city,
+          }),
+          headers: {
+            "Content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            setStore({ organizacion: data.organizacion });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
+      pet_list: () => {
+        const store = getStore();
+
+        fetch(process.env.BACKEND_URL + "/api/formulariopets", {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            console.log(data);
+            setStore({ pet_list: data });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
+
+      organizacion: () => {
+        const store = getStore();
+
+        fetch(process.env.BACKEND_URL + "/api/organizacion", {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            console.log(data);
+            setStore({ isAuthenticate: data.loged });
+            setStore({ organizacion: data.organizacion });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
 
       recuperacioncontrasena: (email) => {
         const store = getStore();

@@ -54,3 +54,8 @@ body {
 .formulariopet {
   align-content: center;
 }
+
+.formulariousuario {
+  border: 200px;
+  width: 75%;
+}
