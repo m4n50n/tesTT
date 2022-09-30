@@ -24,7 +24,14 @@ class Organizacion(db.Model):
 
         return {
             "id": self.id,
+            "name": self.name,
             "email": self.email,
+            "phone": self.phone,
+            "password": self.password,
+            "avaiability": self.avaiability,
+            "animals": self.animals,
+            "instagram": self.instagram,
+            "city": self.city,
             "rol": self.rol_id
 
             # do not serialize the password, its a security breach
@@ -62,6 +69,7 @@ class Pets(db.Model):
         return '<Pets {self.name}>'
 
     def serialize(self):
+        organizacion = Organizacion.query.get(self.organizacion_id)
         return {
             "id": self.id,
             "name": self.name,
@@ -69,7 +77,10 @@ class Pets(db.Model):
             "sexo": self.sexo,
             "race": self.race,
             "photo": self.photo,
-            "organizacion": self.organizacion_id,
+            "convivencia": self.convivencia,
+
+            "organizacion": self.organizacion.serialize(),
+
 
 
             # do not serialize the password, its a security breach
