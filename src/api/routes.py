@@ -162,5 +162,54 @@ def perfilusuario():
         "city": organizacion.city,
 
     }
+
     # return jsonify({"msg": "Hola"}), 200
     return jsonify(response), 200
+
+
+@api.route('/edituser', methods=['PUT'])
+@jwt_required()
+def edituser():
+    email = request.json.get("email")
+    city = request.json.get("city")
+    phone = request.json.get("phone")
+    name = request.json.get("name")
+    avaiability = request.json.get("avaiability")
+    animals = request.json.get("animals")
+
+    print(email)
+    organizacion_id = get_jwt_identity()
+    organizacion = Organizacion.query.get(organizacion_id)
+
+    organizacion.email = email
+    organizacion.name = name
+    organizacion.city = city
+    organizacion.avaiability = avaiability
+    organizacion.phone = phone
+    organizacion.animals = animals
+    db.session.commit()
+
+    return jsonify({"msg": "usuario modificado", "organizacion": organizacion.serialize()})
+
+
+@api.route('/organizacion', methods=['GET'])
+@jwt_required()
+def organizacion():
+    organizacion_id = get_jwt_identity()
+    organizacion = Organizacion.query.filter_by(id=organizacion_id).first()
+    # print (list(map(lambda pets: pets.serialize(), pets)))
+    response = {
+        "organizacion": organizacion.serialize(),
+
+        "loged": True
+
+    }
+    return jsonify(response)
+
+
+@api.route('/formulariopets', methods=['GET'])
+def formulariopets():
+
+    pets = Pets.query.all()
+    pets_list = list(map(lambda pets: pets.serialize(), pets))
+    return jsonify(pets_list)

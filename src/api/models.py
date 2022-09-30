@@ -69,6 +69,7 @@ class Pets(db.Model):
         return '<Pets {self.name}>'
 
     def serialize(self):
+        organizacion = Organizacion.query.get(self.organizacion_id)
         return {
             "id": self.id,
             "name": self.name,
@@ -76,7 +77,10 @@ class Pets(db.Model):
             "sexo": self.sexo,
             "race": self.race,
             "photo": self.photo,
-            "organizacion": self.organizacion_id,
+            "convivencia": self.convivencia,
+
+            "organizacion": self.organizacion.serialize(),
+
 
 
             # do not serialize the password, its a security breach

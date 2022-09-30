@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
+import "../../styles/index.css";
 
 export const Perfilusuario = () => {
-  const form = useRef();
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,67 +13,80 @@ export const Perfilusuario = () => {
   const [animals, setAnimals] = useState("");
 
   return (
-    <form className="col-sm-10 mx-auto">
-      <div className="form-group">
-        <label></label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="form-control"
-          placeholder="Nombre"
-        />
+    <div className="formulariousuario container card">
+      <div className="card-body">
+        <div className="form-group">
+          <label></label>
+          <input
+            type="text"
+            defaultValue={store.organizacion.name}
+            onChange={(e) => setName(e.target.value)}
+            className="form-control"
+            placeholder="Nombre"
+          />
+        </div>
+        <div className="form-group">
+          <label></label>{" "}
+          <input
+            type="text"
+            defaultValue={store.organizacion.email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="form-control"
+            placeholder="Email"
+          />
+        </div>
+        <div className="form-group">
+          <label></label>{" "}
+          <input
+            type="text"
+            defaultValue={store.organizacion.avaiability}
+            onChange={(e) => setAvaiability(e.target.value)}
+            className="form-control"
+            placeholder="Disponibilidad de acogida"
+          />
+        </div>
+        <div className="form-group">
+          <label></label>{" "}
+          <input
+            type="text"
+            defaultValue={store.organizacion.animals}
+            onChange={(e) => setAnimals(e.target.value)}
+            className="form-control"
+            placeholder="¿Convives con más animales?"
+          />
+        </div>
+        <div className="form-group">
+          <label></label>{" "}
+          <input
+            type="text"
+            defaultValue={store.organizacion.city}
+            onChange={(e) => setCity(e.target.value)}
+            className="form-control"
+            placeholder="Ciudad"
+          />
+        </div>
+        <div className="form-group">
+          <label></label>{" "}
+          <input
+            type="text"
+            defaultValue={store.organizacion.phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="form-control"
+            placeholder="Teléfono"
+          />
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              actions.editUser(email, name, phone, animals, avaiability, city);
+            }}
+            className="btn  sub btn-secondary"
+          >
+            Guardar
+          </button>
+        </div>
+        {/* </form> */}
       </div>
-      <div className="form-group">
-        <label></label>{" "}
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="form-control"
-          placeholder="Email"
-        />
-      </div>
-      <div className="form-group">
-        <label></label>{" "}
-        <input
-          type="text"
-          value={avaiability}
-          onChange={(e) => setAvaiability(e.target.value)}
-          className="form-control"
-          placeholder="Disponibilidad de acogida"
-        />
-      </div>
-      <div className="form-group">
-        <label></label>{" "}
-        <input
-          type="text"
-          value={animals}
-          onChange={(e) => setAnimals(e.target.value)}
-          className="form-control"
-          placeholder="¿Convives con más animales?"
-        />
-      </div>
-      <div className="form-group">
-        <label></label>{" "}
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          className="form-control"
-          placeholder="Ciudad"
-        />
-      </div>
-      <div className="form-group">
-        <label></label>{" "}
-        <input
-          type="text"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          className="form-control"
-          placeholder="Teléfono"
-        />
-      </div>
-    </form>
+    </div>
   );
 };
