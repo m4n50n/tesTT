@@ -1,31 +1,21 @@
 import React from "react";
-import FormularioPets from "../component/formulariopets";
-import { Link } from "react-router-dom";
-
+import { CasaAcogida } from "../component/card_casaacogida";
 const Protectoralogin = () => {
   return (
-
-
-    <div>
-
-      <button type="button" className="btn btn-primary btn-lg btn">
-        {" "}
-
-      <button type="button" class="btn btn btn-lg">
-        <Link to="/formulariopets">
+    <>
+      <div>
+        <CasaAcogida />
+        <button type="button" className="btn btn-primary btn-lg btn">
           {" "}
-          <a className="link-dark text-decoration-none" href=""></a>
-        </Link>
-
-        Registra a la mascota que necesite hogar
-      </button>
-      <h1>
-        Contacta con las casas de acogida para que ninguna mascota se quede sin
-        hogar
-      </h1>
-      Casas de acogida .... y luego añadir api
-    </div>
+          Registra a la mascota que necesite hogar
+        </button>
+        <h1>
+          Contacta con las casas de acogida para que ninguna mascota se quede
+          sin hogar
+        </h1>
+        Casas de acogida .
+      </div>
+    </>
   );
 };
-
 export default Protectoralogin;
