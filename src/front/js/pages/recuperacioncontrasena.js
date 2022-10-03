@@ -39,9 +39,9 @@ const Recuperacioncontrasena = () => {
           />
 
           <button
-            // onClick={() => {
-            //   actions.recuperacioncontrasena
-            // }}
+            onClick={() => {
+              actions.recuperacioncontrasena;
+            }}
             type="submit"
             className="btn  sub btn-secondary botonrecuperacion"
           >

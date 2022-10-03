@@ -4,19 +4,12 @@ import { Link } from "react-router-dom";
 
 const Protectoralogin = () => {
   return (
-
-
     <div>
-
-      <button type="button" className="btn btn-primary btn-lg btn">
-        {" "}
-
       <button type="button" class="btn btn btn-lg">
         <Link to="/formulariopets">
           {" "}
           <a className="link-dark text-decoration-none" href=""></a>
         </Link>
-
         Registra a la mascota que necesite hogar
       </button>
       <h1>

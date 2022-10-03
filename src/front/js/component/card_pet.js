@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
+import "../../styles/index.css";
 
 export function Cardperros(props) {
   const { actions, store } = useContext(Context);
@@ -9,7 +10,7 @@ export function Cardperros(props) {
     actions.pet_list();
   }, []);
   return (
-    <div>
+    <div className="container-fluid testimonial-group">
       <div className="card" style={{ width: "18rem" }} />
       <div className="card-body">
         <img
@@ -24,8 +25,8 @@ export function Cardperros(props) {
           <li className="list-group-item">{props.pet.convivencia}</li>
           <li className="list-group-item">{props.pet.sexo}</li>
         </ul>
-        <button>
-          <Link to={"contacto/"}>¡Contacta con nosotros!</Link>{" "}
+        <button type="button" className="btn btn-warning botoncontacto">
+          <Link to={"/contacto"}>¡Contacta con nosotros!</Link>{" "}
         </button>
       </div>
     </div>

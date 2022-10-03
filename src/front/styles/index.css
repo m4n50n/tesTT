@@ -59,3 +59,36 @@ body {
   border: 200px;
   width: 75%;
 }
+
+.maps {
+  position: relative;
+  height: 50vh;
+  width: 20%;
+}
+
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+.casaacogidapet {
+  display: flex;
+  border: 20;
+}
+.titulomascotas {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: rgba(221, 175, 36, 0.989);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+}
+.botoncontacto {
+  background-color: rgba(221, 175, 36, 0.989);
+  padding: 15px;
+  margin-left: 27px;
+  margin-top: 10px;
+}
+.testimonial-group > .row {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}

@@ -10,12 +10,17 @@ const CasaAcogida = () => {
     actions.pet_list();
   }, []);
   return (
-    <div>
-      {store.pet_list.map((pet) => {
-        return <Cardperros key={pet.id} pet={pet} />;
-      })}
+    <div className="container-fluid ">
+      <center className="titulomascotas">
+        ¿Tienes disponibilidad para ayudar a alguna de estas mascotas? ¡Contacta
+        con la protectora!
+      </center>
+      <div className="casaacogidapet">
+        {store.pet_list.map((pet) => {
+          return <Cardperros key={pet.id} pet={pet} />;
+        })}
+      </div>
       <Perfilusuario />
-      <Maps location={location} zoom={18} />
     </div>
   );
 };

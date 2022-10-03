@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+// import ScrollToTop from "./component/scrollToTop";
 import { Login } from "./pages/paginalogin";
 import Protectoralogin from "./pages/protectoralogin";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import Accesologin from "./pages/accesologin";
 import { Perfilusuario } from "./pages/perfilusuario";
 import Recuperacioncontrasena from "./pages/recuperacioncontrasena";
 import Casaacogida from "./pages/casaacogida";
@@ -16,7 +15,7 @@ import { Contacto } from "./pages/formulariocontacto";
 import { Navbar } from "./component/navbar";
 
 import { FormularioPets } from "./component/formulariopets";
-import { perfilusuario } from "./pages/perfilusuario";
+import { perfilUsuario } from "./pages/perfilusuario";
 
 //create your first component
 const Layout = () => {
@@ -27,34 +26,30 @@ const Layout = () => {
   return (
     <div>
       <BrowserRouter basename={basename}>
-        <ScrollToTop>
+        {/* <ScrollToTop> */}
+        <Navbar />
 
-          <Navbar/>
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<Demo />} path="/demo" />
+          <Route element={<Login />} path="/login" />
+          <Route element={<Register />} path="/register" />
+          <Route element={<Contacto />} path="/contacto" />
+          {/* <Route element={<Organizacion />} path="/organizacion" /> */}
+          <Route element={<Protectoralogin />} path="/protectoralogin" />
+          <Route element={<Perfilusuario />} path="/perfilusuario" />
+          <Route
+            element={<Recuperacioncontrasena />}
+            path="/recuperacioncontrasena"
+          />
 
-          <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Login />} path="/login" />
-            <Route element={<Register />} path="/register" />
-            <Route element={<Contacto />} path="/contacto" />
-            <Route element={<Accesologin />} path="/accesologin" />
-            <Route
-              element={<Protectoralogin />}
-              path="/login/protectoralogin"
-            />
-            <Route element={<Perfilusuario />} path="/perfilusuario" />
-            <Route
-              element={<Recuperacioncontrasena />}
-              path="/recuperacioncontrasena"
-            />
+          <Route element={<Casaacogida />} path="/casaacogida" />
 
-            <Route element={<Casaacogida />} path="/login/casaacogida" />
-
-            <Route element={<FormularioPets />} path="/formulariopets" />
-            <Route element={<Single />} path="/single/:theid" />
-            <Route element={<h1>Not found!</h1>} />
-          </Routes>
-        </ScrollToTop>
+          <Route element={<FormularioPets />} path="/formulariopets" />
+          <Route element={<Single />} path="/single/:theid" />
+          <Route element={<h1>Not found!</h1>} />
+        </Routes>
+        {/* </ScrollToTop> */}
       </BrowserRouter>
     </div>
   );

@@ -15,14 +15,14 @@ export default function Map({ location, zoom }) {
 
   return (
     // Important! Always set the container height explicitly
-    <div style={{ height: "100vh", width: "100%" }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyC8-eQQ4QbDpTuXg-ctU3UrFe53Y2zGU5U" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
-      </GoogleMapReact>
-    </div>
+    // <div style={{ height: "50vh", width: "50%" }}>
+    <GoogleMapReact
+      bootstrapURLKeys={{ key: "AIzaSyC8-eQQ4QbDpTuXg-ctU3UrFe53Y2zGU5U" }}
+      defaultCenter={defaultProps.center}
+      defaultZoom={defaultProps.zoom}
+    >
+      <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
+    </GoogleMapReact>
+    // </div>
   );
 }
