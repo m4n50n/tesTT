@@ -1,27 +1,18 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { validate } from "schema-utils";
 import { Context } from "../store/appContext";
-import Maps from "../component/maps";
 export const Login = () => {
   const { store, actions } = useContext(Context);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const location = {
-    address: "Las Palmas de Gran Canaria.",
-    lat: 28.09973,
-    lng: -15.41343,
-  };
-  const buttonSubmit = () => {
+
+  const buttonSubmit = (e) => {
+    e.preventDefault();
+    console.log("Hola, soy la función");
     validate(email, password);
-    actions.login(email, password);
-    if (localStorage.getItem("rol") == 2) {
-      navigate("protectoralogin/");
-    } else if (localStorage.getItem("rol") == 1) {
-      navigate("casaacogida/");
-    }
+    actions.login(email, password, navigate);
   };
   const validate = (email, password) => {
     setErrorMessage("");
@@ -32,12 +23,7 @@ export const Login = () => {
   return (
     <>
       <div className="footer mt-auto py-3 text-center">
-        <form
-          onSubmit={(ev) => {
-            ev.preventDefault();
-            actions.login(email, password);
-          }}
-        >
+        <form onSubmit={buttonSubmit}>
           <div className="form-outline mb-4">
             <input
               type="email"
@@ -47,10 +33,10 @@ export const Login = () => {
               autoComplete="off"
               value={email}
               onChange={(ev) => setEmail(ev.target.value)}
-            ></input>
+            />
             <div>
               <label className="form-label" htmlFor="form2Example1">
-                Correo electronico
+                Correo electrónico
               </label>
             </div>
           </div>
@@ -62,7 +48,7 @@ export const Login = () => {
               autoComplete="off"
               value={password}
               onChange={(ev) => setPassword(ev.target.value)}
-            ></input>
+            />
             <div>
               <label className="form-label" htmlFor="form2Example2">
                 Contraseña
@@ -94,17 +80,11 @@ export const Login = () => {
               </a>
             </div>
           </div>
-          <button
-            type="button"
-            onClick={() => {
-              validate(email, password);
-              actions.login(email, password);
-              buttonSubmit();
-            }}
-            className="btn btn-primary btn-block mb-4"
-          >
-            Sign in
-          </button>
+          <input
+            type="submit"
+            className="btn btn-primary mb-4"
+            value="Acceder"
+          />
           <div className="text-center">
             <p>
               ¿Aun no te has registrado?{" "}

@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      roles: [],
+      roles: "",
       organizacion: {},
       isAuthenticate: false,
       pet_list: [],
@@ -56,34 +56,35 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ isAuthenticate: false, organizacion: {} });
       },
 
-      login: (email, password) => {
+      login: async (email, password, navigate) => {
         const store = getStore();
-        fetch(process.env.BACKEND_URL + "/api/login", {
-          method: "POST",
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-          headers: {
-            "Content-type": "application/json",
-          },
-        })
-          .then((resp) => {
-            if (resp.ok) {
-              return resp.json();
-            }
-          })
-          .then((data) => {
-            console.log(data);
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("rol", data.organizacion.rol);
-            setStore({ isAuthenticate: data.loged });
-            setStore({ organizacion: data.organizacion });
-          })
-          .catch((error) => {
-            setStore({ isAuthenticate: data.loged, msg: data.msg });
-            console.error("[ERROR IN LOGIN]", error);
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/api/login", {
+            method: "POST",
+            body: JSON.stringify({
+              email: email,
+              password: password,
+            }),
+            headers: {
+              "Content-type": "application/json",
+            },
           });
+          const data = await resp.json();
+          if (data.organizacion.rol == 1) {
+            navigate("/protectoralogin");
+          } else if (data.organizacion.rol == 2) {
+            navigate("/casaacogida");
+          }
+          console.log(data);
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("rol", data.organizacion.rol);
+          setStore({ isAuthenticate: data.loged });
+          setStore({ organizacion: data.organizacion });
+          setStore({ rol: data.organizacion.rol });
+        } catch (error) {
+          // setStore({ isAuthenticate: data.loged, msg: data.msg });
+          console.error("[ERROR IN LOGIN]", error);
+        }
       },
       pets: (pets) => {
         let body = new FormData();

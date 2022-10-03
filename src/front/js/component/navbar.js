@@ -1,8 +1,9 @@
 import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
   return (
     <div className="container-fluid">
       {/* <div className="row">
@@ -42,6 +43,7 @@ export const Navbar = () => {
           <button
             onClick={() => {
               actions.logout();
+              navigate("/");
             }}
             type="button"
             className="buttonacess"
