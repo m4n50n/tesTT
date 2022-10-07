@@ -1,0 +1,36 @@
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+.testimonial-group > .row {
+  display: block;
+
+  white-space: nowrap;
+}
+.organizacioncard {
+  display: flex;
+  border: 20;
+  overflow-x: auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+.botoncontacto {
+  background-color: rgba(221, 175, 36, 0.989);
+  padding: 15px;
+  margin-left: 27px;
+  margin-top: 10px;
+}
+.protectoracard {
+  width: auto;
+  height: auto;
+  min-width: 200px;
+  min-height: 200px;
+}
+.titulocard {
+  color: rgba(221, 175, 36, 0.989);
+  max-height: 80px;
+}
+.card .cardsprotectora {
+  text-size-adjust: 20px;
+  margin-top: 200px;
+}
