@@ -1,6 +1,8 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 body {
   background: rgba(248, 245, 156, 0.989);
 }
@@ -66,14 +68,6 @@ body {
   width: 20%;
 }
 
-.cardpets {
-  margin: 10px;
-  display: flex;
-}
-.casaacogidapet {
-  display: flex;
-  border: 20;
-}
 .titulomascotas {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -81,14 +75,14 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 30px;
 }
-.botoncontacto {
-  background-color: rgba(221, 175, 36, 0.989);
-  padding: 15px;
-  margin-left: 27px;
-  margin-top: 10px;
+
+.botonclose {
+  background-color: rgba(248, 245, 156, 0.989);
+  border-radius: 50px;
+  align-content: center;
 }
-.testimonial-group > .row {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
+@media (max-width: 345px) {
+  .wrapper .connect::after {
+    left: 32%;
+  }
 }

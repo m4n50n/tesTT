@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/login.css";
+
 export const Login = () => {
   const { store, actions } = useContext(Context);
   const [password, setPassword] = useState("");
@@ -22,88 +24,65 @@ export const Login = () => {
   };
   return (
     <>
-      <div className="footer mt-auto py-3 text-center">
-        <form onSubmit={buttonSubmit}>
-          <div className="form-outline mb-4">
-            <input
-              type="email"
-              id="form2Example1"
-              className="form-control, container-xs"
-              placeholder="email"
-              autoComplete="off"
-              value={email}
-              onChange={(ev) => setEmail(ev.target.value)}
-            />
-            <div>
-              <label className="form-label" htmlFor="form2Example1">
-                Correo electrónico
-              </label>
-            </div>
-          </div>
-          <div className="form-outline mb-4">
-            <input
-              type="password"
-              id="form2Example2"
-              className="form-control, container-xs"
-              autoComplete="off"
-              value={password}
-              onChange={(ev) => setPassword(ev.target.value)}
-            />
-            <div>
-              <label className="form-label" htmlFor="form2Example2">
-                Contraseña
-              </label>
-            </div>
-          </div>
-          <p className="text-danger">{errorMessage}</p>
-          <div className="row mb-4">
-            <div className="col d-flex justify-content-center">
-              <div className="form-check">
-                {/*    //<input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id="form2Example31"
-                checked
+      <div class="wrapper">
+        <div class="card">
+          <div onSubmit={buttonSubmit} action="#" class="d-flex flex-column">
+            <div class="h3 text-center text-white">Login</div>
+            <div class="d-flex align-items-center input-field my-3 mb-4">
+              <span class="far fa-user p-2"></span>
+              <input
+                type="email"
+                id="form2Example1"
+                class="form-control"
+                placeholder="email"
+                autoComplete="off"
+                value={email}
+                onChange={(ev) => setEmail(ev.target.value)}
               />
-              />// */}
-                <label className="form-check-label" htmlFor="form2Example31">
-                  {" "}
-                </label>
+            </div>
+            <div class="d-flex align-items-center input-field mb-4">
+              <span class="fas fa-lock p-2"></span>
+              <input
+                type="password"
+                id="form2Example2"
+                class="form-control"
+                placeholder="contraseña"
+                autoComplete="off"
+                value={password}
+                onChange={(ev) => setPassword(ev.target.value)}
+              />
+              <div></div>
+            </div>
+            <p class="text-danger">{errorMessage}</p>
+            <div class="row mb-4">
+              <div class="mt-sm-0 mt-3">
+                <a href="#">¿Olvidó su contraseña?</a>
               </div>
-            </div>
-            <div className="col">
               <a href="#!">
-                <Link to="/recuperacioncontraseña">
-                  Has olvidado tu contraseña?
-                </Link>
+                <Link to="/recuperacioncontrasenaa"></Link>
               </a>
             </div>
           </div>
-          <input
-            type="submit"
-            className="btn btn-primary mb-4"
-            value="Acceder"
-          />
-          <div className="text-center">
-            <p>
-              ¿Aun no te has registrado?{" "}
-              <a href="#!">
-                <Link to="/register">Registrate</Link>
-              </a>
-            </p>
-            <p></p>
-            <button type="button" className="btn btn-link btn-floating mx-1">
-              <i className="fab fa-facebook-f"></i>
-            </button>
-            <button type="button" className="btn btn-link btn-floating mx-1">
-              <i className="fab fa-instagram"></i>
-            </button>
-            <button type="button" className="btn btn-link btn-floating mx-1">
-              <i className="fab fa-twitter"></i>
-            </button>
-          </div>
-        </form>
+        </div>
+        <input type="submit" class="btn btn-primary mb-4" value="Acceder" />
+        <div class="text-center">
+          <p>
+            ¿Aun no te has registrado?{" "}
+            <a href="#!">
+              <Link to="/register">Registrate</Link>
+            </a>
+          </p>
+          <p></p>
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-instagram"></i>
+          </button>
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+          </button>
+        </div>
       </div>
     </>
   );

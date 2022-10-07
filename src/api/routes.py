@@ -107,13 +107,22 @@ def pets():
     return jsonify(pets_list)
 
 
+@api.route('/card_protectora', methods=['GET'])
+def card_protectora():
+
+    organizacion = Organizacion.query.all()
+    organizacion_list = list(
+        map(lambda organizacion: organizacion.serialize(), organizacion))
+    return jsonify(organizacion_list)
+
+
 @api.route('/accesologin', methods=['GET'])
 def accesologin():
     return jsonify(data)
 
 
 @api.route('/recuperacioncontrasena', methods=['POST'])
-def recuperacioncontraseña():
+def recuperacioncontrasena():
     email = request.json.get("email")
     organizacion = Organizacion.query.filter_by(email=email)
 
@@ -170,7 +179,9 @@ def perfilusuario():
 @api.route('/edituser', methods=['PUT'])
 @jwt_required()
 def edituser():
-    email = request.json.get("email")
+    email = request.json.get("email", None)
+    if email == None or email == "":
+        email = "email"
     city = request.json.get("city")
     phone = request.json.get("phone")
     name = request.json.get("name")

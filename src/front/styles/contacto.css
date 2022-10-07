@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+.containercontacto {
+  min-height: 100vh;
+  background-color: rgba(248, 245, 156, 0.989);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.cardcontacto {
+  height: 430px;
+  width: 340px;
+  background-color: white;
+  border-radius: 20px;
+}
+.contactodiv {
+  justify-content: space-between;
+  padding: 20px;
+}
+.contactodiv h2 {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.contactodiv i {
+  font-size: 20px;
+  color: rgba(221, 175, 36, 0.989);
+}
+.inputcontacto[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid rgba(221, 175, 36, 0.989);
+  padding: 0px 35px;
+  font-size: 15px;
+}
+.input-text {
+  position: relative;
+  margin-top: 10px;
+}
+.input-text span {
+  position: absolute;
+  top: 9px;
+  left: 35px;
+  transition: all 0.5s;
+}
+.input-text input:focus ~ span,
+.input-text input:valid ~ span {
+  font-size: 12px;
+  top: -5px;
+  position: absolute;
+  color: rgba(221, 175, 36, 0.989) !important;
+  font-weight: 900;
+}
+.details :nth-child(5) input[type="text"] {
+  border: none;
+}
+.last {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 20px;
+  margin-top: 50px;
+}
+
+.last span {
+  height: 30px;
+  width: 30px;
+  background-color: rgba(221, 175, 36, 0.989);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mensaje {
+  color: rgba(221, 175, 36, 0.989);
+  margin: 0;
+  margin-top: 30px;
+}
+.botonenviar {
+  border-color: rgba(221, 175, 36, 0.989);
+  background-color: rgba(248, 245, 156, 0.989);
+  width: 150px;
+}

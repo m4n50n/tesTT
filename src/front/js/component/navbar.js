@@ -17,6 +17,7 @@ export const Navbar = () => {
           </div>
         </div>
       </div> */}
+
       <div className="row menu pt-2 pb-2">
         {!store.isAuthenticate ? (
           <div>
@@ -40,17 +41,28 @@ export const Navbar = () => {
             </div>{" "}
           </div>
         ) : (
-          <button
-            onClick={() => {
-              actions.logout();
-              navigate("/");
-            }}
-            type="button"
-            className="buttonacess"
-            class="btn btn-light bg-light"
-          >
-            Cierre de sesion{" "}
-          </button>
+          <>
+            <button
+              onClick={() => {
+                actions.logout();
+                navigate("/");
+              }}
+              type="button"
+              className="buttonacess botonclose"
+              class="btn botonclose"
+            >
+              Cerrar sesión{" "}
+            </button>
+            <Link to="/perfilusuario">
+              <button
+                type="button"
+                className="buttonacess botonclose"
+                class="btn botonclose"
+              >
+                Perfil{" "}
+              </button>
+            </Link>
+          </>
         )}
       </div>
     </div>
