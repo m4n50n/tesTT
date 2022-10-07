@@ -13,6 +13,7 @@ import { Register } from "./pages/formularioregistro";
 import injectContext from "./store/appContext";
 import { Contacto } from "./pages/formulariocontacto";
 import { Navbar } from "./component/navbar";
+import Maps from "./component/maps";
 
 import { FormularioPets } from "./component/formulariopets";
 import { perfilUsuario } from "./pages/perfilusuario";
@@ -22,21 +23,29 @@ const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
+  const path = window.location.pathname
 
   return (
+   
     <div>
+      
+    
+
       <BrowserRouter basename={basename}>
         {/* <ScrollToTop> */}
-        <Navbar />
-
+        {path=="/protectoralogin" ? "" : <Navbar />}
+   
         <Routes>
+        
+         
           <Route element={<Home />} path="/" />
           <Route element={<Demo />} path="/demo" />
+          <Route element={<Maps />} path="/maps" />
           <Route element={<Login />} path="/login" />
           <Route element={<Register />} path="/register" />
           <Route element={<Contacto />} path="/contacto" />
           {/* <Route element={<Organizacion />} path="/organizacion" /> */}
-          <Route element={<Protectoralogin />} path="/protectoralogin" />
+          
           <Route element={<Perfilusuario />} path="/perfilusuario" />
           <Route
             element={<Recuperacioncontrasena />}
@@ -44,13 +53,14 @@ const Layout = () => {
           />
 
           <Route element={<Casaacogida />} path="/casaacogida" />
-
           <Route element={<FormularioPets />} path="/formulariopets" />
           <Route element={<Single />} path="/single/:theid" />
           <Route element={<h1>Not found!</h1>} />
+          <Route element={<Protectoralogin />} path="/protectoralogin" />
         </Routes>
         {/* </ScrollToTop> */}
       </BrowserRouter>
+      
     </div>
   );
 };

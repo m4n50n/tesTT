@@ -29,7 +29,14 @@ export const FormularioPets = () => {
             className="form-control"
             id="inputGroupFile01"
           />
+
+       <div>
+    
+       <input type="file" accept="image/*"
+       onChange={(e) => setPhot(e.target.photo)}/>
+       </div>
         </div>
+
         <div className="form-group">
           <label></label>
           <input

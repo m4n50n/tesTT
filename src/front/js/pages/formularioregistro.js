@@ -166,6 +166,10 @@ export const Register = () => {
             </div>
           ) : (
             ""
+            
+          
+
+
           )}
           {store.isLoading ? (
             <Loader type="" color="#F3C766" height={80} width={80} />
@@ -184,6 +188,9 @@ export const Register = () => {
         <p>{login}</p>
         ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
       </div>
+      
+     
     </div>
+
   );
 };

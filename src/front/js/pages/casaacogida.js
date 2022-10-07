@@ -15,7 +15,7 @@ const CasaAcogida = () => {
         ¿Tienes disponibilidad para ayudar a alguna de estas mascotas? ¡Contacta
         con la protectora!
       </center>
-      <div className="casaacogidapet">
+      <div className="cardpets">
         {store.pet_list.map((pet) => {
           return <Cardperros key={pet.id} pet={pet} />;
         })}
