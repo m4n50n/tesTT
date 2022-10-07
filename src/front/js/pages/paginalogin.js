@@ -27,7 +27,7 @@ export const Login = () => {
       <div class="wrapper">
         <div class="card">
           <div onSubmit={buttonSubmit} action="#" class="d-flex flex-column">
-            <div class="h3 text-center text-white">Login</div>
+            <div class="h3 text-center colorlogin">Login</div>
             <div class="d-flex align-items-center input-field my-3 mb-4">
               <span class="far fa-user p-2"></span>
               <input
@@ -54,7 +54,7 @@ export const Login = () => {
               <div></div>
             </div>
             <p class="text-danger">{errorMessage}</p>
-            <div class="row mb-4">
+            <div class="row mb-2">
               <div class="mt-sm-0 mt-3">
                 <a href="#">¿Olvidó su contraseña?</a>
               </div>
@@ -64,7 +64,11 @@ export const Login = () => {
             </div>
           </div>
         </div>
-        <input type="submit" class="btn btn-primary mb-4" value="Acceder" />
+        <input
+          type="submit"
+          class="btn btn mb-4 aling-item botonlogin"
+          value="Acceder"
+        />
         <div class="text-center">
           <p>
             ¿Aun no te has registrado?{" "}

@@ -65,7 +65,7 @@ export const Registro = () => {
 
   return (
     <>
-      <div class="wrapper">
+      <div class="wrapper position-relative">
         <div className="form-outline mb-4 text-center">
           <div className="myform">
             <h4 className="protectoraocasa">
@@ -78,7 +78,10 @@ export const Registro = () => {
                 className="form-control seleccionar"
                 name="rol"
                 value={rol}
-                onChange={(e) => setRol(e.target.value)}
+                onChange={(e) => {
+                  setRol(e.target.value);
+                  localStorage.setItem("rol", [e.target.value]);
+                }}
               >
                 <option disabled>Seleccione una opción</option>
                 {store.roles.map((value, index) => {
@@ -157,7 +160,7 @@ export const Registro = () => {
             {rol == 1 ? (
               <div class="form-group d-flex align-items-center">
                 <div class="icon">
-                  <span class="fas fa-instagram"></span>
+                  <span class="fab fa-instagram"></span>
                 </div>
                 <input
                   value={instagram}
@@ -196,19 +199,23 @@ export const Registro = () => {
                 placeholder="¿Con qué animales convives?"
               />
             </div>
-          ) : null}
+          ) : (
+            ""
+          )}
         </div>
         {store.isLoading ? (
           <Loader type="" color="#F3C766" height={80} width={80} />
         ) : (
-          <div>
-            <button
-              onClick={(e) => register(e)}
-              type="submit"
-              className="btn  sub btn-secondary"
-            >
-              Registrar
-            </button>
+          <div className="">
+            <div>
+              <button
+                onClick={(e) => register(e)}
+                type="submit"
+                className="btn  sub btn-secondary"
+              >
+                Registrar
+              </button>
+            </div>
             <div className="politicaprivacidad">
               <p className="privacidaddatos">
                 Aceptas que has leído la

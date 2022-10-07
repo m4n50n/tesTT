@@ -39,6 +39,15 @@ body {
   cursor: pointer;
   padding: 0.8rem;
 }
+.colorlogin {
+  color: #1f5588;
+}
+.botonlogin {
+  background-color: #5694cd;
+  opacity: 90%;
+  border-radius: 10px;
+  align-items: center;
+}
 
 .wrapper .card a {
   text-decoration: none;
