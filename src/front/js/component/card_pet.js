@@ -20,8 +20,8 @@ export function Cardperros(props) {
         }}
       />
       <div className="card-body">
-        <img
-          src="https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
+      <img
+          src=""
           className="card-img-top"
           alt="..."
         />

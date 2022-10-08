@@ -35,6 +35,11 @@ body {
   margin-top: 20px;
 }
 
+#registerbutton
+{
+  text-align: left;
+}
+
 .mensajecontrasena {
   margin-top: 10px;
 }
@@ -46,6 +51,20 @@ body {
   color: #495969;
 }
 
+.cardcasa {
+ 
+  background: rgba(221, 175, 36, 0.989);
+  width: 60px;
+  padding: 50px;
+
+
+}
+
+
+.buttonout
+{
+  text-align:right ; 
+}
 .tituloregistrate {
   color: #495969;
 }
@@ -68,6 +87,25 @@ body {
   width: 20%;
 }
 
+
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+
+
+ .cardacogida {
+  height:350px;
+  width: 350px;
+ }
+
+ .listacogida {
+  height:350px;
+  width:350px;
+ }
+
+
+
 .titulomascotas {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -85,4 +123,25 @@ body {
   .wrapper .connect::after {
     left: 32%;
   }
+}
+
+
+.protectoraocasa {
+  color: #495969;
+}
+
+.buttonmpas {
+  text-align: right;
+}
+
+.buttoninicio  {
+ align-items: left;
+}
+
+.buttonregi {
+  text-align: center;
+}
+#registerbutton
+{
+text-align: left;
 }

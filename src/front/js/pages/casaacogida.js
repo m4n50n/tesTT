@@ -14,6 +14,7 @@ const CasaAcogida = () => {
     actions.organizacion_list();
   }, []);
   return (
+
     <>
       {/* <Navbaracogida /> */}
       <footer />
@@ -41,6 +42,7 @@ const CasaAcogida = () => {
             );
           })}
         </div>
+
       </div>
     </>
   );

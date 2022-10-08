@@ -240,8 +240,60 @@ export const Registro = () => {
             <p>{login}</p>
             ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
           </div>
-        </div>
+
+          {rol == 1 ? (
+            <div className="form-group">
+              <label>avaiability</label>
+              <input
+                type="text"
+                value={avaiability}
+                onChange={(e) => setAvaiability(e.target.value)}
+                className="form-control"
+                placeholder="Disponibilidad de acogida"
+              />
+            </div>
+          ) : (
+            ""
+          )}
+          {rol == 1 ? (
+            <div className="form-group">
+              <label>animals</label>
+              <input
+                type="text"
+                value={animals}
+                onChange={(e) => setAnimals(e.target.value)}
+                className="form-control"
+                placeholder="¿Tienes más animales? ¿Cuáles?"
+              />
+            </div>
+          ) : (
+            ""
+            
+          
+
+
+          )}
+          {store.isLoading ? (
+            <Loader type="" color="#F3C766" height={80} width={80} />
+          ) : (
+            <div>
+              <button
+                onClick={register}
+                type="submit"
+                className="btn  sub btn-secondary"
+              >
+                Registrar
+              </button>
+            </div>
+          )}
+        </form>
+        <p>{login}</p>
+        ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
+
       </div>
+      
+     
     </div>
+
   );
 };

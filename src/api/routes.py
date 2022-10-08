@@ -81,22 +81,21 @@ def newpet():
     protectora_id = get_jwt_identity()
     name = request.form.get("name")
     years = request.form.get("years")
-    photo = request.form.get("photo")
+    #//photo = request.form.get("photo")//
     sexo = request.form.get("sexo")
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
-
-    if 'photo' in request.files:
         # upload file to uploadcare
-        photo = cloudinary.uploader.upload(request.files['photo'])
-        photo_url = upload_result["secure_url"]
-    pets = Pets(organizacion_id=protectora_id, name=name, years=years,
-                race=race, photo=photo, sexo=sexo, convivencia=convivencia)
+    photo = cloudinary.uploader.upload(request.files['image'])
+
+    photo_url = result['secure_url']
+    print("@@@@@@@@@@@")
+    print(photo_url)
+    pets = Pets(organizacion_id=protectora_id, name=name, years=years,race=race, photo=photo_url, sexo=sexo, convivencia=convivencia)               
+
     db.session.app(pets)
     db.session.commit()
-    return jsonify({
-        "pets": pets.serialize()
-    })
+    return jsonify({ "pets": pets.serialize() }),  200
 
 
 @api.route('/pets', methods=['GET'])
@@ -206,16 +205,40 @@ def edituser():
 @api.route('/organizacion', methods=['GET'])
 @jwt_required()
 def organizacion():
-    organizacion_id = get_jwt_identity()
-    organizacion = Organizacion.query.filter_by(id=organizacion_id).first()
-    # print (list(map(lambda pets: pets.serialize(), pets)))
-    response = {
-        "organizacion": organizacion.serialize(),
+    try:
 
-        "loged": True
+        organizacion_id = get_jwt_identity()
+        organizacion = Organizacion.query.filter_by(id=organizacion_id).first()
+    
+        response = {
+            "organizacion": organizacion.serialize(),
 
-    }
-    return jsonify(response)
+            "loged": True
+
+        }
+        return jsonify(response),200
+
+    except Exception as error:
+        
+        return jsonify(f"message error: {error}"), 401 
+
+
+@api.route('/casasacogida', methods=['GET'])
+@jwt_required()
+def listaCasaAcogida():
+    try:
+
+        organizacion_id = get_jwt_identity()
+        organizacion = Organizacion.query.filter_by(rol_id=2)
+        casas_list = list(map(lambda organizacion: organizacion.serialize(), organizacion))
+        response = {
+            "list": casas_list
+        }
+        return jsonify(response),200
+
+    except Exception as error:
+        
+        return jsonify(f"message error: {error}"), 401 
 
 
 @api.route('/formulariopets', methods=['GET'])

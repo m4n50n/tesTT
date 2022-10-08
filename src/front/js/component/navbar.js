@@ -1,17 +1,23 @@
 import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
+import "../../styles/protectoralogin.css"
+import {Maps} from "../component/maps";
+import "../../styles/index.css";
+import Kodulogo from "../../img/Kodulogo.png"
+
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   return (
+
     <div className="container-fluid">
       {/* <div className="row">
         <div className="col-12">
           <div className="d-flex justify-content-center">
             <img
               className="logo"
-              src="https://www.creativefabrica.com/wp-content/uploads/2021/04/29/Dog-line-outline-monoline-logo-Graphics-11485513-1-580x386.png"
+              src={Kodulogo}
               alt="logo"
             />
           </div>
@@ -20,27 +26,56 @@ export const Navbar = () => {
 
       <div className="row menu pt-2 pb-2">
         {!store.isAuthenticate ? (
-          <div>
-            <div className="col-4 text-center">
+          <div className="d-flex justify-content-evenly">
+            <div className="align-items-start">
               <Link to="/login">
                 {" "}
-                <a className="link-dark text-decoration-none" href="">
-                  INICIO
-                </a>
+                <button
+                  onClick={""}
+                  type="button"
+                 
+                  class="btn btn-light bg-light"
+                >
+                  INICIO{" "}
+                </button>
               </Link>
             </div>
-            <div className="col-4 text-center">
+            
+            <div  className="align-items-center">
+              <Link to="/register">
+                <button
+                 
+                  type="button"
+                  className="buttonregi"
+                  class="btn btn-light bg-light"
+                >
+                  REGISTRATE{" "}
+                </button>
+              </Link>
+            </div>
+            <div className="">
               <a className="link-dark text-decoration-none" href=""></a>
             </div>
-            <div className="col-4 text-center">
-              <Link to="/register">
-                <a className="link-dark text-decoration-none" href="">
-                  REGISTRATE
-                </a>
+            <div className="align-items-end">
+              <Link to="/maps">
+                {" "}
+                <button
+                  onClick="location.href''"
+                  type="button"
+                  className="buttonmaps"
+                  class="btn btn-light bg-light">
+                  MAPS{" "}
+
+                </button>
               </Link>
             </div>{" "}
           </div>
+
+
         ) : (
+
+  
+
           <>
             <button
               onClick={() => {
@@ -63,8 +98,10 @@ export const Navbar = () => {
               </button>
             </Link>
           </>
+
         )}
       </div>
-    </div>
+    </nav>
   );
 };
+

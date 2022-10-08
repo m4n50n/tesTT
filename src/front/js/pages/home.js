@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navbar } from "../component/navbar";
+import {Link} from "react-router-dom"
 import { Footer } from "../component/footer";
 
 import "../../styles/index.css";
@@ -8,6 +8,11 @@ export const Home = () => {
   return (
     <>
       <div>
+       <nav className="navbar navbar-light bg-warning">
+   
+          
+    </nav>
+
         <div className="row">
           <div className="col-12">
             <div className="d-flex justify-content-center">

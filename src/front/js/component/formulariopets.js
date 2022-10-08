@@ -29,7 +29,12 @@ export const FormularioPets = () => {
             className="form-control"
             id="inputGroupFile01"
           />
+
+       <div>
+    
+       </div>
         </div>
+
         <div className="form-group">
           <label></label>
           <input
