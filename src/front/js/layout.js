@@ -5,18 +5,23 @@ import { Login } from "./pages/paginalogin";
 import Protectoralogin from "./pages/protectoralogin";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import { Perfilusuario } from "./pages/perfilusuario";
+import { Quienessomos } from "./pages/quienessomos";
+import { Editusuario } from "./pages/editusuario";
 import Recuperacioncontrasena from "./pages/recuperacioncontrasena";
 import Casaacogida from "./pages/casaacogida";
 import { Single } from "./pages/single";
-import { Register } from "./pages/formularioregistro";
 import injectContext from "./store/appContext";
 import { Contacto } from "./pages/formulariocontacto";
 import { Navbar } from "./component/navbar";
+
 import Maps from "./component/maps";
+import { Navbaracogida } from "./component/navbaracogida";
+import { Registro } from "./pages/registro";
+
 
 import { FormularioPets } from "./component/formulariopets";
 import { perfilUsuario } from "./pages/perfilusuario";
+import { Card_protectora } from "./component/card_protectora";
 
 //create your first component
 const Layout = () => {
@@ -32,9 +37,8 @@ const Layout = () => {
     
 
       <BrowserRouter basename={basename}>
-        {/* <ScrollToTop> */}
-        {path=="/protectoralogin" ? "" : <Navbar />}
-   
+
+        <Navbar />
         <Routes>
         
          
@@ -42,11 +46,19 @@ const Layout = () => {
           <Route element={<Demo />} path="/demo" />
           <Route element={<Maps />} path="/maps" />
           <Route element={<Login />} path="/login" />
-          <Route element={<Register />} path="/register" />
+          <Route element={<Registro />} path="/register" />
           <Route element={<Contacto />} path="/contacto" />
+
           {/* <Route element={<Organizacion />} path="/organizacion" /> */}
           
           <Route element={<Perfilusuario />} path="/perfilusuario" />
+
+          <Route element={<Quienessomos />} path="/quienessomos" />
+          <Route element={<Navbaracogida />} path="/navbaracogida" />
+          <Route element={<Protectoralogin />} path="/protectoralogin" />
+          <Route element={<Editusuario />} path="/perfilusuario" />
+          <Route element={<Card_protectora />} path="/card_protectora" />
+
           <Route
             element={<Recuperacioncontrasena />}
             path="/recuperacioncontrasena"
@@ -58,7 +70,6 @@ const Layout = () => {
           <Route element={<h1>Not found!</h1>} />
           <Route element={<Protectoralogin />} path="/protectoralogin" />
         </Routes>
-        {/* </ScrollToTop> */}
       </BrowserRouter>
       
     </div>

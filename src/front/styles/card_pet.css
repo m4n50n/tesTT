@@ -1,0 +1,20 @@
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+.testimonial-group > .row {
+  display: block;
+
+  white-space: nowrap;
+}
+.casaacogidapet {
+  display: flex;
+  border: 20;
+  overflow-x: auto;
+}
+.botoncontacto {
+  background-color: rgba(221, 175, 36, 0.989);
+  padding: 15px;
+  margin-left: 27px;
+  margin-top: 10px;
+}

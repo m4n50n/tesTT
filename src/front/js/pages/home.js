@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom"
 import { Footer } from "../component/footer";
 
-import "../../styles/home.css";
+import "../../styles/index.css";
 
 export const Home = () => {
   return (

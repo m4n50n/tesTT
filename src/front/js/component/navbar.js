@@ -10,13 +10,21 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   return (
-    <nav className="navbar navbar-light bg-warning">
-       <img
-                className="logo"
-                src={Kodulogo}
-                alt="logo"
-              />
-      <div className="container">
+
+    <div className="container-fluid">
+      {/* <div className="row">
+        <div className="col-12">
+          <div className="d-flex justify-content-center">
+            <img
+              className="logo"
+              src={Kodulogo}
+              alt="logo"
+            />
+          </div>
+        </div>
+      </div> */}
+
+      <div className="row menu pt-2 pb-2">
         {!store.isAuthenticate ? (
           <div className="d-flex justify-content-evenly">
             <div className="align-items-start">
@@ -65,17 +73,32 @@ export const Navbar = () => {
 
 
         ) : (
-          <button
-            onClick={() => {
-              actions.logout();
-              navigate("/");
-            }}
-            type="button"
-            className="buttonlogout"
-            class="btn btn-light bg-light"
-          >
-            Cierre de sesion{" "}
-          </button>
+
+  
+
+          <>
+            <button
+              onClick={() => {
+                actions.logout();
+                navigate("/");
+              }}
+              type="button"
+              className="buttonacess botonclose"
+              class="btn botonclose"
+            >
+              Cerrar sesión{" "}
+            </button>
+            <Link to="/perfilusuario">
+              <button
+                type="button"
+                className="buttonacess botonclose"
+                class="btn botonclose"
+              >
+                Perfil{" "}
+              </button>
+            </Link>
+          </>
+
         )}
       </div>
     </nav>

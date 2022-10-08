@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       casaacogida_list:[],
       isAuthenticate: false,
       pet_list: [],
+      organizacion_list: [],
     },
     actions: {
       roles: () => {
@@ -16,7 +17,17 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ roles: response });
           });
       },
-      register: (email, password, name, phone, city, rol) => {
+      register: (
+        email,
+        password,
+        name,
+        phone,
+        city,
+        avaiability,
+        instagram,
+        animals,
+        rol
+      ) => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/register", {
@@ -28,7 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             phone: phone,
             city: city,
             rol: rol,
-            aviability: aviability,
+            avaiability: avaiability,
             animals: animals,
             instagram: instagram,
           }),
@@ -159,6 +170,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
+            if (data.organizacion.rol == 1) {
+              navigate("/protectoralogin");
+            } else if (data.organizacion.rol == 2) {
+              navigate("/casaacogida");
+            }
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
             console.log(data);
@@ -169,6 +185,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
+
    
 
 
@@ -191,6 +208,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
+
 
 
       organizacion: (email, avaiability, name, phone, city, animals) => {
@@ -229,10 +247,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 
+
       logout: () => {
         localStorage.clear();
         setStore({ isAuthenticate: false, organizacion: {} });
       },
+
+
 
       editUser: (email, name, phone, animals, avaiability, city) => {
         const store = getStore();
@@ -284,6 +305,28 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             console.log(data);
             setStore({ pet_list: data });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
+      },
+      organizacion_list: () => {
+        const store = getStore();
+
+        fetch(process.env.BACKEND_URL + "/api/card_protectora", {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            console.log(data);
+            setStore({ organizacion_list: data });
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);

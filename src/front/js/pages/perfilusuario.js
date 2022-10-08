@@ -69,10 +69,10 @@ export const Perfilusuario = () => {
           <label></label>{" "}
           <input
             type="text"
-            defaultValue={store.organizacion.phone}
-            onChange={(e) => setPhone(e.target.value)}
+            defaultValue={store.organizacion.city}
+            onChange={(e) => setCity(e.target.value)}
             className="form-control"
-            placeholder="Teléfono"
+            placeholder="Ciudad"
           />
         </div>
         <div>
