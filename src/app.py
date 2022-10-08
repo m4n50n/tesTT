@@ -2,6 +2,8 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 import os
+import cloudinary
+import cloudinary.uploader
 from flask import Flask, request, jsonify, url_for, send_from_directory,render_template
 from flask_migrate import Migrate
 from flask_swagger import swagger
@@ -37,6 +39,8 @@ else:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db, compare_type = True)
 db.init_app(app)
+
+config = cloudinary.config(secure=True)
 
 # Allow CORS requests to this API
 CORS(app)

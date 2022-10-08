@@ -32,8 +32,6 @@ export const FormularioPets = () => {
 
        <div>
     
-       <input type="file" accept="image/*"
-       onChange={(e) => setPhot(e.target.photo)}/>
        </div>
         </div>
 

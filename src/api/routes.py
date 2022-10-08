@@ -67,7 +67,7 @@ def register():
 
 
 @api.route('/roles', methods=['GET'])
-def rol():
+def rol():d
     roles = Rol.query.all()
     data = list(map(lambda rol: rol.serialize(), roles))
     # data = [rol.serialize() for rol in roles]
@@ -81,22 +81,21 @@ def newpet():
     protectora_id = get_jwt_identity()
     name = request.form.get("name")
     years = request.form.get("years")
-    photo = request.form.get("photo")
+    #//photo = request.form.get("photo")//
     sexo = request.form.get("sexo")
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
-
-    if 'photo' in request.files:
         # upload file to uploadcare
-        photo = cloudinary.uploader.upload(request.files['photo'])
-        photo_url = upload_result["secure_url"]
-    pets = Pets(organizacion_id=protectora_id, name=name, years=years,
-                race=race, photo=photo_url, sexo=sexo, convivencia=convivencia)
+    photo = cloudinary.uploader.upload(request.files['image'])
+
+    photo_url = result['secure_url']
+    print("@@@@@@@@@@@")
+    print(photo_url)
+    pets = Pets(organizacion_id=protectora_id, name=name, years=years,race=race, photo=photo_url, sexo=sexo, convivencia=convivencia)               
+
     db.session.app(pets)
     db.session.commit()
-    return jsonify({
-        "pets": pets.serialize()
-    })
+    return jsonify({ "pets": pets.serialize() }),  200
 
 
 @api.route('/pets', methods=['GET'])

@@ -2,6 +2,7 @@
 import { CasaAcogida } from "../component/card_casaacogida";
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import { Link,useNavigate} from "react-router-dom";
 
 
 
@@ -12,6 +13,7 @@ import { Context } from "../store/appContext";
 
 const Protectoralogin = () => {
   const { actions, store } = useContext(Context);
+  const navigate=useNavigate ()
   useEffect(() => {
     actions.listaCasaAcogida();
 
@@ -21,20 +23,21 @@ const Protectoralogin = () => {
   return (
 
     <>
-       
-      <button type="button" className="btn btn-outline-danger">Registra tu mascota </button>
-
       <div>
-         <div> 
-         <button onClick={() => { actions.logout(); navigate("/");}}type="button"className="buttonout"class="btn btn-light bg-light"  > LOGOUT</button>
+       <Link to="/formulariopets"> 
+        <button type="button" className="btn btn-outline-danger" >
+          Registra tu mascota{" "}
+        </button>
+       </Link>
+      <div/>
 
+      
 
-         </div>
-        <div className="cardacogida">
+      <div className="cardacogida">
           {store.casaacogida_list.map((organizacion) => {
             return <CasaAcogida key={organizacion.id} organizacion={organizacion} />;
           })}
-        </div>
+      </div>
 
 
 

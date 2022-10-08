@@ -13,15 +13,19 @@ export function CasaAcogida(prop) {
     
     <div className="card" style={{ width: "18rem" }} />
        <div className="card-body">
+
           <div className="cardacogida">
-         <img src="https://i.pinimg.com/originals/cf/76/fd/cf76fd938cb31c1ccb693745f69f87fb.jpg"  className="card-img-top" alt="..." /> 
-        </div>
+            
+           <input type="file" accept="image/*"
+            onChange={(e) => setPhot(e.target.photo)}/>
+
+          </div>
       <ul className="list-group list-group-flush">
-          <li class="list-group-item active" aria-current="true">{prop.organizacion.name}</li>
+          <li className="list-group-item active" aria-current="true">{prop.organizacion.name}</li>
           <li className="list-group-item">{prop.organizacion.email}</li>
-          <li class="list-group-item">{prop.organizacion.city}</li>
-          <li class="list-group-item">{prop.organizacion.avaiability}</li>
-          <li class="list-group-item">{prop.organizacion.animals}</li>
+          <li className="list-group-item">{prop.organizacion.city}</li>
+          <li className="list-group-item">{prop.organizacion.avaiability}</li>
+          <li className="list-group-item">{prop.organizacion.animals}</li>
       </ul>
   
 

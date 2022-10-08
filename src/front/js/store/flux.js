@@ -86,24 +86,30 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       pets: (pets) => {
+        console.log (pets)
         let body = new FormData();
         for (let key in pets) {
           body.append(key, pets[key]);
         }
+       
         const store = getStore();
-        fetch(process.env.BACKEND_URL + "/api/pets", {
+        fetch(process.env.BACKEND_URL + "/api/pet", {
           method: "POST",
           body: body,
           headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-type": "application/json",
+     
           },
         })
           .then((resp) => {
             if (resp.ok) {
+              console.log(resp)
               return resp.json();
             }
           })
           .then((data) => {
+            console.log (data)
             setStore({ newPets: data });
           })
           .catch((error) => {
@@ -288,8 +294,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
+
           method: "GET",
           headers: {
+             Authorization:"Bearer " + localStorage.getItem("token"),
             "Content-type": "application/json",
           },
         })
@@ -300,7 +308,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .then((data) => {
             console.log(data);
-            setStore({ organizacion: data });
+            setStore({ organizacion: data,isAuthenticate:true });
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);

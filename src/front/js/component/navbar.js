@@ -4,13 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../styles/protectoralogin.css"
 import {Maps} from "../component/maps";
 import "../../styles/index.css";
+import Kodulogo from "../../img/Kodulogo.png"
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   return (
     <nav className="navbar navbar-light bg-warning">
-      
+       <img
+                className="logo"
+                src={Kodulogo}
+                alt="logo"
+              />
       <div className="container">
         {!store.isAuthenticate ? (
           <div className="d-flex justify-content-evenly">
@@ -18,7 +23,7 @@ export const Navbar = () => {
               <Link to="/login">
                 {" "}
                 <button
-                  ononclick="location.href=''"
+                  onClick={""}
                   type="button"
                  
                   class="btn btn-light bg-light"
@@ -27,10 +32,11 @@ export const Navbar = () => {
                 </button>
               </Link>
             </div>
+            
             <div  className="align-items-center">
               <Link to="/register">
                 <button
-                  ononclick="location.href='aquiponemoselenlace'"
+                 
                   type="button"
                   className="buttonregi"
                   class="btn btn-light bg-light"
@@ -46,7 +52,7 @@ export const Navbar = () => {
               <Link to="/maps">
                 {" "}
                 <button
-                  ononclick="location.href''"
+                  onClick="location.href''"
                   type="button"
                   className="buttonmaps"
                   class="btn btn-light bg-light">
