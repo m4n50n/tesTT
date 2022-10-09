@@ -20,7 +20,7 @@ import { Registro } from "./pages/registro";
 
 
 import { FormularioPets } from "./component/formulariopets";
-import { perfilUsuario } from "./pages/perfilusuario";
+import { Perfilusuario } from "./pages/perfilusuario";
 import { Card_protectora } from "./component/card_protectora";
 
 //create your first component
