@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       roles: [],
       organizacion: {},
-      casaacogida_list:[],
+      casaacogida_list: [],
       isAuthenticate: false,
       pet_list: [],
       organizacion_list: [],
@@ -63,7 +63,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-    
 
       login: async (email, password, navigate) => {
         const store = getStore();
@@ -80,7 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           const data = await resp.json();
           if (data.organizacion.rol == 1) {
-            console.log ("entro en este if")
+            console.log("entro en este if");
             navigate("/protectoralogin");
           } else if (data.organizacion.rol == 2) {
             navigate("/casaacogida");
@@ -92,17 +91,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ organizacion: data.organizacion });
           setStore({ rol: data.organizacion.rol });
         } catch (error) {
-       
           console.error("[ERROR IN LOGIN]", error);
         }
       },
       pets: (pets) => {
-        console.log (pets)
+        console.log(pets);
         let body = new FormData();
         for (let key in pets) {
           body.append(key, pets[key]);
         }
-       
+
         const store = getStore();
         fetch(process.env.BACKEND_URL + "/api/pet", {
           method: "POST",
@@ -110,17 +108,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-type": "application/json",
-     
           },
         })
           .then((resp) => {
             if (resp.ok) {
-              console.log(resp)
+              console.log(resp);
               return resp.json();
             }
           })
           .then((data) => {
-            console.log (data)
+            console.log(data);
             setStore({ newPets: data });
           })
           .catch((error) => {
@@ -186,10 +183,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-   
-
-
-     listaCasaAcogida: () => {
+      listaCasaAcogida: () => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/casasacogida", {
@@ -199,8 +193,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             Authorization: "Bearer " + localStorage.getItem("token"),
           },
         })
-          .then((resp) => {return resp.json();})
-          .then((data) => {      
+          .then((resp) => {
+            return resp.json();
+          })
+          .then((data) => {
             console.log(data);
             setStore({ casaacogida_list: data.list });
           })
@@ -208,8 +204,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-
-
 
       organizacion: (email, avaiability, name, phone, city, animals) => {
         const store = getStore();
@@ -245,32 +239,28 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-
-
-
       logout: () => {
         localStorage.clear();
         setStore({ isAuthenticate: false, organizacion: {} });
       },
 
-
-
-      editUser: (email, name, phone, animals, avaiability, city) => {
+      perfilusuario: (email, password, name, phone, city, rol) => {
         const store = getStore();
 
-        fetch(process.env.BACKEND_URL + "/api/edituser", {
+        fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
           method: "PUT",
           body: JSON.stringify({
             email: email,
+            password: password,
             name: name,
-            phone: phone,
             animals: animals,
-            avaiability: avaiability,
+            aviability: aviability,
+            phone: phone,
             city: city,
+            rol: rol,
           }),
           headers: {
             "Content-type": "application/json",
-            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         })
           .then((resp) => {
@@ -279,15 +269,20 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("rol", data.organizacion.rol);
+            console.log(data);
+            setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);
           });
-
       },
-
-      
+      logout: () => {
+        localStorage.clear();
+        setStore({ isAuthenticate: false, organizacion: {} });
+      },
       pet_list: () => {
         const store = getStore();
 
@@ -337,10 +332,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
-
           method: "GET",
           headers: {
-             Authorization:"Bearer " + localStorage.getItem("token"),
+            Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-type": "application/json",
           },
         })
@@ -351,14 +345,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .then((data) => {
             console.log(data);
-            setStore({ organizacion: data,isAuthenticate:true });
+            setStore({ organizacion: data });
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);
           });
       },
-
-
 
       recuperacioncontraseña: (email) => {
         const store = getStore();

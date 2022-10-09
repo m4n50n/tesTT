@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { validate } from "schema-utils";
 import { Context } from "../store/appContext";
 import "../../styles/login.css";
 
@@ -8,13 +9,17 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
 
-  const buttonSubmit = (e) => {
-    e.preventDefault();
-    console.log("Hola, soy la función");
+  const buttonSubmit = () => {
     validate(email, password);
-    actions.login(email, password, navigate);
+    actions.login(email, password);
+    if (localStorage.getItem("rol") == 1) {
+      navigate("/protectoralogin");
+    } else if (localStorage.getItem("rol") == 2) {
+      navigate("/casaacogida");
+    }
   };
   const validate = (email, password) => {
     setErrorMessage("");
@@ -55,28 +60,31 @@ export const Login = () => {
             </div>
             <p class="text-danger">{errorMessage}</p>
             <div class="row mb-2">
-              <div class="mt-sm-0 mt-3">
-                <a href="#">¿Olvidó su contraseña?</a>
-              </div>
-              <a href="#!">
-                <Link to="/recuperacioncontrasenaa"></Link>
-              </a>
+              <Link className="colortexto" to="/recuperacioncontrasena">
+                {" "}
+                ¿Olvidó su contraseña?
+              </Link>
             </div>
           </div>
         </div>
-        <input
-          type="submit"
-          class="btn btn mb-4 aling-item botonlogin"
-          value="Acceder"
-        />
+        <div className="d-flex justify-content-center">
+          <button
+            type="button"
+            onClick={() => {
+              validate(email, password);
+              actions.login(email, password);
+
+              buttonSubmit();
+            }}
+            class="btn btn-primary btn-block mb-4"
+          >
+            Acceder
+          </button>
+        </div>
         <div class="text-center">
           <p>
-            ¿Aun no te has registrado?{" "}
-            <a href="#!">
-              <Link to="/register">Registrate</Link>
-            </a>
+            ¿Aún no te has registrado? <Link to="/register">Regístrate</Link>
           </p>
-          <p></p>
           <button type="button" class="btn btn-link btn-floating mx-1">
             <i class="fab fa-facebook-f"></i>
           </button>

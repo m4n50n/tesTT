@@ -5,6 +5,9 @@ import "../../styles/protectoralogin.css";
 import { Maps } from "../component/maps";
 import "../../styles/index.css";
 import Kodulogo from "../../img/Kodulogo.png";
+
+
+
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
@@ -91,4 +94,6 @@ export const Navbar = () => {
       </div>
     </div>
   );
+
 };
+
