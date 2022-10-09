@@ -91,7 +91,7 @@ export const Registro = () => {
                 </select>
               </div>
             </div>
-            <form action="#" className="col-sm-10 mx-auto">
+            <div action="#" className="col-sm-10 mx-auto">
               <div className="h5 font-weight-bold text-center mb-3"></div>
               <div className="form-group d-flex align-items-center">
                 <div className="icon icono">
@@ -236,7 +236,7 @@ export const Registro = () => {
               </div>
 
               <div className="connect border-bottom mt-4 mb-4"></div>
-            </form>
+            </div>
             <p>{login}</p>
             ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
           </div>
@@ -268,10 +268,6 @@ export const Registro = () => {
             </div>
           ) : (
             ""
-            
-          
-
-
           )}
           {store.isLoading ? (
             <Loader type="" color="#F3C766" height={80} width={80} />
@@ -286,14 +282,10 @@ export const Registro = () => {
               </button>
             </div>
           )}
-        </form>
-        <p>{login}</p>
-        ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
-
+        </div>
       </div>
-      
-     
+      <p>{login}</p>
+      ¿Ya estás registrado? <Link to={"/login"}>Inicia Sesión!</Link>{" "}
     </div>
-
   );
 };

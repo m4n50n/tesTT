@@ -18,9 +18,8 @@ import Maps from "./component/maps";
 import { Navbaracogida } from "./component/navbaracogida";
 import { Registro } from "./pages/registro";
 
-
 import { FormularioPets } from "./component/formulariopets";
-import { perfilUsuario } from "./pages/perfilusuario";
+import { Perfilusuario } from "./pages/perfilusuario";
 import { Card_protectora } from "./component/card_protectora";
 
 //create your first component
@@ -28,20 +27,13 @@ const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
-  const path = window.location.pathname
+  const path = window.location.pathname;
 
   return (
-   
     <div>
-      
-    
-
       <BrowserRouter basename={basename}>
-
         <Navbar />
         <Routes>
-        
-         
           <Route element={<Home />} path="/" />
           <Route element={<Demo />} path="/demo" />
           <Route element={<Maps />} path="/maps" />
@@ -50,7 +42,7 @@ const Layout = () => {
           <Route element={<Contacto />} path="/contacto" />
 
           {/* <Route element={<Organizacion />} path="/organizacion" /> */}
-          
+
           <Route element={<Perfilusuario />} path="/perfilusuario" />
 
           <Route element={<Quienessomos />} path="/quienessomos" />
@@ -71,7 +63,6 @@ const Layout = () => {
           <Route element={<Protectoralogin />} path="/protectoralogin" />
         </Routes>
       </BrowserRouter>
-      
     </div>
   );
 };
