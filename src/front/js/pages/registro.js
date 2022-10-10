@@ -206,12 +206,12 @@ export const Registro = () => {
         {store.isLoading ? (
           <Loader type="" color="#F3C766" height={80} width={80} />
         ) : (
-          <div className="">
-            <div>
+          <div className="registroboton">
+            <div className="d-flex justify-content-center">
               <button
                 onClick={(e) => register(e)}
                 type="submit"
-                className="btn  sub btn-secondary"
+                className="btn btn-secondary botonacceso"
               >
                 Registrar
               </button>

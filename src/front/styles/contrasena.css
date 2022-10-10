@@ -2,12 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 /* Reseting */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 
 body {
   min-height: 100vh;
@@ -17,14 +11,13 @@ body {
     rgba(242, 238, 116, 0.989)
   );
 }
-
-.formregister {
-  margin: auto;
+.titulocontrasena {
+  color: #66829d;
+}
+.tituloemail {
+  color: #66829d;
 }
 
-.hola {
-  margin-bottom: 30px;
-}
 .tamanodeformulario {
   max-width: 450px;
   margin: 50px auto;
@@ -49,7 +42,11 @@ body {
 .wrapper .form-group:hover {
   border-bottom: 1px solid #eee;
 }
-
+.botonrecuperacion {
+  color: whitesmoke;
+  border-color: #66829d;
+  background-color: #66829d;
+}
 .wrapper .form-group .icon {
   color: #66829d;
 }
@@ -68,9 +65,6 @@ body {
 .wrapper .form-group input::placeholder {
   color: #66829d;
 }
-.registroboton {
-  color: #66829d;
-}
 .formularioname {
   color: rgba(221, 175, 36, 0.989);
 }
@@ -81,9 +75,6 @@ body {
 
 .wrapper .form-group .fa-phone {
   transform: rotate(90deg);
-}
-.botonacceso {
-  background-color: #66829d;
 }
 
 .wrapper .option {
@@ -268,7 +259,7 @@ input {
 
 @media (max-width: 460px) {
   .wrapper {
-    margin: 15px;
+    margin: 30px;
     padding: 20px;
   }
 

@@ -79,7 +79,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           const data = await resp.json();
           if (data.organizacion.rol == 1) {
-            console.log("entro en este if");
             navigate("/protectoralogin");
           } else if (data.organizacion.rol == 2) {
             navigate("/casaacogida");

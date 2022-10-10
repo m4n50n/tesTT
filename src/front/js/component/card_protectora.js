@@ -2,12 +2,14 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
+import { navigate, useNavigate } from "react-router-dom";
 import "../../styles/card_protectora.css";
 
 export function Card_protectora(props) {
   const { actions, store } = useContext(Context);
   useEffect(() => {
     actions.organizacion_list();
+    const navigate = useNavigate();
   }, []);
   return (
     <div className="card cardsprotectora">

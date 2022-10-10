@@ -1,9 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Cardperros } from "../component/card_pet";
-import { Perfilusuario } from "./perfilusuario";
 import { Card_protectora } from "../component/card_protectora";
-import { Navbaracogida } from "../component/navbaracogida";
 
 import "../../styles/index.css";
 
@@ -14,7 +12,6 @@ const CasaAcogida = () => {
     actions.organizacion_list();
   }, []);
   return (
-
     <>
       {/* <Navbaracogida /> */}
       <footer />
@@ -42,7 +39,6 @@ const CasaAcogida = () => {
             );
           })}
         </div>
-
       </div>
     </>
   );

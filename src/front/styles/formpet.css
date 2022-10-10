@@ -68,9 +68,6 @@ body {
 .wrapper .form-group input::placeholder {
   color: #66829d;
 }
-.registroboton {
-  color: #66829d;
-}
 .formularioname {
   color: rgba(221, 175, 36, 0.989);
 }
@@ -81,9 +78,6 @@ body {
 
 .wrapper .form-group .fa-phone {
   transform: rotate(90deg);
-}
-.botonacceso {
-  background-color: #66829d;
 }
 
 .wrapper .option {
@@ -250,20 +244,6 @@ input {
 .wrapper .btn.btn-primary:hover::before {
   opacity: 1;
   transform: skew(45deg) translateX(-130px);
-}
-.bodyregistro {
-  border: #66829d;
-  margin: 20px;
-}
-.seleccionar {
-  opacity: 90%;
-  color: #66829d;
-}
-.opcionrol {
-  color: #66829d;
-}
-.estasregistrado {
-  color: #66829d;
 }
 
 @media (max-width: 460px) {
