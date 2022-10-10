@@ -51,11 +51,11 @@
 
 .wrapper .card a {
   text-decoration: none;
-  color: #eee;
+  color: #495969;
 }
 
 .wrapper .card a:hover {
-  color: #495969;
+  color: rgba(221, 175, 36, 0.989);
 }
 
 .wrapper .card .input-field {
@@ -69,11 +69,15 @@
   border: none;
   outline: none;
   box-shadow: none;
-  color: #eee;
+  color: #495969;
+
+  /* color: #eee; */
 }
 
 .wrapper .card .input-field button.btn {
-  color: #eee;
+  color: #495969;
+
+  /* color: #eee; */
   padding: 0rem;
   padding-right: 0.5rem;
 }

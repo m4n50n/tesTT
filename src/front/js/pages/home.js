@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { Footer } from "../component/footer";
 
 import "../../styles/index.css";
@@ -8,10 +8,7 @@ export const Home = () => {
   return (
     <>
       <div>
-       <nav className="navbar navbar-light bg-warning">
-   
-          
-    </nav>
+        <nav className="navbar navbar-light bg-warning"></nav>
 
         <div className="row">
           <div className="col-12">
@@ -26,9 +23,9 @@ export const Home = () => {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <Footer />;
-      </div>
+      </div> */}
     </>
   );
 };

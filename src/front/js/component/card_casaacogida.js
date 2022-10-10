@@ -11,24 +11,29 @@ export function CasaAcogidaCard(props) {
   }, []);
 
   return (
-    <div>
+    <div className="col-3">
       <div className="card" style={{ width: "18rem" }} />
       <div className="card-body">
-        <div className="cardacogida">
+        {/* <div>
           <input
             type="file"
             accept="image/*"
             onChange={(e) => setPhot(e.target.photo)}
           />
-        </div>
+        </div> */}
         <ul className="list-group list-group-flush">
-          <li className="list-group-item active" aria-current="true">
+          <li
+            className="list-group-item active text-break "
+            aria-current="true"
+          >
             {props.pet.name}
           </li>
-          <li className="list-group-item">{props.pet.email}</li>
-          <li className="list-group-item">{props.pet.city}</li>
-          <li className="list-group-item">{props.pet.avaiability}</li>
-          <li className="list-group-item">{props.pet.animals}</li>
+          <li className="list-group-item text-break ">{props.pet.email}</li>
+          <li className="list-group-item text-break ">{props.pet.city}</li>
+          <li className="list-group-item text-break ">
+            {props.pet.avaiability}
+          </li>
+          <li className="list-group-item text-break ">{props.pet.animals}</li>
         </ul>
 
         <button type="button">

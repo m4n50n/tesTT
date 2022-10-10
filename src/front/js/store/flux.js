@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(process.env.BACKEND_URL + "/api/roles")
           .then((response) => response.json())
           .then((response) => {
-            console.log(response);
+            // console.log(response);
             setStore({ roles: response });
           });
       },
@@ -55,7 +55,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            console.log(data);
+            // console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -83,7 +83,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           } else if (data.organizacion.rol == 2) {
             navigate("/casaacogida");
           }
-          console.log(data);
+          // console.log(data);
           localStorage.setItem("token", data.token);
           localStorage.setItem("rol", data.organizacion.rol);
           setStore({ isAuthenticate: data.loged });
@@ -92,7 +92,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {}
       },
       pets: (pets) => {
-        console.log(pets);
+        // console.log(pets);
         let body = new FormData();
         for (let key in pets) {
           body.append(key, pets[key]);
@@ -109,12 +109,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         })
           .then((resp) => {
             if (resp.ok) {
-              console.log(resp);
+              // console.log(resp);
               return resp.json();
             }
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setStore({ newPets: data });
           })
           .catch((error) => {
@@ -171,7 +171,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            console.log(data);
+            // console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -194,7 +194,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             return resp.json();
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setStore({ casaacogida_list: data.list });
           })
           .catch((error) => {
@@ -227,7 +227,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            console.log(data);
+            // console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -268,7 +268,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            console.log(data);
+            // console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -295,7 +295,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setStore({ pet_list: data });
           })
           .catch((error) => {
@@ -317,7 +317,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setStore({ organizacion_list: data });
           })
           .catch((error) => {
@@ -341,7 +341,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             setStore({ organizacion: data });
           })
           .catch((error) => {
@@ -349,9 +349,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      recuperacioncontraseña: (email) => {
+      recuperacioncontrasena: (email) => {
         const store = getStore();
-        fetch(process.env.BACKEND_URL + "/api/recuperacioncontraseña", {
+        fetch(process.env.BACKEND_URL + "/api/recuperacioncontrasena", {
           method: "POST",
           body: JSON.stringify({
             email: email,

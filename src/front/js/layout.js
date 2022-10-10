@@ -60,6 +60,7 @@ const Layout = () => {
           <Route element={<h1>Not found!</h1>} />
           <Route element={<Protectoralogin />} path="/protectoralogin" />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -12,18 +12,19 @@ body {
 .logo {
   width: 200px;
   height: 150px;
+  margin-bottom: 400px;
 }
 .menu {
   background: rgba(221, 175, 36, 0.989);
-  width: 600px;
-  padding: 500px;
+  width: 100%;
+  /* padding: 500px; */
 }
 .footer {
   background: rgba(221, 175, 36, 0.989);
 
   padding: 1em 0;
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
 }

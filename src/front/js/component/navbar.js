@@ -11,37 +11,51 @@ export const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="container-fluid">
-      <div className="row menu pt-2 pb-2">
-        {/* <div className="col-2">
+      <div className="row menu pt-2 pb-2 align-items-center">
+        <div className="col-2">
           <div className="d-flex justify-content-center">
-            <img className="logo" src={Kodulogo} alt="logo" />
+            <img style={{ width: "80px" }} src={Kodulogo} alt="logo" />
           </div>
-        </div> */}
+        </div>
         {!store.isAuthenticate ? (
-          <div className="d-flex justify-content-evenly">
-            <div className="align-items-start">
-              <Link to="/login">
-                {" "}
-                <button type="button" className="btn btn-light bg-light">
-                  INICIO{" "}
-                </button>
-              </Link>
-            </div>
-            <div className="align-items-center">
-              <Link to="/register">
-                <button
-                  type="button"
-                  className="btn btn-light bg-light buttonregi"
-                >
-                  REGISTRATE{" "}
-                </button>
-              </Link>
-            </div>
-            <div>
-              <a className="link-dark text-decoration-none" href=""></a>
-            </div>
-            <div className="align-items-end">
-              {/* <Link to="/maps">
+          <div className="col-10">
+            <div className="d-flex justify-content-evenly">
+              <div className="align-items-start">
+                <Link to="/">
+                  {" "}
+                  <button
+                    type="button"
+                    className="buttonacess botonclose btn botonclose"
+                  >
+                    INICIO{" "}
+                  </button>
+                </Link>
+              </div>
+              <div className="align-items-center">
+                <Link to="/register">
+                  <button
+                    type="button"
+                    className="buttonacess botonclose btn botonclose"
+                  >
+                    REGISTRATE{" "}
+                  </button>
+                </Link>
+              </div>
+              <div className="align-items-center">
+                <Link to="/login">
+                  <button
+                    type="button"
+                    className="buttonacess botonclose btn botonclose"
+                  >
+                    LOGIN{" "}
+                  </button>
+                </Link>
+              </div>
+              <div>
+                <a className="link-dark text-decoration-none" href=""></a>
+              </div>
+              <div className="align-items-end">
+                {/* <Link to="/maps">
                 {" "}
                 <button
                   type="button"
@@ -51,29 +65,52 @@ export const Navbar = () => {
                   MAPS{" "}
                 </button>
               </Link> */}
-            </div>{" "}
+              </div>{" "}
+            </div>
           </div>
         ) : (
-          <>
-            <button
-              onClick={() => {
-                actions.logout();
-                navigate("/");
-              }}
-              type="button"
-              className="buttonacess botonclose btn botonclose"
-            >
-              Cerrar sesión{" "}
-            </button>
-            <Link to="/perfilusuario">
-              <button
-                type="button"
-                className="buttonacess botonclose btn botonclose"
-              >
-                Perfil{" "}
-              </button>
-            </Link>
-          </>
+          <div className="col-10">
+            <div className="d-flex justify-content-evenly">
+              <div className="align-items-start">
+                <Link to="/">
+                  {" "}
+                  <button
+                    type="button"
+                    className="buttonacess botonclose btn botonclose"
+                  >
+                    INICIO{" "}
+                  </button>
+                </Link>
+              </div>
+
+              <Link to="/editusuario">
+                <button
+                  type="button"
+                  className="buttonacess botonclose btn botonclose"
+                >
+                  Perfil{" "}
+                </button>
+              </Link>
+
+              <div className="align-items-start">
+                {" "}
+                <button
+                  onClick={() => {
+                    actions.logout();
+                    navigate("/");
+                  }}
+                  type="button"
+                  className="buttonacess botonclose btn botonclose"
+                >
+                  Cerrar sesión{" "}
+                </button>
+              </div>
+
+              <div>
+                <a className="link-dark text-decoration-none" href=""></a>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>

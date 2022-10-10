@@ -1,9 +1,11 @@
 import React, { useContext, useRef, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/contrasena.css";
+import { useNavigate } from "react-router";
 
 const Recuperacioncontrasena = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [mensaje, setMensaje] = useState("");
   const sendcontrasena = (e) => {
@@ -11,6 +13,9 @@ const Recuperacioncontrasena = () => {
     if (email !== "") {
       actions.recuperacioncontrasena(email);
       setMensaje("el correo ha sido enviado");
+      setTimeout(() => {
+        navigate("/");
+      }, 3500);
     } else {
       setMensaje("Introduzca el correo electrónico");
     }
