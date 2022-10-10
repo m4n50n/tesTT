@@ -65,7 +65,7 @@ export const Registro = () => {
 
   return (
     <>
-      <div class="wrapper position-relative">
+      <div className="wrapper position-relative">
         <div className="form-outline mb-4 text-center">
           <div className="myform">
             <h4 className="protectoraocasa">
@@ -96,9 +96,9 @@ export const Registro = () => {
           </div>
 
           <div action="#">
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="far fa-user"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="far fa-user"></span>
               </div>
               <input
                 value={name}
@@ -108,9 +108,9 @@ export const Registro = () => {
                 placeholder="Nombre"
               />
             </div>
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="far fa-envelope"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="far fa-envelope"></span>
               </div>
               <input
                 value={email}
@@ -120,9 +120,9 @@ export const Registro = () => {
                 placeholder="Email"
               />
             </div>
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="fas fa-key"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="fas fa-key"></span>
               </div>
               <input
                 value={password}
@@ -133,9 +133,9 @@ export const Registro = () => {
               />
             </div>
 
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="fas fa-phone"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="fas fa-phone"></span>
               </div>
               <input
                 value={phone}
@@ -145,9 +145,9 @@ export const Registro = () => {
                 placeholder="Teléfono"
               />
             </div>
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="fas fa-map-marker-alt"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="fas fa-map-marker-alt"></span>
               </div>
               <input
                 value={city}
@@ -158,9 +158,9 @@ export const Registro = () => {
               />
             </div>
             {rol == 1 ? (
-              <div class="form-group d-flex align-items-center">
-                <div class="icon">
-                  <span class="fab fa-instagram"></span>
+              <div className="form-group d-flex align-items-center">
+                <div className="icon">
+                  <span className="fab fa-instagram"></span>
                 </div>
                 <input
                   value={instagram}
@@ -173,9 +173,9 @@ export const Registro = () => {
             ) : null}
           </div>
           {rol == 2 ? (
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="fa fa-calendar"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="fa fa-calendar"></span>
               </div>
               <input
                 value={avaiability}
@@ -187,9 +187,9 @@ export const Registro = () => {
             </div>
           ) : null}
           {rol == 2 ? (
-            <div class="form-group d-flex align-items-center">
-              <div class="icon">
-                <span class="fa fa-paw"></span>
+            <div className="form-group d-flex align-items-center">
+              <div className="icon">
+                <span className="fa fa-paw"></span>
               </div>
               <input
                 value={animals}

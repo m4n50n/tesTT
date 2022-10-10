@@ -14,7 +14,6 @@ const CasaAcogida = () => {
   return (
     <>
       {/* <Navbaracogida /> */}
-      <footer />
       <div className="container-fluid ">
         <center className="titulomascotas">
           ¿Tienes disponibilidad para ayudar a alguna de estas mascotas?

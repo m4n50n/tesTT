@@ -19,6 +19,7 @@ import { FormularioPets } from "./component/formulariopets";
 import { Perfilusuario } from "./pages/perfilusuario";
 import { Card_protectora } from "./component/card_protectora";
 import { CasaAcogidaCard } from "./component/card_casaacogida";
+import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -42,11 +43,11 @@ const Layout = () => {
 
           <Route element={<Perfilusuario />} path="/perfilusuario" />
 
-          <Route element={<Quienessomos />} path="/quienessomos" />
+          {/* <Route element={<Quienessomos />} path="/quienessomos" /> */}
           <Route element={<Protectoralogin />} path="/protectoralogin" />
-          <Route element={<Editusuario />} path="/perfilusuario" />
-          <Route element={<CasaAcogidaCard />} path="/card_casaacogida" />
-          <Route element={<Card_protectora />} path="/card_protectora" />
+          <Route element={<Editusuario />} path="/editusuario" />
+          {/* <Route element={<CasaAcogidaCard />} path="/card_casaacogida" /> */}
+          {/* <Route element={<Card_protectora />} path="/card_protectora" /> */}
 
           <Route
             element={<Recuperacioncontrasena />}

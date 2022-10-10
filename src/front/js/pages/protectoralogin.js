@@ -6,6 +6,7 @@ import { CasaAcogidaCard } from "../component/card_casaacogida";
 
 const Protectoralogin = () => {
   const { actions, store } = useContext(Context);
+  const navigate = useNavigate();
 
   useEffect(() => {
     actions.listaCasaAcogida();

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
@@ -23,12 +23,12 @@ export function CasaAcogidaCard(props) {
         </div>
         <ul className="list-group list-group-flush">
           <li className="list-group-item active" aria-current="true">
-            {prop.organizacion.name}
+            {props.pet.name}
           </li>
-          <li className="list-group-item">{prop.organizacion.email}</li>
-          <li className="list-group-item">{prop.organizacion.city}</li>
-          <li className="list-group-item">{prop.organizacion.avaiability}</li>
-          <li className="list-group-item">{prop.organizacion.animals}</li>
+          <li className="list-group-item">{props.pet.email}</li>
+          <li className="list-group-item">{props.pet.city}</li>
+          <li className="list-group-item">{props.pet.avaiability}</li>
+          <li className="list-group-item">{props.pet.animals}</li>
         </ul>
 
         <button type="button">
@@ -40,5 +40,5 @@ export function CasaAcogidaCard(props) {
 }
 
 CasaAcogidaCard.propTypes = {
-  organizacion: propTypes.any,
+  pet: propTypes.any,
 };

@@ -15,8 +15,7 @@ export const Navbaracogida = () => {
             navigate("/");
           }}
           type="button"
-          className="buttonacess botonclose"
-          class="btn botonclose"
+          className="buttonacess botonclose btn"
         >
           Cerrar sesión{" "}
         </button>
@@ -26,8 +25,7 @@ export const Navbaracogida = () => {
             navigate("/perfilusuario");
           }}
           type="button"
-          className="buttonacess botonclose"
-          class="btn botonclose"
+          className="buttonacess botonclose btn"
         >
           Perfil{" "}
         </button>

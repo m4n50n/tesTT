@@ -32,7 +32,7 @@ const Recuperacioncontrasena = () => {
                   setEmail(e.target.value);
                 }}
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="inputEmail"
                 placeholder="email"
               />

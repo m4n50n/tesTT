@@ -7,9 +7,9 @@ import "../../styles/card_protectora.css";
 
 export function Card_protectora(props) {
   const { actions, store } = useContext(Context);
+  const navigate = useNavigate();
   useEffect(() => {
     actions.organizacion_list();
-    const navigate = useNavigate();
   }, []);
   return (
     <div className="card cardsprotectora">

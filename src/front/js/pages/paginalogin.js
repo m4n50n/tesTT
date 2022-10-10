@@ -14,7 +14,7 @@ export const Login = () => {
 
   const buttonSubmit = () => {
     validate(email, password);
-    actions.login(email, password);
+    actions.login(email, password, navigate);
     if (localStorage.getItem("rol") == 1) {
       navigate("/protectoralogin");
     } else if (localStorage.getItem("rol") == 2) {
@@ -29,28 +29,32 @@ export const Login = () => {
   };
   return (
     <>
-      <div class="wrapper">
-        <div class="card">
-          <div onSubmit={buttonSubmit} action="#" class="d-flex flex-column">
-            <div class="h3 text-center colorlogin">Login</div>
-            <div class="d-flex align-items-center input-field my-3 mb-4">
-              <span class="far fa-user p-2"></span>
+      <div className="wrapper">
+        <div className="card">
+          <div
+            onSubmit={buttonSubmit}
+            action="#"
+            className="d-flex flex-column"
+          >
+            <div className="h3 text-center colorlogin">Login</div>
+            <div className="d-flex align-items-center input-field my-3 mb-4">
+              <span className="far fa-user p-2"></span>
               <input
                 type="email"
                 id="form2Example1"
-                class="form-control"
+                className="form-control"
                 placeholder="email"
                 autoComplete="off"
                 value={email}
                 onChange={(ev) => setEmail(ev.target.value)}
               />
             </div>
-            <div class="d-flex align-items-center input-field mb-4">
-              <span class="fas fa-lock p-2"></span>
+            <div className="d-flex align-items-center input-field mb-4">
+              <span className="fas fa-lock p-2"></span>
               <input
                 type="password"
                 id="form2Example2"
-                class="form-control"
+                className="form-control"
                 placeholder="contraseña"
                 autoComplete="off"
                 value={password}
@@ -58,8 +62,8 @@ export const Login = () => {
               />
               <div></div>
             </div>
-            <p class="text-danger">{errorMessage}</p>
-            <div class="row mb-2">
+            <p className="text-danger">{errorMessage}</p>
+            <div className="row mb-2">
               <Link className="colortexto" to="/recuperacioncontrasena">
                 {" "}
                 ¿Olvidó su contraseña?
@@ -76,23 +80,23 @@ export const Login = () => {
 
               buttonSubmit();
             }}
-            class="btn btn-primary btn-block mb-4"
+            className="btn btn-primary btn-block mb-4"
           >
             Acceder
           </button>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <p>
             ¿Aún no te has registrado? <Link to="/register">Regístrate</Link>
           </p>
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
+          <button type="button" className="btn btn-link btn-floating mx-1">
+            <i className="fab fa-facebook-f"></i>
           </button>
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-instagram"></i>
+          <button type="button" className="btn btn-link btn-floating mx-1">
+            <i className="fab fa-instagram"></i>
           </button>
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-twitter"></i>
+          <button type="button" className="btn btn-link btn-floating mx-1">
+            <i className="fab fa-twitter"></i>
           </button>
         </div>
       </div>

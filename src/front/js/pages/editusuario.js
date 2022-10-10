@@ -24,14 +24,14 @@ export const Editusuario = () => {
   };
 
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       {/* <fieldset disabled={!disabledinput ? false : true}> */}
-      <div class="h5 font-weight-bold text-center mb-3">
+      <div className="h5 font-weight-bold text-center mb-3">
         Perfil casa de acogida
       </div>
-      <div class="form-group d-flex align-items-center">
-        <div class="icon">
-          <span class="fas fa-phone"></span>
+      <div className="form-group d-flex align-items-center">
+        <div className="icon">
+          <span className="fas fa-phone"></span>
         </div>
         <input
           type="text"
@@ -41,9 +41,9 @@ export const Editusuario = () => {
           placeholder="Teléfono"
         />
       </div>
-      <div class="form-group d-flex align-items-center">
-        <div class="icon">
-          <span class="far fa-envelope"></span>
+      <div className="form-group d-flex align-items-center">
+        <div className="icon">
+          <span className="far fa-envelope"></span>
         </div>
         <input
           type="text"
@@ -53,9 +53,9 @@ export const Editusuario = () => {
           placeholder="Email"
         />
       </div>
-      <div class="form-group d-flex align-items-center">
-        <div class="icon">
-          <span class="fa fa-calendar"></span>
+      <div className="form-group d-flex align-items-center">
+        <div className="icon">
+          <span className="fa fa-calendar"></span>
         </div>
         <input
           type="text"
@@ -65,9 +65,9 @@ export const Editusuario = () => {
           placeholder="Disponibilidad de acogida"
         />
       </div>
-      <div class="form-group d-flex align-items-center">
-        <div class="icon">
-          <span class="fa fa-paw"></span>
+      <div className="form-group d-flex align-items-center">
+        <div className="icon">
+          <span className="fa fa-paw"></span>
         </div>
         <input
           type="text"
@@ -77,9 +77,9 @@ export const Editusuario = () => {
           placeholder="¿Convives con más animales?"
         />
       </div>
-      <div class="form-group d-flex align-items-center">
-        <div class="icon">
-          <span class="fas fa-map-marker-alt"></span>
+      <div className="form-group d-flex align-items-center">
+        <div className="icon">
+          <span className="fas fa-map-marker-alt"></span>
         </div>
         <input
           type="text"
@@ -110,7 +110,7 @@ export const Editusuario = () => {
         </button>
       )}
 
-      <div class="mb-2"></div>
+      <div className="mb-2"></div>
     </div>
   );
 };

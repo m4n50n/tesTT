@@ -89,9 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ isAuthenticate: data.loged });
           setStore({ organizacion: data.organizacion });
           setStore({ rol: data.organizacion.rol });
-        } catch (error) {
-          console.error("[ERROR IN LOGIN]", error);
-        }
+        } catch (error) {}
       },
       pets: (pets) => {
         console.log(pets);
@@ -185,7 +183,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       listaCasaAcogida: () => {
         const store = getStore();
 
-        fetch(process.env.BACKEND_URL + "/api/casasacogida", {
+        fetch(process.env.BACKEND_URL + "/api/card_casaacogida", {
           method: "GET",
           headers: {
             "Content-type": "application/json",

@@ -11,29 +11,18 @@ export const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="container-fluid">
-      {/* <div className="row">
-        <div className="col-12">
-          <div className="d-flex justify-content-center">
-            <img
-              className="logo"
-              src={Kodulogo}
-              alt="logo"
-            />
-          </div>
-        </div>
-      </div> */}
-
       <div className="row menu pt-2 pb-2">
+        {/* <div className="col-2">
+          <div className="d-flex justify-content-center">
+            <img className="logo" src={Kodulogo} alt="logo" />
+          </div>
+        </div> */}
         {!store.isAuthenticate ? (
           <div className="d-flex justify-content-evenly">
             <div className="align-items-start">
               <Link to="/login">
                 {" "}
-                <button
-                  onClick={""}
-                  type="button"
-                  class="btn btn-light bg-light"
-                >
+                <button type="button" className="btn btn-light bg-light">
                   INICIO{" "}
                 </button>
               </Link>
@@ -42,28 +31,26 @@ export const Navbar = () => {
               <Link to="/register">
                 <button
                   type="button"
-                  className="buttonregi"
-                  class="btn btn-light bg-light"
+                  className="btn btn-light bg-light buttonregi"
                 >
                   REGISTRATE{" "}
                 </button>
               </Link>
             </div>
-            <div className="">
+            <div>
               <a className="link-dark text-decoration-none" href=""></a>
             </div>
             <div className="align-items-end">
-              <Link to="/maps">
+              {/* <Link to="/maps">
                 {" "}
                 <button
-                  onClick="location.href''"
                   type="button"
-                  className="buttonmaps"
-                  class="btn btn-light bg-light"
+                  className="btn btn-light bg-light buttonmaps"
+                  class=""
                 >
                   MAPS{" "}
                 </button>
-              </Link>
+              </Link> */}
             </div>{" "}
           </div>
         ) : (
@@ -74,16 +61,14 @@ export const Navbar = () => {
                 navigate("/");
               }}
               type="button"
-              className="buttonacess botonclose"
-              class="btn botonclose"
+              className="buttonacess botonclose btn botonclose"
             >
               Cerrar sesión{" "}
             </button>
             <Link to="/perfilusuario">
               <button
                 type="button"
-                className="buttonacess botonclose"
-                class="btn botonclose"
+                className="buttonacess botonclose btn botonclose"
               >
                 Perfil{" "}
               </button>
