@@ -26,10 +26,7 @@ export const Registro = () => {
       password !== "" &&
       name !== "" &&
       phone !== "" &&
-      city !== "" &&
-      instagram !== "" &&
-      avaiability !== "" &&
-      animals !== ""
+      city !== ""
     ) {
       actions.register(
         email,

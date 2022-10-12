@@ -328,7 +328,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       organizacion: () => {
         const store = getStore();
 
-        fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
+        fetch(process.env.BACKEND_URL + "/api/editusuario", {
           method: "GET",
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),

@@ -36,7 +36,7 @@ def login():
 
 
 @api.route('/register', methods=['POST'])
-def register():
+def registro():
     email = request.json.get("email")
     password = request.json.get("password")
     city = request.json.get("city")

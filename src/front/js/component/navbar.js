@@ -1,52 +1,53 @@
 import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
-import "../../styles/protectoralogin.css";
-import { Maps } from "../component/maps";
 import "../../styles/index.css";
-import Kodulogo from "../../img/Kodulogo.png";
+import Homeppet from "../../img/Homeppet.png";
+import Texto from "../../img/texto.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   return (
-    <div className="container-fluid">
-      <div className="row menu pt-2 pb-2 align-items-center">
+    <div className="navbar-brand colornavbar">
+      <div className="row menu align-items-center">
         <div className="col-2">
-          <div className="d-flex justify-content-center">
-            <img style={{ width: "80px" }} src={Kodulogo} alt="logo" />
+          <div className="m-l-20 d-flex">
+            <img
+              className="m-r-10 logofoto"
+              style={{ width: "120px" }}
+              src={Homeppet}
+              alt="logo"
+            />
+            <img
+              className="textologo"
+              style={{ width: "120px" }}
+              src={Texto}
+              alt="texto"
+            />
           </div>
         </div>
         {!store.isAuthenticate ? (
-          <div className="col-10">
+          <div className="col-10 ">
             <div className="d-flex justify-content-evenly">
               <div className="align-items-start">
                 <Link to="/">
                   {" "}
-                  <button
-                    type="button"
-                    className="buttonacess botonclose btn botonclose"
-                  >
+                  <button type="button" className="btn buttonhome">
                     INICIO{" "}
                   </button>
                 </Link>
               </div>
               <div className="align-items-center">
                 <Link to="/register">
-                  <button
-                    type="button"
-                    className="buttonacess botonclose btn botonclose"
-                  >
+                  <button type="button" className="btn buttonhome">
                     REGISTRATE{" "}
                   </button>
                 </Link>
               </div>
               <div className="align-items-center">
                 <Link to="/login">
-                  <button
-                    type="button"
-                    className="buttonacess botonclose btn botonclose"
-                  >
+                  <button type="button" className="btn buttonhome">
                     LOGIN{" "}
                   </button>
                 </Link>
