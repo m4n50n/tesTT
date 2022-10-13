@@ -20,11 +20,7 @@ export function Cardperros(props) {
         }}
       />
       <div className="card-body">
-        <img
-          src="https://i.picsum.photos/id/1012/3973/2639.jpg?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
-          className="card-img-top"
-          alt="..."
-        />
+        <img src={props.pet.photo} className="card-img-top" alt="..." />
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
             <b>Nombre:</b> {props.pet.name}

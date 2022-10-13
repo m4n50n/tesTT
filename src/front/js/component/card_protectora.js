@@ -21,7 +21,7 @@ export function Card_protectora(props) {
           border: "0px",
         }}
       />
-      <div className="card-body protectoracard">
+      <div className="card-body col-6 protectoracard">
         <ul className="list-group list-group-flush">
           <h5 className="list-group-item titulocard">
             <b>Protectora:</b> {props.organizacion.name}

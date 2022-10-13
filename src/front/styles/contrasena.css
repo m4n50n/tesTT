@@ -242,10 +242,10 @@ input {
   opacity: 1;
   transform: skew(45deg) translateX(-130px);
 }
-.bodyregistro {
-  border: #66829d;
-  margin: 20px;
+.botonrecuperacion {
+  margin-top: 20px;
 }
+
 .seleccionar {
   opacity: 90%;
   color: #66829d;

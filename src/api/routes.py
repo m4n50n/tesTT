@@ -36,7 +36,7 @@ def login():
 
 
 @api.route('/register', methods=['POST'])
-def register():
+def registro():
     email = request.json.get("email")
     password = request.json.get("password")
     city = request.json.get("city")
@@ -86,7 +86,7 @@ def newpet():
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
     # upload file to uploadcare
-    photo = cloudinary.uploader.upload(request.files['image'])
+    result = cloudinary.uploader.upload(request.files['image'])
 
     photo_url = result['secure_url']
     print("@@@@@@@@@@@")
@@ -94,7 +94,7 @@ def newpet():
     pets = Pets(organizacion_id=protectora_id, name=name, years=years,
                 race=race, photo=photo_url, sexo=sexo, convivencia=convivencia)
 
-    db.session.app(pets)
+    db.session.add(pets)
     db.session.commit()
     return jsonify({"pets": pets.serialize()}),  200
 
