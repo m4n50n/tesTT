@@ -10,7 +10,7 @@ export const FormularioPets = () => {
 
   const PetPhoto = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      setPet({ ...pet, photo: e.target.files[0] });
+      setPet({ ...pet, image: e.target.files[0] });
     }
   };
 
@@ -40,7 +40,7 @@ export const FormularioPets = () => {
               <label></label>
               <input
                 type="text"
-                onChange={(e) => setPet({ ...pet, firstname: e.target.value })}
+                onChange={(e) => setPet({ ...pet, name: e.target.value })}
                 className="form-control"
                 placeholder="Nombre"
               />

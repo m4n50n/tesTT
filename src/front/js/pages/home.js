@@ -8,9 +8,7 @@ import "../../styles/index.css";
 export const Home = () => {
   return (
     <>
-      <div>
-        <nav className="navbar navbar-light"></nav>
-
+      <div className="container">
         <div className="row">
           <div className="col-6">
             <div className="d-flex justify-content-center">

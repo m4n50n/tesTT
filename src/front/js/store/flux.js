@@ -104,7 +104,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           body: body,
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
-            "Content-type": "application/json",
           },
         })
           .then((resp) => {

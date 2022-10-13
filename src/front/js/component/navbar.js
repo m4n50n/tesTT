@@ -2,7 +2,9 @@ import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/index.css";
-import Homeppet from "../../img/Homeppet.png";
+// import Homeppet from "../../img/Homeppet.png";
+// import Logorojo from "../../img/Logorojo.png";
+import Logoperros from "../../img/Logoperros.png";
 import Texto from "../../img/texto.png";
 
 export const Navbar = () => {
@@ -13,12 +15,14 @@ export const Navbar = () => {
       <div className="row menu align-items-center">
         <div className="col-2">
           <div className="m-l-20 d-flex">
-            <img
-              className="m-r-10 logofoto"
-              style={{ width: "120px" }}
-              src={Homeppet}
-              alt="logo"
-            />
+            <Link to="/">
+              <img
+                className="m-r-10 logofoto"
+                style={{ width: "120px" }}
+                src={Logoperros}
+                alt="logo"
+              />
+            </Link>
             <img
               className="textologo"
               style={{ width: "120px" }}
@@ -75,20 +79,14 @@ export const Navbar = () => {
               <div className="align-items-start">
                 <Link to="/">
                   {" "}
-                  <button
-                    type="button"
-                    className="buttonacess botonclose btn botonclose"
-                  >
+                  <button type="button" className="btn buttonhome">
                     INICIO{" "}
                   </button>
                 </Link>
               </div>
 
               <Link to="/editusuario">
-                <button
-                  type="button"
-                  className="buttonacess botonclose btn botonclose"
-                >
+                <button type="button" className="btn buttonhome">
                   Perfil{" "}
                 </button>
               </Link>
@@ -101,7 +99,7 @@ export const Navbar = () => {
                     navigate("/");
                   }}
                   type="button"
-                  className="buttonacess botonclose btn botonclose"
+                  className="btn buttonhome"
                 >
                   Cerrar sesión{" "}
                 </button>
