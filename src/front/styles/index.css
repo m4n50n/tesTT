@@ -133,15 +133,16 @@ body {
   font-size: larger;
   color: #495969;
 }
-.textofoto {
-  margin-left: 300px;
+.textologo {
+  left: 5px;
 }
-.logofoto {
-  display: flex;
-}
-.navbarcolor {
-  color: #fffbe5;
+
+.colornavbar {
+  color: rgba(248, 245, 156, 0.989);
 }
 .fotopett {
   margin-top: auto;
+}
+.fa-bars {
+  color: #66829d;
 }
