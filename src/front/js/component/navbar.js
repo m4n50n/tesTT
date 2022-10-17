@@ -2,10 +2,7 @@ import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/index.css";
-// import Homeppet from "../../img/Homeppet.png";
-// import Logorojo from "../../img/Logorojo.png";
-import Logoperros from "../../img/Logoperros.png";
-import Texto from "../../img/texto.png";
+import Logonombre from "../../img/Logonombre.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -17,14 +14,14 @@ export const Navbar = () => {
           <Link to="/">
             <img
               className="m-r-10 logofoto"
-              style={{ width: "100px" }}
-              src={Logoperros}
+              style={{ width: "175px" }}
+              src={Logonombre}
               alt="logo"
             />
           </Link>
         </div>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler row"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -32,95 +29,95 @@ export const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler">
-            <i class="fas fa-bars"></i>
+          <span className="navbar-text">
+            <i className="fas fa-bars"></i>
           </span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <img
-            className="textologo"
-            style={{ width: "120px" }}
-            src={Texto}
-            alt="texto"
-          />
-          {!store.isAuthenticate ? (
-            <div className="d-flex justify-content-evenly">
-              <div className="align-items-start">
-                <Link to="/">
-                  {" "}
-                  <button type="button" className="btn buttonhome">
-                    INICIO{" "}
-                  </button>
-                </Link>
-              </div>
-              <div className="nav-item">
-                <Link to="/register">
-                  <button type="button" className="btn buttonhome">
-                    REGISTRATE{" "}
-                  </button>
-                </Link>
-              </div>
-              <div className="nav-item">
-                <Link to="/login">
-                  <button type="button" className="btn buttonhome">
-                    LOGIN{" "}
-                  </button>
-                </Link>
-              </div>
-              <div>
-                <a className=" text-decoration-none" href=""></a>
-              </div>
-              <div className="nav-item">
-                {/* <Link to="/maps">
-                {" "}
-                <button
-                  type="button"
-                  className="btn btn-light bg-light buttonmaps"
-                  class=""
-                >
-                  MAPS{" "}
-                </button>
-              </Link> */}
-              </div>{" "}
-            </div>
-          ) : (
-            <div>
-              <div className="d-flex justify-content-evenly">
-                <div className="nav-item">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {!store.isAuthenticate ? (
+              <div className="d-flex justify-content-end">
+                <li className="nav-item">
                   <Link to="/">
                     {" "}
                     <button type="button" className="btn buttonhome">
                       INICIO{" "}
                     </button>
                   </Link>
-                </div>
-
-                <Link to="/editusuario">
-                  <button type="button" className="btn buttonhome">
-                    PERFIL{" "}
-                  </button>
-                </Link>
-
-                <div className="nav-item">
-                  {" "}
-                  <button
-                    onClick={() => {
-                      actions.logout();
-                      navigate("/");
-                    }}
-                    type="button"
-                    className="btn buttonhome"
-                  >
-                    CERRAR SESIÓN{" "}
-                  </button>
-                </div>
-
+                </li>
+                <li className="nav-item">
+                  <Link to="/register">
+                    <button type="button" className="btn buttonhome">
+                      REGISTRATE{" "}
+                    </button>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/login">
+                    <button type="button" className="btn buttonhome">
+                      LOGIN{" "}
+                    </button>
+                  </Link>
+                </li>
                 <div>
-                  <a className="link-dark text-decoration-none" href=""></a>
+                  <a className=" text-decoration-none" href=""></a>
+                </div>
+                <div className="nav-item">
+                  {/* <Link to="/maps">
+                {" "}
+                <button
+                  type="button"
+                  className="btn btn-light bg-light buttonmaps"
+                  className=""
+                >
+                  MAPS{" "}
+                </button>
+              </Link> */}
+                </div>{" "}
+              </div>
+            ) : (
+              <div>
+                <div className="d-block justify-content-evenly">
+                  <li className="nav-item">
+                    <Link to="/">
+                      {" "}
+                      <button type="button" className="btn buttonhome">
+                        INICIO{" "}
+                      </button>
+                    </Link>
+                  </li>
+
+                  <Link to="/editusuario">
+                    <button type="button" className="btn buttonhome">
+                      PERFIL{" "}
+                    </button>
+                  </Link>
+
+                  <li className="nav-item">
+                    {" "}
+                    <button
+                      onClick={() => {
+                        actions.logout();
+                        navigate("/");
+                      }}
+                      type="button"
+                      className="btn buttonhome"
+                    >
+                      CERRAR SESIÓN{" "}
+                    </button>
+                  </li>
+
+                  <div>
+                    <a
+                      className="link text-decoration-none colorinput"
+                      href=""
+                    ></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </ul>
         </div>
       </div>
     </nav>

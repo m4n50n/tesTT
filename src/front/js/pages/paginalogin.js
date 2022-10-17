@@ -24,7 +24,7 @@ export const Login = () => {
   const validate = (email, password) => {
     setErrorMessage("");
     if (!email.includes("@")) {
-      setErrorMessage("email is not correct");
+      setErrorMessage("El email no es correcto");
     }
   };
   return (

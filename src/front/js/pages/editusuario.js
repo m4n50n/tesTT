@@ -19,7 +19,7 @@ export const Editusuario = () => {
     if (!email.includes("@")) {
       alert("Email no válido");
     } else {
-      actions.editUser(email, name, phone, animals, avaiability, city);
+      actions.perfilusuario(email, name, phone, animals, avaiability, city);
     }
   };
 

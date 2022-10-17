@@ -15,7 +15,7 @@
 
 .wrapper .card {
   max-width: 300px;
-  min-height: 20px;
+  min-height: 15px;
   margin: 30px;
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -28,45 +28,7 @@
 
 .wrapper .card a {
   text-decoration: none;
-  color: #495969;
-}
-
-.wrapper .card a:hover {
-  color: rgba(221, 175, 36, 0.989);
-}
-
-.wrapper .card .input-field {
-  border-radius: 5px;
-  color: #495969;
-  padding: 0.3rem;
-}
-
-.wrapper .card .input-field input.form-control,
-.wrapper .card .input-field input.form-control:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
-  color: #495969;
-
-  /* color: #eee; */
-}
-
-.wrapper .card .input-field button.btn {
-  color: #495969;
-
-  /* color: #eee; */
-  padding: 0rem;
-  padding-right: 0.5rem;
-}
-
-.wrapper .card .input-field button.btn:hover {
-  color: #495969;
-}
-
-.wrapper .card .input-field button.btn:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
+  color: #66829d;
 }
 
 .wrapper .card .input-field input::placeholder {
@@ -83,14 +45,6 @@
 
 .wrapper .card .option span.text-light-white:hover {
   color: #495969;
-}
-
-.wrapper .card .option input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
 }
 
 .wrapper .card .option:hover input ~ .checkmark {
@@ -114,14 +68,6 @@
   height: 10px;
 }
 
-.wrapper .card .btn.btn-primary {
-  border-radius: 20px;
-  width: 100px;
-  background-color: #495969;
-  color: #333;
-  border: none;
-}
-
 .wrapper .card .btn.btn-primary:hover {
   color: #fff;
   background: #333;
@@ -130,20 +76,6 @@
 .wrapper .card .btn.btn-primary:focus {
   border: none;
   box-shadow: none;
-}
-
-.wrapper .card .text-light-white {
-  color: #495969;
-}
-.wrapper .card .line span.connect {
-  position: absolute;
-  top: -12px;
-  left: 33%;
-  color: #000;
-  padding: 0 0.3rem;
-  z-index: 100;
-  border-radius: 2px;
-  background-color: #495969;
 }
 
 .wrapper .card .connections a img {
@@ -157,17 +89,4 @@
   .wrapper .card .line:after {
     left: 27%;
   }
-}
-
-@media (max-width: 350px) {
-  .wrapper {
-    margin: 10px auto;
-  }
-
-  .wrapper .card {
-    margin: 10px;
-  }
-}
-.colortexto {
-  color: #fc00ff;
 }
