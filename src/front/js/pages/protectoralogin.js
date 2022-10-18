@@ -16,7 +16,7 @@ const Protectoralogin = () => {
     <>
       <div>
         <Link to="/formulariopets">
-          <button type="button" className="btn btn-outline-danger">
+          <button type="button" class="btn btn-warning" className="botonmascota">
             Registra tu mascota{" "}
           </button>
         </Link>

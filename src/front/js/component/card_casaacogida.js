@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
-import "../../styles/index.css";
+import "../../styles/protectoralogin.css";
 
 export function CasaAcogidaCard(props) {
   const { actions, store } = useContext(Context);
@@ -23,21 +23,18 @@ export function CasaAcogidaCard(props) {
         </div> */}
         <ul className="list-group list-group-flush">
           <li
-            className="list-group-item active text-break "
-            aria-current="true"
-          >
-            {props.pet.name}
+            className="ctitle list-group-item active text-break "
+            aria-current="true">  {props.pet.name}
           </li>
-          <li className="list-group-item text-break ">{props.pet.email}</li>
-          <li className="list-group-item text-break ">{props.pet.city}</li>
-          <li className="list-group-item text-break ">
-            {props.pet.avaiability}
+          <li className="list-group-item text-break ">Email:{props.pet.email}</li>
+          <li className="list-group-item text-break ">Ciudad:{props.pet.city}</li>
+          <li className="list-group-item text-break ">Disponibilidad:{props.pet.avaiability}
           </li>
-          <li className="list-group-item text-break ">{props.pet.animals}</li>
+          <li className="list-group-item text-break ">Animales:{props.pet.animals}</li>
         </ul>
 
-        <button type="button">
-          <Link to={"/contacto"}>¡Contacta con nosotros!</Link>{" "}
+        <button type="button"    className="bcontactanos">
+          <Link to={"/contacto"}> Contacta con nosotros </Link>{" "}
         </button>
       </div>
     </div>

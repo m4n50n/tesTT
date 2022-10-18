@@ -42,8 +42,8 @@ const Layout = () => {
           <Route element={<Perfilusuario />} path="/perfilusuario" />
           {/* <Route element={<Quienessomos />} path="/quienessomos" /> */}
           <Route element={<Protectoralogin />} path="/protectoralogin" />
-          <Route element={<Editusuario />} path="/editusuario" />
-          {/* <Route element={<CasaAcogidaCard />} path="/card_casaacogida" /> */}
+          <Route element={<Editusuario />} path="/editusuario" />np
+          {<Route element={<CasaAcogidaCard />} path="/card_casaacogida" />}
           {/* <Route element={<Card_protectora />} path="/card_protectora" /> */}
           <Route
             element={<Recuperacioncontrasena />}

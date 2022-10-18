@@ -9,7 +9,7 @@
   .buttoninicio  {
    align-items: left;
   }
-
+ 
   .buttonregi {
     text-align: center;
   }
@@ -17,3 +17,23 @@
 {
   text-align: left;
 }
+
+.ctitle{
+  background-color: rgb(187, 187, 58) !important;
+  color:rgb(48, 54, 95) !important
+  
+}
+
+.botonmascota{
+  background-color: darkkhaki;
+  color:#10467c; 
+  font:18px fantasy;
+  text-align-last: center;
+}
+
+.bcontactanos{
+ background-color: #dbb839 !important;
+ color: #dbb839 !important;
+ font: 18px fantasy;
+
+ }
