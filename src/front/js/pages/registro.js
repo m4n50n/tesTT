@@ -23,6 +23,7 @@ export const Registro = () => {
     e.preventDefault();
     if (
       email !== "" &&
+      // rol !== "" &&
       password !== "" &&
       name !== "" &&
       phone !== "" &&
@@ -34,9 +35,10 @@ export const Registro = () => {
         name,
         phone,
         city,
-        instagram,
         avaiability,
-        animals
+        instagram,
+        animals,
+        rol
       );
       setLogin("Gracias por registrarte en Kodu");
       if (localStorage.getItem("rol") == 1) {
@@ -52,7 +54,7 @@ export const Registro = () => {
   const validate = (email) => {
     setErrorMessage("");
     if (!email.includes("@")) {
-      setErrorMessage("email is not correct");
+      setErrorMessage("El email no es correcto");
     }
   };
 
@@ -80,7 +82,9 @@ export const Registro = () => {
                   localStorage.setItem("rol", [e.target.value]);
                 }}
               >
-                <option disabled>Seleccione una opción</option>
+                <option disabled selected>
+                  Seleccione una opción
+                </option>
                 {store.roles.map((value, index) => {
                   return (
                     <option className="opcionrol" key={index} value={value.id}>

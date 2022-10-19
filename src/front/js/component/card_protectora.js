@@ -30,16 +30,16 @@ export function Card_protectora(props) {
             <b>Email:</b> {props.organizacion.email}
           </li>
           <li className="list-group-item">
-            {" "}
-            <b>Instagram:</b> {props.organizacion.instagram}
-          </li>
-          <li className="list-group-item">
             <b> Ciudad:</b>
             {props.organizacion.city}
           </li>
           <li className="list-group-item">
             <b>Teléfono:</b>
             {props.organizacion.phone}
+          </li>
+          <li className="list-group-item">
+            {" "}
+            <b>Instagram:</b> {props.organizacion.instagram}
           </li>
         </ul>
         {/* <button type="button" className="btn btn-warning botoncontacto">

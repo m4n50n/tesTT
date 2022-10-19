@@ -5,11 +5,7 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    rgba(248, 245, 156, 0.989),
-    rgba(242, 238, 116, 0.989)
-  );
+  background-color: rgba(248, 245, 156, 0.989);
 }
 .titulocontrasena {
   color: #66829d;

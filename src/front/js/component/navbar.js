@@ -2,116 +2,130 @@ import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/index.css";
-// import Homeppet from "../../img/Homeppet.png";
-// import Logorojo from "../../img/Logorojo.png";
-import Logoperros from "../../img/Logoperros.png";
-import Texto from "../../img/texto.png";
+import Logonombre from "../../img/Logonombre.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   return (
-    <div className="navbar-brand colornavbar">
-      <div className="row menu align-items-center">
-        <div className="col-2">
-          <div className="m-l-20 d-flex">
-            <Link to="/">
-              <img
-                className="m-r-10 logofoto"
-                style={{ width: "120px" }}
-                src={Logoperros}
-                alt="logo"
-              />
-            </Link>
+    <nav className="navbar navbar-expand-lg colornavbar">
+      <div className="container-fluid ">
+        <div className="navbar-brand">
+          <Link to="/">
             <img
-              className="textologo"
-              style={{ width: "120px" }}
-              src={Texto}
-              alt="texto"
+              className="m-r-10 logofoto"
+              style={{ width: "175px" }}
+              src={Logonombre}
+              alt="logo"
             />
-          </div>
+          </Link>
         </div>
-        {!store.isAuthenticate ? (
-          <div className="col-10 ">
-            <div className="d-flex justify-content-evenly">
-              <div className="align-items-start">
-                <Link to="/">
-                  {" "}
-                  <button type="button" className="btn buttonhome">
-                    INICIO{" "}
-                  </button>
-                </Link>
-              </div>
-              <div className="align-items-center">
-                <Link to="/register">
-                  <button type="button" className="btn buttonhome">
-                    REGISTRATE{" "}
-                  </button>
-                </Link>
-              </div>
-              <div className="align-items-center">
-                <Link to="/login">
-                  <button type="button" className="btn buttonhome">
-                    LOGIN{" "}
-                  </button>
-                </Link>
-              </div>
-              <div>
-                <a className="link-dark text-decoration-none" href=""></a>
-              </div>
-              <div className="align-items-end">
-                {/* <Link to="/maps">
+        <button
+          className="navbar-toggler "
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-text">
+            <i className="fas fa-bars"></i>
+          </span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {!store.isAuthenticate ? (
+              <>
+                <li className="nav-item text-end">
+                  <Link type="button" className="btn  buttonhome" to="/">
+                    INICIO
+                  </Link>
+                </li>
+                <li className="nav-item text-end">
+                  <Link to="/register">
+                    <button type="button" className="btn buttonhome">
+                      REGISTRATE{" "}
+                    </button>
+                  </Link>
+                </li>
+                <li className="nav-item text-end">
+                  <Link to="/login">
+                    <button type="button" className="btn buttonhome">
+                      LOGIN{" "}
+                    </button>
+                  </Link>
+                </li>
+                <div>
+                  <a className=" text-decoration-none" href=""></a>
+                </div>
+                {/* <div className="nav-item">
+                  {/* <Link to="/maps">
                 {" "}
                 <button
                   type="button"
                   className="btn btn-light bg-light buttonmaps"
-                  class=""
+                  className=""
                 >
                   MAPS{" "}
                 </button>
-              </Link> */}
-              </div>{" "}
-            </div>
-          </div>
-        ) : (
-          <div className="col-10">
-            <div className="d-flex justify-content-evenly">
-              <div className="align-items-start">
-                <Link to="/">
-                  {" "}
-                  <button type="button" className="btn buttonhome">
-                    INICIO{" "}
-                  </button>
-                </Link>
-              </div>
+              </Link> 
+                </div>*/}
+              </>
+            ) : (
+              <>
+                <div className="d-block justify-content-evenly">
+                  <li className="nav-item text-end">
+                    {localStorage.getItem("rol") === 1 ? (
+                      <Link to="/protectoralogin">
+                        {" "}
+                        <button type="button" className="btn buttonhome">
+                          INICIO{" "}
+                        </button>
+                      </Link>
+                    ) : (
+                      <Link to="/casaacogida">
+                        {" "}
+                        <button type="button" className="btn buttonhome">
+                          INICIO{" "}
+                        </button>
+                      </Link>
+                    )}
+                  </li>
+                  <li className="nav-item text-end">
+                    <Link to="/editusuario">
+                      <button type="button" className="btn buttonhome">
+                        PERFIL{" "}
+                      </button>
+                    </Link>
+                  </li>
+                  <li className="nav-item text-end">
+                    {" "}
+                    <button
+                      onClick={() => {
+                        actions.logout();
+                        navigate("/");
+                      }}
+                      type="button"
+                      className="btn buttonhome"
+                    >
+                      CERRAR SESIÓN{" "}
+                    </button>
+                  </li>
 
-              <Link to="/editusuario">
-                <button type="button" className="btn buttonhome">
-                  Perfil{" "}
-                </button>
-              </Link>
-
-              <div className="align-items-start">
-                {" "}
-                <button
-                  onClick={() => {
-                    actions.logout();
-                    navigate("/");
-                  }}
-                  type="button"
-                  className="btn buttonhome"
-                >
-                  Cerrar sesión{" "}
-                </button>
-              </div>
-
-              <div>
-                <a className="link-dark text-decoration-none" href=""></a>
-              </div>
-            </div>
-          </div>
-        )}
+                  <div>
+                    <a
+                      className="link text-decoration-none colorinput"
+                      href=""
+                    ></a>
+                  </div>
+                </div>
+              </>
+            )}
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };

@@ -10,7 +10,7 @@ const Protectoralogin = () => {
 
   useEffect(() => {
     actions.listaCasaAcogida();
-  }, []);
+  }, [store.isAuthenticate]);
   console.log(store.casaacogida_list);
   return (
     <>

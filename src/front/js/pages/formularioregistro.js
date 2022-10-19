@@ -59,10 +59,6 @@ export const Registro = () => {
     }
   };
 
-  useEffect(() => {
-    actions.roles();
-  }, []);
-
   return (
     <div className="form-group formregister">
       <div className="container-fluid bodyregistro">
@@ -80,12 +76,13 @@ export const Registro = () => {
                   value={rol}
                   onChange={(e) => setRol(e.target.value)}
                 >
-                  <option disabled>Seleccione una opción</option>
                   {store.roles.map((value, index) => {
                     return (
-                      <option key={index} value={value.id}>
-                        {value.name}
-                      </option>
+                      <>
+                        <option value={value.id} key={index}>
+                          {value.name}
+                        </option>
+                      </>
                     );
                   })}
                 </select>
