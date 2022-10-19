@@ -77,12 +77,21 @@ export const Navbar = () => {
               <>
                 <div className="d-block justify-content-evenly">
                   <li className="nav-item text-end">
-                    <Link to="/">
-                      {" "}
-                      <button type="button" className="btn buttonhome">
-                        INICIO{" "}
-                      </button>
-                    </Link>
+                    {localStorage.getItem("rol") === 1 ? (
+                      <Link to="/protectoralogin">
+                        {" "}
+                        <button type="button" className="btn buttonhome">
+                          INICIO{" "}
+                        </button>
+                      </Link>
+                    ) : (
+                      <Link to="/casaacogida">
+                        {" "}
+                        <button type="button" className="btn buttonhome">
+                          INICIO{" "}
+                        </button>
+                      </Link>
+                    )}
                   </li>
                   <li className="nav-item text-end">
                     <Link to="/editusuario">

@@ -27,10 +27,10 @@ def login():
             # return jsonify({"msg": "usuario correcto", "loged": True, "organizacion": organizacion.serialize()})
 
             token = create_access_token(identity=organizacion.id)
-            return jsonify({"msg": "usuario correcto", "loged": True, "token": token, "organizacion": organizacion.serialize()})
+            return jsonify({"msg": "usuario correcto", "loged": True, "token": token, "organizacion": organizacion.serialize()}), 200
 
     else:
-        return jsonify({"msg": "usuario incorrecto", "loged": False})
+        return jsonify({"msg": "usuario incorrecto", "loged": False}), 400
     # else:
     # return jsonify({"msg": "contraseña incorrecta", "loged": False})
 

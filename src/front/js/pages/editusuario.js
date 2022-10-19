@@ -6,7 +6,7 @@ import "../../styles/editusuario.css";
 export const Editusuario = () => {
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(store.organizacion.email);
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [avaiability, setAvaiability] = useState("");
