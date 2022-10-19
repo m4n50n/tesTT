@@ -1,3 +1,18 @@
+
+
+.body{
+   background-color:endeded;
+}
+
+.home{
+  display:flex
+}
+
+.in-flex{
+  flex: 1;
+}
+
+
 .protectoraocasa {
     color: #495969;
   }
@@ -33,7 +48,12 @@
 
 .bcontactanos{
  background-color: #dbb839 !important;
- color: #dbb839 !important;
+ color:whitesmoke!important;
  font: 18px fantasy;
+
+ }
+
+ .card-border{
+  border: solid #2e74e3 10px;
 
  }

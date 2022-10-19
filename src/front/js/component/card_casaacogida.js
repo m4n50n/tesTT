@@ -13,7 +13,7 @@ export function CasaAcogidaCard(props) {
   return (
     <div className="col-3">
       <div className="card" style={{ width: "18rem" }} />
-      <div className="card-body">
+      <div className="card-body card-border">
         {/* <div>
           <input
             type="file"
@@ -32,10 +32,11 @@ export function CasaAcogidaCard(props) {
           </li>
           <li className="list-group-item text-break ">Animales:{props.pet.animals}</li>
         </ul>
-
-        <button type="button"    className="bcontactanos">
-          <Link to={"/contacto"}> Contacta con nosotros </Link>{" "}
-        </button>
+        <Link to={"/contacto"}> 
+          <button type="button" className="bcontactanos">
+           Contacta con nosotros {" "}
+           </button>
+        </Link>
       </div>
     </div>
   );
