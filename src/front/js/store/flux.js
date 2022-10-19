@@ -55,9 +55,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("rol", data.organizacion.rol);
-            // console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
+            getActions().listaCasaAcogida();
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);
@@ -186,7 +186,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           method: "GET",
           headers: {
             "Content-type": "application/json",
-            Authorization: "Bearer " + localStorage.getItem("token"),
           },
         })
           .then((resp) => {
@@ -201,20 +200,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      organizacion: (email, avaiability, name, phone, city, animals) => {
+      getorganizacion: () => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/organizacion", {
           method: "GET",
-          body: JSON.stringify({
-            email: email,
-            name: name,
-            animals: animals,
-            avaiability: avaiability,
-            phone: phone,
-            city: city,
-          }),
           headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-type": "application/json",
           },
         })
@@ -224,9 +216,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("rol", data.organizacion.rol);
-            // console.log(data);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
@@ -240,22 +229,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ isAuthenticate: false, organizacion: {} });
       },
 
-      perfilusuario: (email, password, name, phone, city, rol) => {
+      perfilusuario: (email, name, phone, animals, avaiability, city) => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
           method: "PUT",
           body: JSON.stringify({
             email: email,
-            password: password,
             name: name,
             animals: animals,
-            aviability: aviability,
+            avaiability: avaiability,
             phone: phone,
             city: city,
-            rol: rol,
           }),
           headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
             "Content-type": "application/json",
           },
         })
@@ -265,10 +253,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
           })
           .then((data) => {
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("rol", data.organizacion.rol);
-            // console.log(data);
-            setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
           })
           .catch((error) => {
@@ -324,7 +308,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      organizacion: () => {
+      editorganizacion: () => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/editusuario", {

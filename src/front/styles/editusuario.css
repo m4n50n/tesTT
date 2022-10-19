@@ -11,7 +11,7 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #000428, #004683);
+  background-color: rgba(248, 245, 156, 0.989);
 }
 
 .wrapper {
@@ -190,7 +190,7 @@ body {
   align-items: center;
   color: #fff;
   border-radius: 6px;
-  box-shadow: 0 5px 30px #004683e0;
+  box-shadow: 0 5px 30px #66829d;
   transition: 0.5s;
   overflow: hidden;
 }

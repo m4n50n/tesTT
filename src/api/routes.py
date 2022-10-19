@@ -27,10 +27,10 @@ def login():
             # return jsonify({"msg": "usuario correcto", "loged": True, "organizacion": organizacion.serialize()})
 
             token = create_access_token(identity=organizacion.id)
-            return jsonify({"msg": "usuario correcto", "loged": True, "token": token, "organizacion": organizacion.serialize()})
+            return jsonify({"msg": "usuario correcto", "loged": True, "token": token, "organizacion": organizacion.serialize()}), 200
 
     else:
-        return jsonify({"msg": "usuario incorrecto", "loged": False})
+        return jsonify({"msg": "usuario incorrecto", "loged": False}), 400
     # else:
     # return jsonify({"msg": "contraseña incorrecta", "loged": False})
 
@@ -43,27 +43,38 @@ def registro():
     phone = request.json.get("phone")
     name = request.json.get("name")
     rol = request.json.get("rol")
+    instagram = request.json.get("instagram")
+    avaiability = request.json.get("avaiability")
+    animals = request.json.get("animals")
 
     print(email)
+    print(password)
+    print(name)
+    print(city)
+    print(phone)
+    print(rol)
     if email and password and city and phone and name and rol:
+        print(11111111111111111111)
         if Organizacion.query.filter_by(email=email).first() == None:
-
+            print(222222222222)
             rol_id = db.session.query(Rol).filter_by(id=rol).first()
+            print("@@@@@@@@@@@@@")
+            print()
 
-    if email and password and city and phone and name and rol_id:
-        if Organizacion.query.filter_by(email=email).first() == None:
+            if email and password and city and phone and name and rol_id:
+                if Organizacion.query.filter_by(email=email).first() == None:
 
-            organizacion = Organizacion(
-                email=email, password=password, city=city, phone=phone, name=name, rol=rol_id)
+                    organizacion = Organizacion(
+                        email=email, password=password, city=city, phone=phone, name=name, rol=rol_id)
 
-            db.session.add(organizacion)
-            db.session.commit()
-            token = create_access_token(identity=organizacion.id)
-            return jsonify({"organizacion": organizacion.serialize(), "loged": True, "token": token})
+                    db.session.add(organizacion)
+                    db.session.commit()
+                    token = create_access_token(identity=organizacion.id)
+                    return jsonify({"organizacion": organizacion.serialize(), "loged": True, "token": token}), 200
         else:
-            return jsonify({"msg": "este usuario ya existe", "loged": False})
+            return jsonify({"msg": "este usuario ya existe", "loged": False}), 400
     else:
-        return jsonify({"msg": "usuario no creado, revisa la información", "loged": False})
+        return jsonify({"msg": "usuario no creado, revisa la información", "loged": False}), 400
 
 
 @api.route('/roles', methods=['GET'])
@@ -176,7 +187,7 @@ def perfilusuario():
     return jsonify(response), 200
 
 
-@api.route('/edituser', methods=['PUT'])
+@api.route('/perfilusuario', methods=['PUT'])
 @jwt_required()
 def edituser():
     email = request.json.get("email", None)
@@ -206,11 +217,9 @@ def edituser():
 @api.route('/organizacion', methods=['GET'])
 @jwt_required()
 def organizacion():
-    try:
-
-        organizacion_id = get_jwt_identity()
-        organizacion = Organizacion.query.filter_by(id=organizacion_id).first()
-
+    organizacion_id = get_jwt_identity()
+    organizacion = Organizacion.query.filter_by(id=organizacion_id).first()
+    if organizacion:
         response = {
             "organizacion": organizacion.serialize(),
 
@@ -218,18 +227,13 @@ def organizacion():
 
         }
         return jsonify(response), 200
-
-    except Exception as error:
-
-        return jsonify(f"message error: {error}"), 401
+    else:
+        return jsonify({"msg": "Inicie sesión", "loged": False}), 401
 
 
 @api.route('/card_casaacogida', methods=['GET'])
-@jwt_required()
 def listaCasaAcogida():
     try:
-
-        organizacion_id = get_jwt_identity()
         organizacion = Organizacion.query.filter_by(rol_id=2)
         casas_list = list(
             map(lambda organizacion: organizacion.serialize(), organizacion))
