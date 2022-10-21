@@ -43,10 +43,14 @@ export const Registro = () => {
       );
       setLogin("Gracias por registrarte en Kodu");
       if (localStorage.getItem("rol") == 1) {
-        swal("Hello world!");
+        swal(
+          "¡Bienvenid@ a Kodu! Aquí podrás publicar las mascotas que necesiten un hogar y contactar con las casas de acogida. "
+        );
         navigate("/protectoralogin");
       } else if (localStorage.getItem("rol") == 2) {
-        swal("Hello world!");
+        swal(
+          "¡Bienvenid@ a Kodu! No pierdas tiempo y contacta con la protectora para ofrecerles tu servicios de acogida de algún animal que encuentres en esta página "
+        );
         navigate("/casaacogida");
       }
     } else {

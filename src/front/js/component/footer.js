@@ -15,7 +15,7 @@ export const Footer = () => (
 
         <div className="col-xs-12 col-md-6 text-right">
           <h6 className="d-flex justify-content-center kodutexto">
-            ENCUENTRANOS EN LAS REDES
+            ENCUÉNTRANOS EN LAS REDES
           </h6>
           <div className="redes-footer d-flex justify-content-center h5">
             <a href="https://www.instagram.com/" className="m-3">

@@ -10,9 +10,9 @@ export function Cardperros(props) {
     actions.pet_list();
   }, []);
   return (
-    <div className="container-fluid">
+    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 rounded bodypet">
       <div
-        className="card"
+        className="col ml-5"
         style={{
           width: "18rem",
           backgroundColor: "transparent",
@@ -41,7 +41,10 @@ export function Cardperros(props) {
             {props.pet.sexo}
           </li>
         </ul>
-        <button type="button" className="btn btn-warning botoncontacto">
+        <button
+          type="button"
+          className="btn btn-warning text-align:center mt-3"
+        >
           <Link to={"/contacto"}>¡Contacta con la protectora!</Link>{" "}
         </button>
       </div>

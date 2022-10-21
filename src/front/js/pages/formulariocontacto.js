@@ -34,7 +34,7 @@ export const Contacto = () => {
   return (
     <>
       <form className="formulariocontacto" ref={form} onSubmit={sendEmail}>
-        <div className="container containercontacto">
+        <div className="container containercontacto mb-6">
           <div className="card cardcontacto">
             <div className="top-div contactodiv mensaje">
               <h5>
