@@ -22,6 +22,12 @@
   font-size: large;
   font-family: fantasy;
 }
+.nav-item :hover {
+  color: rgba(221, 175, 36, 0.989);
+}
+.navbar-toggler {
+  color: rgba(221, 175, 36, 0.989);
+}
 .footer {
   background: rgba(221, 175, 36, 0.989);
   padding: 1em 0;
@@ -161,4 +167,15 @@ footer {
 
 a img:hover {
   color: #fff;
+}
+a {
+  color: #66829d;
+}
+.kodutexto {
+  font-family: fantasy;
+  color: rgba(248, 245, 156, 0.989);
+  font-size: larger;
+}
+.resumen {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

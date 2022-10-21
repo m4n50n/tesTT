@@ -47,19 +47,10 @@ def registro():
     avaiability = request.json.get("avaiability")
     animals = request.json.get("animals")
 
-    print(email)
-    print(password)
-    print(name)
-    print(city)
-    print(phone)
-    print(rol)
     if email and password and city and phone and name and rol:
         print(11111111111111111111)
         if Organizacion.query.filter_by(email=email).first() == None:
-            print(222222222222)
             rol_id = db.session.query(Rol).filter_by(id=rol).first()
-            print("@@@@@@@@@@@@@")
-            print()
 
             if email and password and city and phone and name and rol_id:
                 if Organizacion.query.filter_by(email=email).first() == None:
@@ -198,6 +189,7 @@ def edituser():
     name = request.json.get("name")
     avaiability = request.json.get("avaiability")
     animals = request.json.get("animals")
+    instagram = request.json.get("instagram")
 
     print(email)
     organizacion_id = get_jwt_identity()
@@ -209,6 +201,7 @@ def edituser():
     organizacion.avaiability = avaiability
     organizacion.phone = phone
     organizacion.animals = animals
+    organizacion.instagram = instagram
     db.session.commit()
 
     return jsonify({"msg": "usuario modificado", "organizacion": organizacion.serialize()})
@@ -228,7 +221,7 @@ def organizacion():
         }
         return jsonify(response), 200
     else:
-        return jsonify({"msg": "Inicie sesión", "loged": False}), 401
+        return jsonify({"msg": "Inicie sesión", "loged": False}), 422
 
 
 @api.route('/card_casaacogida', methods=['GET'])

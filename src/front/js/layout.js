@@ -14,11 +14,10 @@ import injectContext from "./store/appContext";
 import { Contacto } from "./pages/formulariocontacto";
 import { Navbar } from "./component/navbar";
 import { Registro } from "./pages/registro";
+import { Perfilprotectora } from "./pages/perfilprotectora";
 
 import { FormularioPets } from "./component/formulariopets";
 import { Perfilusuario } from "./pages/perfilusuario";
-import { Card_protectora } from "./component/card_protectora";
-import { CasaAcogidaCard } from "./component/card_casaacogida";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -38,18 +37,15 @@ const Layout = () => {
           <Route element={<Login />} path="/login" />
           <Route element={<Registro />} path="/register" />
           <Route element={<Contacto />} path="/contacto" />
-          {/* <Route element={<Organizacion />} path="/organizacion" /> */}
           <Route element={<Perfilusuario />} path="/perfilusuario" />
+          <Route element={<Perfilprotectora />} path="/perfilprotectora" />
           {/* <Route element={<Quienessomos />} path="/quienessomos" /> */}
           <Route element={<Protectoralogin />} path="/protectoralogin" />
           <Route element={<Editusuario />} path="/editusuario" />
-          {/* <Route element={<CasaAcogidaCard />} path="/card_casaacogida" /> */}
-          {/* <Route element={<Card_protectora />} path="/card_protectora" /> */}
           <Route
             element={<Recuperacioncontrasena />}
             path="/recuperacioncontrasena"
           />
-          j
           <Route element={<Casaacogida />} path="/casaacogida" />
           <Route element={<FormularioPets />} path="/formulariopets" />
           <Route element={<Single />} path="/single/:theid" />

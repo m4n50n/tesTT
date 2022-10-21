@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Footer } from "../component/footer";
 import Fotopet from "../../img/Fotopet.png";
+import Mapa from "../component/maps";
 
 import "../../styles/index.css";
 

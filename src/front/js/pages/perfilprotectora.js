@@ -3,17 +3,14 @@ import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/editusuario.css";
 
-export const Editusuario = () => {
+export const Perfilprotectora = () => {
   const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
   const [email, setEmail] = useState(store.organizacion.email);
   const [phone, setPhone] = useState(store.organizacion.phone);
   const [city, setCity] = useState(store.organizacion.city);
-  const [avaiability, setAvaiability] = useState(
-    store.organizacion.avaiability
-  );
+  const [instagram, setInstagram] = useState(store.organizacion.Instagram);
   const [errorMessage, setErrorMessage] = useState("");
-  const [animals, setAnimals] = useState(store.organizacion.animals);
   const [disabledinput, setDisabledinput] = useState(true);
 
   useEffect(() => {
@@ -24,22 +21,21 @@ export const Editusuario = () => {
     if (!email.includes("@")) {
       alert("Email no válido");
     } else {
-      actions.perfilusuario(email, name, phone, animals, avaiability, city);
+      actions.perfilprotectora(email, name, phone, instagram, city);
       setDisabledinput(true);
     }
   };
   const defaultState = async () => {
     setPhone(store.organizacion.phone);
     setEmail(store.organizacion.email);
-    setAvaiability(store.organizacion.avaiability);
-    setAnimals(store.organizacion.animals);
+    setInstagram(store.organizacion.instagram);
     setCity(store.organizacion.city);
   };
   return (
     <div className="wrapper">
       <fieldset disabled={!disabledinput ? false : true}>
         <div className="h5 font-weight-bold text-center mb-3">
-          Perfil casa de acogida
+          Perfil protectora
         </div>
         <div className="form-group d-flex align-items-center">
           <div className="icon">
@@ -67,26 +63,14 @@ export const Editusuario = () => {
         </div>
         <div className="form-group d-flex align-items-center">
           <div className="icon">
-            <span className="fa fa-calendar"></span>
+            <span className="fab fa-instagram"></span>
           </div>
           <input
             type="text"
-            defaultValue={store.organizacion.avaiability}
-            onChange={(e) => setAvaiability(e.target.value)}
+            defaultValue={store.organizacion.instagram}
+            onChange={(e) => setInstagram(e.target.value)}
             className="form-control"
-            placeholder="Disponibilidad de acogida"
-          />
-        </div>
-        <div className="form-group d-flex align-items-center">
-          <div className="icon">
-            <span className="fa fa-paw"></span>
-          </div>
-          <input
-            type="text"
-            defaultValue={store.organizacion.animals}
-            onChange={(e) => setAnimals(e.target.value)}
-            className="form-control"
-            placeholder="¿Convives con más animales?"
+            placeholder="Instagram"
           />
         </div>
         <div className="form-group d-flex align-items-center">

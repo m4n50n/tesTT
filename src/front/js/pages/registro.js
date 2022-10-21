@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 import "../../styles/register.css";
 
@@ -42,8 +43,10 @@ export const Registro = () => {
       );
       setLogin("Gracias por registrarte en Kodu");
       if (localStorage.getItem("rol") == 1) {
+        swal("Hello world!");
         navigate("/protectoralogin");
       } else if (localStorage.getItem("rol") == 2) {
+        swal("Hello world!");
         navigate("/casaacogida");
       }
     } else {
@@ -82,7 +85,7 @@ export const Registro = () => {
                   localStorage.setItem("rol", [e.target.value]);
                 }}
               >
-                <option disabled selected>
+                <option disabled selected value="">
                   Seleccione una opción
                 </option>
                 {store.roles.map((value, index) => {
@@ -128,7 +131,7 @@ export const Registro = () => {
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Contraseña"
               />
