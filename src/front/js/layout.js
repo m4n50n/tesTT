@@ -34,6 +34,7 @@ const Layout = () => {
         <Navbar />
         <Routes>
           <Route element={<Home />} path="/" />
+          
           <Route element={<Demo />} path="/demo" />
           <Route element={<Login />} path="/login" />
           <Route element={<Registro />} path="/register" />
@@ -49,7 +50,7 @@ const Layout = () => {
             element={<Recuperacioncontrasena />}
             path="/recuperacioncontrasena"
           />
-          j
+          
           <Route element={<Casaacogida />} path="/casaacogida" />
           <Route element={<FormularioPets />} path="/formulariopets" />
           <Route element={<Single />} path="/single/:theid" />

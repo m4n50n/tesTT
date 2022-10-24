@@ -5,7 +5,15 @@
 }
 
 .home{
-  display:flex
+  display:grid; 
+}
+
+.responsiv{
+  display: grid;
+  min-height: 600px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-right: 50px;
 }
 
 .in-flex{
@@ -48,12 +56,47 @@
 
 .bcontactanos{
  background-color: #dbb839 !important;
- color:whitesmoke!important;
+ color:whitesmoke;
  font: 18px fantasy;
-
+ width:205px;
  }
 
  .card-border{
-  border: solid #2e74e3 10px;
+  border: solid #dead31dd 10px;
+  height:250px; 
+  flex: 1;
 
+
+ 
+ }
+
+ .titlecard{
+  font-family: 'Merriweather', serif;
+  font:18px fantasy;
+
+ }
+
+ .emailcard{
+  font-family: 'Merriweather', serif;
+  font: 14px fantasy;
+
+ }
+
+ .ciudadcard{
+  font-family: 'Merriweather', serif;
+  font: 14px fantasy;
+ }
+
+ .dispcard{
+  font-family: 'Merriweather', serif;
+  font: 14px fantasy;
+ }
+
+ .animalcard{
+  font-family: 'Merriweather', serif;
+  font: 14px fantasy;
+ }
+
+ .cardrespo{
+  flex:1;
  }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Footer } from "../component/footer";
 import Fotopet from "../../img/Fotopet.png";
+import Maps from "../../js/component/maps";
 
 import "../../styles/index.css";
 
@@ -28,6 +29,9 @@ export const Home = () => {
           </div>
         </div>
       </div>
+      
+      <h1> Mappa</h1>
+      <Maps location={location} zoom={18} />
 
       {/* <div>
         <Footer />;

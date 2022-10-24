@@ -11,7 +11,7 @@ export function CasaAcogidaCard(props) {
   }, []);
 
   return (
-    <div className="col-3">
+    <div className="">
       <div className="card" style={{ width: "18rem" }} />
       <div className="card-body card-border">
         {/* <div>
@@ -21,16 +21,17 @@ export function CasaAcogidaCard(props) {
             onChange={(e) => setPhot(e.target.photo)}
           />
         </div> */}
-        <ul className="list-group list-group-flush">
+        <ul className="list-group list-group-flush ">
           <li
-            className="ctitle list-group-item active text-break "
+            className="ctitle list-group-item active text-break titlecard "
             aria-current="true">  {props.pet.name}
           </li>
-          <li className="list-group-item text-break ">Email:{props.pet.email}</li>
-          <li className="list-group-item text-break ">Ciudad:{props.pet.city}</li>
-          <li className="list-group-item text-break ">Disponibilidad:{props.pet.avaiability}
+          <li className="list-group-item text-break emailcard ">Email:{props.pet.email}</li>
+          <li className="list-group-item text-break ciudadcard ">Ciudad:{props.pet.city}</li>
+          <li className="list-group-item text-break dispcard">Disponibilidad:{props.pet.avaiability}
           </li>
-          <li className="list-group-item text-break ">Animales:{props.pet.animals}</li>
+          <li className="list-group-item text-break animalcard ">Animales:{props.pet.animals}
+          </li>
         </ul>
         <Link to={"/contacto"}> 
           <button type="button" className="bcontactanos">

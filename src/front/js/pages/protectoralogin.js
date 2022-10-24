@@ -22,7 +22,7 @@ const Protectoralogin = () => {
         </Link>
         <div />
 
-        <div className="row">
+        <div className="responsiv cardrespo">
           {store.casaacogida_list.map((organizacion) => {
             return <CasaAcogidaCard key={organizacion.id} pet={organizacion} />;
           })}
