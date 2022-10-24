@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
-import "../../styles/index.css";
+import "../../styles/protectoralogin.css";
 
 export function CasaAcogidaCard(props) {
   const { actions, store } = useContext(Context);
@@ -11,9 +11,9 @@ export function CasaAcogidaCard(props) {
   }, []);
 
   return (
-    <div className="col-3">
+    <div className="">
       <div className="card" style={{ width: "18rem" }} />
-      <div className="card-body">
+      <div className="card-body card-border">
         {/* <div>
           <input
             type="file"
@@ -21,24 +21,23 @@ export function CasaAcogidaCard(props) {
             onChange={(e) => setPhot(e.target.photo)}
           />
         </div> */}
-        <ul className="list-group list-group-flush">
+        <ul className="list-group list-group-flush ">
           <li
-            className="list-group-item active text-break "
-            aria-current="true"
-          >
-            {props.pet.name}
+            className="ctitle list-group-item active text-break titlecard "
+            aria-current="true">  {props.pet.name}
           </li>
-          <li className="list-group-item text-break ">{props.pet.email}</li>
-          <li className="list-group-item text-break ">{props.pet.city}</li>
-          <li className="list-group-item text-break ">
-            {props.pet.avaiability}
+          <li className="list-group-item text-break emailcard ">Email:{props.pet.email}</li>
+          <li className="list-group-item text-break ciudadcard ">Ciudad:{props.pet.city}</li>
+          <li className="list-group-item text-break dispcard">Disponibilidad:{props.pet.avaiability}
           </li>
-          <li className="list-group-item text-break ">{props.pet.animals}</li>
+          <li className="list-group-item text-break animalcard ">Animales:{props.pet.animals}
+          </li>
         </ul>
-
-        <button type="button">
-          <Link to={"/contacto"}>¡Contacta con nosotros!</Link>{" "}
-        </button>
+        <Link to={"/contacto"}> 
+          <button type="button" className="bcontactanos">
+           Contacta con nosotros {" "}
+           </button>
+        </Link>
       </div>
     </div>
   );

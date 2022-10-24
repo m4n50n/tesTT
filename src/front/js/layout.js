@@ -34,6 +34,7 @@ const Layout = () => {
         <Navbar />
         <Routes>
           <Route element={<Home />} path="/" />
+          
           <Route element={<Demo />} path="/demo" />
           <Route element={<Login />} path="/login" />
           <Route element={<Registro />} path="/register" />
@@ -42,14 +43,14 @@ const Layout = () => {
           <Route element={<Perfilusuario />} path="/perfilusuario" />
           {/* <Route element={<Quienessomos />} path="/quienessomos" /> */}
           <Route element={<Protectoralogin />} path="/protectoralogin" />
-          <Route element={<Editusuario />} path="/editusuario" />
-          {/* <Route element={<CasaAcogidaCard />} path="/card_casaacogida" /> */}
+          <Route element={<Editusuario />} path="/editusuario" />np
+          {<Route element={<CasaAcogidaCard />} path="/card_casaacogida" />}
           {/* <Route element={<Card_protectora />} path="/card_protectora" /> */}
           <Route
             element={<Recuperacioncontrasena />}
             path="/recuperacioncontrasena"
           />
-          j
+          
           <Route element={<Casaacogida />} path="/casaacogida" />
           <Route element={<FormularioPets />} path="/formulariopets" />
           <Route element={<Single />} path="/single/:theid" />
