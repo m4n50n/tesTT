@@ -213,6 +213,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((resp) => {
             if (resp.ok) {
               return resp.json();
+            } else if (resp.status == 422) {
+              return resp.json();
             }
           })
           .then((data) => {
@@ -262,6 +264,35 @@ const getState = ({ getStore, getActions, setStore }) => {
       logout: () => {
         localStorage.clear();
         setStore({ isAuthenticate: false, organizacion: {} });
+      },
+      perfilprotectora: (email, name, phone, instagram, city) => {
+        const store = getStore();
+
+        fetch(process.env.BACKEND_URL + "/api/perfilusuario", {
+          method: "PUT",
+          body: JSON.stringify({
+            email: email,
+            name: name,
+            instagram: instagram,
+            phone: phone,
+            city: city,
+          }),
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+            "Content-type": "application/json",
+          },
+        })
+          .then((resp) => {
+            if (resp.ok) {
+              return resp.json();
+            }
+          })
+          .then((data) => {
+            setStore({ organizacion: data.organizacion });
+          })
+          .catch((error) => {
+            console.error("[ERROR IN LOGIN]", error);
+          });
       },
       pet_list: () => {
         const store = getStore();

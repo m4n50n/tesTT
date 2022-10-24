@@ -94,11 +94,20 @@ export const Navbar = () => {
                     )}
                   </li>
                   <li className="nav-item text-end">
-                    <Link to="/editusuario">
-                      <button type="button" className="btn buttonhome">
-                        PERFIL{" "}
-                      </button>
-                    </Link>
+                    {store.organizacion.rol == 1 ? (
+                      <Link to="/perfilprotectora">
+                        <button type="button" className="btn buttonhome">
+                          PERFIL{" "}
+                        </button>
+                      </Link>
+                    ) : null}
+                    {store.organizacion.rol == 2 ? (
+                      <Link to="/editusuario">
+                        <button type="button" className="btn buttonhome">
+                          PERFIL{" "}
+                        </button>
+                      </Link>
+                    ) : null}
                   </li>
                   <li className="nav-item text-end">
                     {" "}

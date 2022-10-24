@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Cardperros } from "../component/card_pet";
 import { Card_protectora } from "../component/card_protectora";
 
-import "../../styles/index.css";
+import "../../styles/casaacogida.css";
 
 const CasaAcogida = () => {
   const { actions, store } = useContext(Context);
