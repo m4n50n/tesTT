@@ -30,9 +30,6 @@ export const Home = () => {
         </div>
       </div>
 
-      <h1> Mappa</h1>
-      <Maps location={location} zoom={18} />
-
       {/* <div>
         <Footer />;
       </div> */}
