@@ -84,6 +84,7 @@ def newpet():
     name = request.form.get("name")
     years = request.form.get("years")
     # //photo = request.form.get("photo")//
+    
     sexo = request.form.get("sexo")
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
