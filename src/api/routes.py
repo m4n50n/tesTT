@@ -84,10 +84,11 @@ def newpet():
     name = request.form.get("name")
     years = request.form.get("years")
     # //photo = request.form.get("photo")//
-    
+
     sexo = request.form.get("sexo")
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
+    adresses = request.form.get("adresses")
     # upload file to uploadcare
     result = cloudinary.uploader.upload(request.files['image'])
 
@@ -95,7 +96,7 @@ def newpet():
     print("@@@@@@@@@@@")
     print(photo_url)
     pets = Pets(organizacion_id=protectora_id, name=name, years=years,
-                race=race, photo=photo_url, sexo=sexo, convivencia=convivencia)
+                race=race, photo=photo_url, sexo=sexo,  convivencia=convivencia, adresses=adresses)
 
     db.session.add(pets)
     db.session.commit()

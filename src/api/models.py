@@ -59,6 +59,7 @@ class Pets(db.Model):
     name = db.Column(db.String(120), unique=False, nullable=False)
     years = db.Column(db.String(120), unique=False, nullable=False)
     convivencia = db.Column(db.String(120), unique=False, nullable=False)
+    adresses = db.Column(db.String(120), unique=False, nullable=False)
     sexo = db.Column(db.String(120), unique=False, nullable=False)
     photo = db.Column(db.String(250), nullable=True)
     race = db.Column(db.String(120), unique=False, nullable=False)
@@ -77,6 +78,7 @@ class Pets(db.Model):
             "sexo": self.sexo,
             "race": self.race,
             "photo": self.photo,
+            "adresses": self.adresses,
             "convivencia": self.convivencia,
 
             "organizacion": self.organizacion.serialize(),
