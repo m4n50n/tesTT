@@ -48,11 +48,15 @@
 }
 
 .botonmascota{
-  background-color: darkkhaki;
-  font:18px fantasy ;
-  font-size: 25px;
+  background-color: #dbb839 !important;
+  color:rgb(36, 78, 155);
+  font: 30px fantasy;
+  width:150px;
+  font-size: 20px;
   text-align-last:center;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  position: relative;
+  top: -230px;
+  
 }
 
 .bcontactanos{
