@@ -12,7 +12,7 @@ export function CasaAcogidaCard(props) {
 
   return (
     <div className="">
-      <div className="card" style={{ width: "18rem" }} />
+      <div className="card" style={{ width: "18rem"  }} />
       <div className="card-body card-border">
         {/* <div>
           <input

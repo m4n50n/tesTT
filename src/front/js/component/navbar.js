@@ -75,7 +75,7 @@ export const Navbar = () => {
               </>
             ) : (
               <>
-                <div className="d-block justify-content-evenly">
+              
                   <li className="nav-item text-end">
                     {localStorage.getItem("rol") === 1 ? (
                       <Link to="/protectoralogin">
@@ -129,7 +129,7 @@ export const Navbar = () => {
                       href=""
                     ></a>
                   </div>
-                </div>
+               
               </>
             )}
           </ul>

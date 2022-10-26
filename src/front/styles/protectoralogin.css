@@ -48,15 +48,20 @@
 }
 
 .botonmascota{
-  background-color: darkkhaki;
-  color:#10467c; 
-  font:18px fantasy;
-  text-align-last: center;
+  background-color: #dbb839 !important;
+  color:rgb(36, 78, 155);
+  font: 30px fantasy;
+  width:150px;
+  font-size: 20px;
+  text-align-last:center;
+  position: relative;
+  top: -230px;
+  
 }
 
 .bcontactanos{
  background-color: #dbb839 !important;
- color:whitesmoke;
+ color:rgb(36, 78, 155);
  font: 18px fantasy;
  width:205px;
  }
@@ -100,3 +105,7 @@
  .cardrespo{
   flex:1;
  }
+.card{
+  background-color: transparent;
+  border: 0px;
+}
