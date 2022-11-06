@@ -14,6 +14,12 @@
   margin-top: 100px;
   margin-bottom: 200px;
 }
+.border-warning {
+  border-color: #66829d;
+  margin-right: 5%;
+  margin-left: 2%;
+  max-height: 300px;
+}
 .botoncontacto {
   background-color: rgba(221, 175, 36, 0.989);
   padding: 15px;
@@ -37,8 +43,7 @@
   margin-top: 200px;
 }
 
-.botonmascota{
+.botonmascota {
   margin-top: 200px;
-  color:beige
-
+  color: beige;
 }

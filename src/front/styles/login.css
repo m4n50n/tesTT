@@ -85,8 +85,8 @@
   object-fit: cover;
 }
 
-@media (max-width: 370px) {
+/* @media (max-width: 350px) {
   .wrapper .card .line:after {
     left: 27%;
   }
-}
+} */

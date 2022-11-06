@@ -1,16 +1,17 @@
-
-
 .cardpets {
   margin: 10px;
   display: flex;
 }
 .testimonial-group > .row {
   display: block;
-
   white-space: nowrap;
 }
 .casaacogidapet {
   display: flex;
   border: 20;
   overflow-x: auto;
+  min-height: 550px;
+}
+.bodypet {
+  height: 300px !important;
 }
