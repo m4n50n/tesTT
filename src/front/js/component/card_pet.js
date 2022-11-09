@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { divnk } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
 import "../../styles/card_pet.css";
@@ -12,9 +12,9 @@ export function Cardperros(props) {
   return (
     <div className="row">
       <div
-        className="card "
+        className="card card-pets"
         style={{
-          width: "18rem",
+          width: "350px",
           // height: "18rem",
           // border: "0px",
         }}
@@ -25,35 +25,36 @@ export function Cardperros(props) {
             className="card-img-top fotocard"
             alt="..."
           />
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
+          <div className="list-group list-group-flush">
+            <div className="item-pet">
               <b>Nombre:</b> {props.pet.name}
-            </li>
-            <li className="list-group-item">
+            </div>
+            <div className="item-pet">
               <b>Edad:</b> {props.pet.years}
-            </li>
-            <li className="list-group-item">
+            </div>
+            <div className="item-pet">
               {" "}
               <b>Raza:</b> {props.pet.race}
-            </li>
-            <li className="list-group-item">
+            </div>
+            <div className="item-pet">
               <b> Convive con:</b>
               {props.pet.convivencia}
-            </li>
-            <li className="list-group-item">
+            </div>
+            <div className="item-pet">
               <b>Sexo:</b>
               {props.pet.sexo}
-            </li>
-            <li className="list-group-item">
+            </div>
+            <div className="item-pet-l">
               {" "}
-              <button
-                type="button"
-                className="btn btn-warning text-align:center mt-3"
-              >
-                <Link to={"/contacto"}>¡Contacta!</Link>{" "}
+              <b>Dirección:</b> {props.pet.adresses}
+            </div>
+            <div className="">
+              {" "}
+              <button type="button" className="btn btn-warning boton-contacta">
+                <div to={"/contacto"}>¡Contacta!</div>{" "}
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

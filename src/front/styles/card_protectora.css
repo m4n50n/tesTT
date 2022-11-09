@@ -14,6 +14,7 @@
   margin-top: 100px;
   margin-bottom: 200px;
 }
+
 .border-warning {
   border-color: #66829d;
   margin-right: 5%;
@@ -32,15 +33,29 @@
   min-width: 200px;
   min-height: 200px;
 }
+.boton-contacto {
+  margin-top: 20px;
+  margin-left: 60px;
+  background-color: rgba(221, 175, 36, 0.989);
+  border-color: #66829d;
+  border-radius: 200px;
+}
 .titulocard {
   color: rgba(248, 245, 156, 0.989);
   max-height: 80px;
 
   background-color: rgba(221, 175, 36, 0.989);
 }
-.card .cardsprotectora {
-  text-size-adjust: 20px;
-  margin-top: 200px;
+.card-protectora {
+  position: relative;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 250px;
+  width: 300px;
+  background: #fffbe5;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 2px rgba(221, 175, 36, 0.989);
 }
 
 .botonmascota {

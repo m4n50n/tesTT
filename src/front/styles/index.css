@@ -79,21 +79,6 @@
   width: 350px;
 }
 
-.titulomascotas {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: rgba(221, 175, 36, 0.989);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 30px;
-}
-.titulomapa {
-  margin-top: 50px;
-  margin-bottom: 100px;
-  margin-left: 100px;
-  color: rgba(221, 175, 36, 0.989);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 30px;
-}
 .fotocard {
   width: 100%;
   height: 10rem;

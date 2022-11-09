@@ -14,13 +14,14 @@ const CasaAcogida = () => {
     actions.organizacion_list();
   }, []);
   return (
-    <>
-      {/* <Navbaracogida /> */}
+    <div>
       <div className="d-flex">
         <Mapahome />
         <div>
           {" "}
-          <center className="titulomapa">kjnkjn</center>
+          <center className="titulomapa">
+            ¡Encuentra animales sin hogar cerca de ti!
+          </center>
         </div>
       </div>
       <div>
@@ -48,7 +49,7 @@ const CasaAcogida = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
