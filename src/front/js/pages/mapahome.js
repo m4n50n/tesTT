@@ -9,9 +9,10 @@ import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-load
 const Mapahome = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9);
+  const [lng, setLng] = useState(-3.74922);
+  const [lat, setLat] = useState(40.463667);
+  const [zoom, setZoom] = useState(4);
+
   mapboxgl.accessToken =
     "pk.eyJ1Ijoia29kdXBldCIsImEiOiJjbDluZW5tZnowNmkyM29vNmxsdGxjaDFmIn0.3SNVb1qlkaRM3lqd_AZHsA";
   useEffect(() => {
@@ -22,23 +23,27 @@ const Mapahome = () => {
       center: [lng, lat],
       zoom: zoom,
     });
+    fetch(process.env.BACKEND_URL + "/api/map")
+      .then((response) => response.json())
+      .then((response) => {
+        response.forEach((element) => {
+          new mapboxgl.Marker()
+            .setLngLat([element.longitude, element.latitude])
+            .setPopup(
+              new mapboxgl.Popup({
+                offset: 25,
+              }).setHTML(
+                `<div><img style="height:80px; width: 80px;" src="${element.pet.photo}"/> <p>${element.pet.name}</p></div>`
+              )
+            )
+            .addTo(map.current);
+        });
+      });
   });
   return (
     <div>
       <div ref={mapContainer} className="map-container" />
     </div>
-    // <Map
-    //   style="mapbox://styles/mapbox/streets-v9"
-    //   center={[-0.481747846041145, 51.3233379650232]}
-    //   containerStyle={{
-    //     height: "40vh",
-    //     width: "100vw",
-    //   }}
-    // >
-    //   <Layer type="symbol" id="marker" layout={{ "icon-image": "marker-15" }}>
-    //     <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-    //   </Layer>
-    // </Map>
   );
 };
 export default Mapahome;

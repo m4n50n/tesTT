@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { divnk } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
 import "../../styles/card_pet.css";
@@ -10,43 +10,52 @@ export function Cardperros(props) {
     actions.pet_list();
   }, []);
   return (
-    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 rounded bodypet">
+    <div className="row">
       <div
-        className="col ml-5"
+        className="card card-pets"
         style={{
-          width: "18rem",
-          backgroundColor: "transparent",
-          border: "0px",
+          width: "350px",
+          // height: "18rem",
+          // border: "0px",
         }}
-      />
-      <div className="card-body">
-        <img src={props.pet.photo} className="card-img-top" alt="..." />
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">
-            <b>Nombre:</b> {props.pet.name}
-          </li>
-          <li className="list-group-item">
-            <b>Edad:</b> {props.pet.years}
-          </li>
-          <li className="list-group-item">
-            {" "}
-            <b>Raza:</b> {props.pet.race}
-          </li>
-          <li className="list-group-item">
-            <b> Convive con:</b>
-            {props.pet.convivencia}
-          </li>
-          <li className="list-group-item">
-            <b>Sexo:</b>
-            {props.pet.sexo}
-          </li>
-        </ul>
-        <button
-          type="button"
-          className="btn btn-warning text-align:center mt-3"
-        >
-          <Link to={"/contacto"}>¡Contacta con la protectora!</Link>{" "}
-        </button>
+      >
+        <div className="card-body carta-perro">
+          <img
+            src={props.pet.photo}
+            className="card-img-top fotocard"
+            alt="..."
+          />
+          <div className="list-group list-group-flush">
+            <div className="item-pet">
+              <b>Nombre:</b> {props.pet.name}
+            </div>
+            <div className="item-pet">
+              <b>Edad:</b> {props.pet.years}
+            </div>
+            <div className="item-pet">
+              {" "}
+              <b>Raza:</b> {props.pet.race}
+            </div>
+            <div className="item-pet">
+              <b> Convive con:</b>
+              {props.pet.convivencia}
+            </div>
+            <div className="item-pet">
+              <b>Sexo:</b>
+              {props.pet.sexo}
+            </div>
+            <div className="item-pet-l">
+              {" "}
+              <b>Dirección:</b> {props.pet.adresses}
+            </div>
+            <div className="">
+              {" "}
+              <button type="button" className="btn btn-warning boton-contacta">
+                <div to={"/contacto"}>¡Contacta!</div>{" "}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -34,8 +34,11 @@ export const Navbar = () => {
           </span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav mb-2 mb-lg-0">
             {!store.isAuthenticate ? (
               <>
                 <li className="nav-item text-end">
@@ -75,61 +78,60 @@ export const Navbar = () => {
               </>
             ) : (
               <>
-              
-                  <li className="nav-item text-end">
-                    {localStorage.getItem("rol") === 1 ? (
-                      <Link to="/protectoralogin">
-                        {" "}
-                        <button type="button" className="btn buttonhome">
-                          INICIO{" "}
-                        </button>
-                      </Link>
-                    ) : (
-                      <Link to="/casaacogida">
-                        {" "}
-                        <button type="button" className="btn buttonhome">
-                          INICIO{" "}
-                        </button>
-                      </Link>
-                    )}
-                  </li>
-                  <li className="nav-item text-end">
-                    {store.organizacion.rol == 1 ? (
-                      <Link to="/perfilprotectora">
-                        <button type="button" className="btn buttonhome">
-                          PERFIL{" "}
-                        </button>
-                      </Link>
-                    ) : null}
-                    {store.organizacion.rol == 2 ? (
-                      <Link to="/editusuario">
-                        <button type="button" className="btn buttonhome">
-                          PERFIL{" "}
-                        </button>
-                      </Link>
-                    ) : null}
-                  </li>
-                  <li className="nav-item text-end">
-                    {" "}
-                    <button
-                      onClick={() => {
-                        actions.logout();
-                        navigate("/");
-                      }}
-                      type="button"
-                      className="btn buttonhome"
-                    >
-                      CERRAR SESIÓN{" "}
-                    </button>
-                  </li>
+                <li className="nav-item text-end">
+                  {localStorage.getItem("rol") == 1 ? (
+                    <Link to="/protectoralogin">
+                      {" "}
+                      <button type="button" className="btn buttonhome">
+                        INICIO{" "}
+                      </button>
+                    </Link>
+                  ) : null}
+                  {localStorage.getItem("rol") == 2 ? (
+                    <Link to="/casaacogida">
+                      {" "}
+                      <button type="button" className="btn buttonhome">
+                        INICIO{" "}
+                      </button>
+                    </Link>
+                  ) : null}
+                </li>
+                <li className="nav-item text-end">
+                  {localStorage.getItem("rol") == 1 ? (
+                    <Link to="/perfilprotectora">
+                      <button type="button" className="btn buttonhome">
+                        PERFIL{" "}
+                      </button>
+                    </Link>
+                  ) : null}
+                  {localStorage.getItem("rol") == 2 ? (
+                    <Link to="/editusuario">
+                      <button type="button" className="btn buttonhome">
+                        PERFIL{" "}
+                      </button>
+                    </Link>
+                  ) : null}
+                </li>
+                <li className="nav-item text-end">
+                  {" "}
+                  <button
+                    onClick={() => {
+                      actions.logout();
+                      navigate("/");
+                    }}
+                    type="button"
+                    className="btn buttonhome"
+                  >
+                    CERRAR SESIÓN{" "}
+                  </button>
+                </li>
 
-                  <div>
-                    <a
-                      className="link text-decoration-none colorinput"
-                      href=""
-                    ></a>
-                  </div>
-               
+                <div>
+                  <a
+                    className="link text-decoration-none colorinput"
+                    href=""
+                  ></a>
+                </div>
               </>
             )}
           </ul>

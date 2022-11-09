@@ -9,7 +9,6 @@ export const FormularioPets = () => {
   const [pet, setPet] = useState("");
   const [login, setLogin] = useState("");
 
-
   useEffect(() => {}, []);
 
   const PetPhoto = (e) => {
@@ -28,7 +27,10 @@ export const FormularioPets = () => {
                 ¡Registra a la mascota que necesite ayuda!
               </h4>
               <div className="input-group mb-3 " />
-              <label className="input-group-text caracterlabel  casellalabel" for="inputGroupFile01">
+              <label
+                className="input-group-text caracterlabel  casellalabel"
+                for="inputGroupFile01"
+              >
                 Subir
               </label>
               <input
@@ -56,6 +58,15 @@ export const FormularioPets = () => {
                 onChange={(e) => setPet({ ...pet, years: e.target.value })}
                 className="form-control "
                 placeholder="Años"
+              />
+            </div>
+            <div className="form-group">
+              <label></label>{" "}
+              <input
+                type="text"
+                onChange={(e) => setPet({ ...pet, adress: e.target.value })}
+                className="form-control "
+                placeholder="Dirección"
               />
             </div>
             <div className="form-group ">
@@ -95,14 +106,10 @@ export const FormularioPets = () => {
                 }}
                 type="submit"
                 className="registroboton btn  sub btn-secondary botonsubida"
-                
               >
                 Guardar
               </button>
-
               <p>{login}</p>{" "}
-
-
             </div>
             <Link to={"/protectoralogin"}>Inicio</Link>{" "}
           </div>

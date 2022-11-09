@@ -1,8 +1,7 @@
-// ES6
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-// ES5
+// ES5;
 // var ReactMapboxGl = require("react-mapbox-gl");
 // var Layer = ReactMapboxGl.Layer;
 // var Feature = ReactMapboxGl.Feature;

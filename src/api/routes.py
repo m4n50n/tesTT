@@ -10,6 +10,7 @@ import cloudinary
 import cloudinary.uploader
 import random
 from flask_mail import Mail, Message
+from geopy.geocoders import Nominatim
 
 api = Blueprint('api', __name__)
 
@@ -88,13 +89,13 @@ def newpet():
     sexo = request.form.get("sexo")
     convivencia = request.form.get("convivencia")
     race = request.form.get("race")
-    adresses = request.form.get("adresses")
+    adresses = request.form.get("adress")
     # upload file to uploadcare
+    cloudinary.config(cloud_name="dceot7tf0", api_key="583767443963337",
+                      api_secret="zt2Q5HVW63c9ZdC_K-QKDLwcrLI")
     result = cloudinary.uploader.upload(request.files['image'])
 
     photo_url = result['secure_url']
-    print("@@@@@@@@@@@")
-    print(photo_url)
     pets = Pets(organizacion_id=protectora_id, name=name, years=years,
                 race=race, photo=photo_url, sexo=sexo,  convivencia=convivencia, adresses=adresses)
 
@@ -114,9 +115,9 @@ def pets():
 @api.route('/card_protectora', methods=['GET'])
 def card_protectora():
 
-    organizacion = Organizacion.query.all()
-    organizacion_list = list(
-        map(lambda organizacion: organizacion.serialize(), organizacion))
+    organizaciones = Organizacion.query.all()
+    organizacion_list = [organizacion.serialize()
+                         for organizacion in organizaciones]
     return jsonify(organizacion_list)
 
 
@@ -246,5 +247,18 @@ def listaCasaAcogida():
 def formulariopets():
 
     pets = Pets.query.all()
-    pets_list = list(map(lambda pets: pets.serialize(), pets))
+    pets_list = [pet.serialize() for pet in pets]
     return jsonify(pets_list)
+
+
+@api.route('/map', methods=['GET'])
+def map():
+    locator = Nominatim(user_agent="myGeocoder")
+    pets = Pets.query.all()
+    response = []
+    for pet in pets:
+        location = locator.geocode(pet.adresses)
+        data = {"latitude": location.latitude,
+                "longitude": location.longitude, "pet": pet.serialize()}
+        response.append(data)
+    return jsonify(response)
