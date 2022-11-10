@@ -11,54 +11,59 @@ export const Home = () => {
   return (
     <>
       <div>
-      <div id="slider" class="carousel slide mb-3" data-ride="carousel">
-          <ol className="carousel-indicators">
-            <li
-              data-target="#myCarousel"
-              data-slide-to="0"
-              className="active"
-            ></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-          <div className="carousel-inner">
-            <div className="item active">
+        <div
+          id="carouselExampleControls"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div className="carousel-item active justify-content-center">
               <img
-                src={Barnerprotectora}
-                className="d-block w-100 col-xs-12 col-xl-12 barnerprotectora"
-                alt="barnerprotectora"
+                src={Barneracogida}
+                className="d-block imagenportada"
+                alt="..."
               />
             </div>
             <div className="carousel-item">
-              <img src={Barneracogida} className="d-block w-100" alt="logo" />
+              <img
+                src={Barnerprotectora}
+                className="d-block imagenportada"
+                alt="..."
+              />
             </div>
             <div className="carousel-item">
               <img
-                src={Barnerprotectora}
-                className="d-block w-100"
-                alt="logo"
+                src={Barneracogida}
+                className="d-block imagenportada"
+                alt="..."
               />
             </div>
           </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
-
-        <a
-          className="left carousel-control"
-          href="#myCarousel"
-          data-slide="prev"
-        >
-          <span className="glyphicon glyphicon-chevron-left"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a
-          className="right carousel-control"
-          href="#myCarousel"
-          data-slide="next"
-        >
-          <span className="glyphicon glyphicon-chevron-right"></span>
-          <span className="sr-only">Next</span>
-        </a>
-
         <div>
           <center className="titulomapahome">
             Ayuda a los animales que estén cerca de ti

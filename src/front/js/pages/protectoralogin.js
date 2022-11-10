@@ -2,9 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import Mapahome from "../pages/mapahome";
-import { card_casaacogida } from "../component/card_casaacogida";
+import { Card_casaacogida } from "../component/card_casaacogida";
 import "../../styles/protectoralogin.css";
-import { Card_protectora } from "../component/card_protectora";
 
 const Protectoralogin = () => {
   const { actions, store } = useContext(Context);
@@ -13,21 +12,20 @@ const Protectoralogin = () => {
   }, []);
   return (
     <div>
-      <div className="col-sm-12 col-md-12 col-xs-12 d-flex">
+      <div className="col-12 col-md-8">
         <Mapahome />
-        <div>
-          <center className="titulomascoto">
-            Publica aquel animal que necesite hogar para que lo encuentren las
-            casas de acogida
-          </center>
-          <Link to={"/formulariopets"}>
-            <button
-              type="button"
-              className="btn boton-contactos"
-              placeholder="Publicar"
-            >
-              Rellenar formulario
-            </button>
+      </div>
+      <div className="col-12 col-md-4">
+        <center className="titulomapa">
+          Publica aquel animal que necesite hogar para que lo encuentren las
+          casas de acogida
+        </center>
+        <div className="mx-auto">
+          <Link
+            className="btn btn-warning boton-contacta text-white"
+            to={"/formulariopets"}
+          >
+            ¡Registra!
           </Link>
         </div>
       </div>
@@ -38,7 +36,7 @@ const Protectoralogin = () => {
       <div className="testimonial-group box-contenedor organizacioncard">
         {store.casaacogida_list.map((organizacion) => {
           return (
-            <Card_protectora
+            <Card_casaacogida
               key={organizacion.id}
               organizacion={organizacion}
             />

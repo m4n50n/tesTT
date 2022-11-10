@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { divnk } from "react-router-dom";
+import { divnk, Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
 import "../../styles/card_pet.css";
@@ -27,32 +27,33 @@ export function Cardperros(props) {
           />
           <div className="list-group list-group-flush">
             <div className="item-pet">
-              <b>Nombre:</b> {props.pet.name}
+              <label>Nombre:</label> {props.pet.name}
             </div>
             <div className="item-pet">
-              <b>Edad:</b> {props.pet.years}
+              <label>Edad:</label> {props.pet.years}
             </div>
             <div className="item-pet">
               {" "}
-              <b>Raza:</b> {props.pet.race}
+              <label>Raza:</label> {props.pet.race}
             </div>
             <div className="item-pet">
-              <b> Convive con:</b>
+              <label> Convive con:</label>
               {props.pet.convivencia}
             </div>
             <div className="item-pet">
-              <b>Sexo:</b>
+              <label>Sexo:</label>
               {props.pet.sexo}
             </div>
             <div className="item-pet-l">
-              {" "}
-              <b>Dirección:</b> {props.pet.adresses}
+              <label>Dirección:</label> {props.pet.adresses}
             </div>
-            <div className="">
-              {" "}
-              <button type="button" className="btn btn-warning boton-contacta">
-                <div to={"/contacto"}>¡Contacta!</div>{" "}
-              </button>
+            <div className="mx-auto">
+              <Link
+                className="btn btn-warning boton-contacta text-white"
+                to={"/contacto"}
+              >
+                ¡Contacta!
+              </Link>
             </div>
           </div>
         </div>

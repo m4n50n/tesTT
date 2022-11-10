@@ -72,10 +72,10 @@ def registro():
 @api.route('/roles', methods=['GET'])
 def rol():
     roles = Rol.query.all()
-    data = list(map(lambda rol: rol.serialize(), roles))
-    # data = [rol.serialize() for rol in roles]
+    # data = list(map(lambda rol: rol.serialize(), roles))
+    data = [rol.serialize() for rol in roles]
     print(data)
-    return jsonify(data)
+    return jsonify(data), 200
 
 
 @api.route('/pet', methods=['POST'])

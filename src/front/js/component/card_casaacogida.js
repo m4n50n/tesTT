@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
-import { navigate, useNavigate } from "react-router-dom";
+import { navigate, useNavigate, Link } from "react-router-dom";
 import "../../styles/protectoralogin.css";
 
-export function card_casaacogida(props) {
+export function Card_casaacogida(props) {
   const { actions, store } = useContext(Context);
   const navigate = useNavigate();
   useEffect(() => {
@@ -13,7 +13,6 @@ export function card_casaacogida(props) {
 
   return (
     <div className="row">
-      <div className="card card-acogida"></div>
       <div
         style={{
           width: "350px",
@@ -21,31 +20,30 @@ export function card_casaacogida(props) {
           border: "0px",
         }}
       />
-      <div className="card-body col-6">
+      <div className="card-body col-6 card-acogida">
         <div className="list-group list-group-flush">
-          <h5 className="list-group-item titulocard">
-            Protectora {props.organizacion.name}
-          </h5>
-          <div>
-            <b>Email:</b> {props.organizacion.email}
+          <h3 className="titulocard">{props.organizacion.name}</h3>
+          <div className="item-casa">
+            <label>Email:</label> {props.organizacion.email}
           </div>
-          <div>
-            <b> Ciudad:</b>
+          <div className="item-casa">
+            <label> Ciudad:</label>
             {props.organizacion.city}
           </div>
-          <div>
-            <b>Disponibilidad:</b>
+          <div className="item-casa">
+            <label>Disponibilidad:</label>
             {props.organizacion.avaiavility}
           </div>
-          <div>
-            {" "}
-            <b>Convivo con:</b> {props.organizacion.animals}
+          <div className="item-casa">
+            <label>Convivo con:</label> {props.organizacion.animals}
           </div>
-          <div>
-            {" "}
-            <button type="button" className="btn boton-contacto">
-              <div to={"/contacto"}>¡Contacta!</div>{" "}
-            </button>
+          <div className="mx-auto">
+            <Link
+              className="btn btn-warning boton-casa text-white"
+              to={"/contacto"}
+            >
+              ¡Contacta!
+            </Link>
           </div>
         </div>
       </div>
@@ -53,6 +51,6 @@ export function card_casaacogida(props) {
   );
 }
 
-card_casaacogida.propTypes = {
+Card_casaacogida.propTypes = {
   pet: propTypes.any,
 };

@@ -8,6 +8,10 @@
   height: 150px;
   margin-bottom: 400px;
 }
+.imagenportada {
+  width: 800px;
+  height: 300px;
+}
 
 .menu {
   background: rgba(248, 245, 156, 0.989);
@@ -59,9 +63,9 @@
   width: 75%;
 }
 
-.mapa-home {
+/* .mapa-home {
   margin-left: 150px;
-}
+} */
 
 .cardpets {
   margin: 10px;
@@ -109,11 +113,7 @@
   width: 100px;
   height: 500px;
 }
-.mapa-home {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: 300px;
-}
+
 .protectoraocasa {
   color: #66829d;
 }
