@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
 import { navigate, useNavigate } from "react-router-dom";
@@ -48,9 +47,6 @@ export function Card_protectora(props) {
               </button>
             </div>
           </div>
-          {/* <button type="button" className="btn btn-warning botoncontacto">
-          <Link to={"/contacto"}>¡Contacta con la protectora!</Link>{" "}
-        </button> */}
         </div>
       </div>
     </div>

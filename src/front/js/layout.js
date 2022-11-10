@@ -5,7 +5,6 @@ import { Login } from "./pages/paginalogin";
 import Protectoralogin from "./pages/protectoralogin";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import { Quienessomos } from "./pages/quienessomos";
 import { Editusuario } from "./pages/editusuario";
 import Recuperacioncontrasena from "./pages/recuperacioncontrasena";
 import Casaacogida from "./pages/casaacogida";

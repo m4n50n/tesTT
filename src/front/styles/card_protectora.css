@@ -33,13 +33,7 @@
   min-width: 200px;
   min-height: 200px;
 }
-.boton-contacto {
-  margin-top: 20px;
-  margin-left: 60px;
-  background-color: rgba(221, 175, 36, 0.989);
-  border-color: #66829d;
-  border-radius: 200px;
-}
+
 .titulocard {
   color: rgba(248, 245, 156, 0.989);
   max-height: 80px;
@@ -58,6 +52,13 @@
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(221, 175, 36, 0.989);
+}
+.boton-contacto {
+  margin-top: 20px;
+  margin-left: 60px;
+  background-color: rgba(221, 175, 36, 0.989);
+  border-color: #66829d;
+  border-radius: 200px;
 }
 
 .botonmascota {

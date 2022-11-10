@@ -1,48 +1,58 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 import propTypes from "prop-types";
+import { navigate, useNavigate } from "react-router-dom";
 import "../../styles/protectoralogin.css";
 
-export function CasaAcogidaCard(props) {
+export function card_casaacogida(props) {
   const { actions, store } = useContext(Context);
+  const navigate = useNavigate();
   useEffect(() => {
     actions.organizacion_list();
   }, []);
 
   return (
-    <div className="">
-      <div className="card" style={{ width: "18rem"  }} />
-      <div className="card-body card-border">
-        {/* <div>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setPhot(e.target.photo)}
-          />
-        </div> */}
-        <ul className="list-group list-group-flush ">
-          <li
-            className="ctitle list-group-item active text-break titlecard "
-            aria-current="true">  {props.pet.name}
-          </li>
-          <li className="list-group-item text-break emailcard ">Email:{props.pet.email}</li>
-          <li className="list-group-item text-break ciudadcard ">Ciudad:{props.pet.city}</li>
-          <li className="list-group-item text-break dispcard">Disponibilidad:{props.pet.avaiability}
-          </li>
-          <li className="list-group-item text-break animalcard ">Animales:{props.pet.animals}
-          </li>
-        </ul>
-        <Link to={"/contacto"}> 
-          <button type="button" className="bcontactanos">
-           Contacta con nosotros {" "}
-           </button>
-        </Link>
+    <div className="row">
+      <div className="card card-acogida"></div>
+      <div
+        style={{
+          width: "350px",
+          backgroundColor: "transparent",
+          border: "0px",
+        }}
+      />
+      <div className="card-body col-6">
+        <div className="list-group list-group-flush">
+          <h5 className="list-group-item titulocard">
+            Protectora {props.organizacion.name}
+          </h5>
+          <div>
+            <b>Email:</b> {props.organizacion.email}
+          </div>
+          <div>
+            <b> Ciudad:</b>
+            {props.organizacion.city}
+          </div>
+          <div>
+            <b>Disponibilidad:</b>
+            {props.organizacion.avaiavility}
+          </div>
+          <div>
+            {" "}
+            <b>Convivo con:</b> {props.organizacion.animals}
+          </div>
+          <div>
+            {" "}
+            <button type="button" className="btn boton-contacto">
+              <div to={"/contacto"}>¡Contacta!</div>{" "}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-CasaAcogidaCard.propTypes = {
+card_casaacogida.propTypes = {
   pet: propTypes.any,
 };
