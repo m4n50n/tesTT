@@ -15,11 +15,13 @@ const CasaAcogida = () => {
   }, []);
   return (
     <div>
-      <div className="col-sm-6 col-md-6 col-xs-6 d-flex">
-        <Mapahome />
-        <div>
+      <div className="row align-items-center">
+        <div className="col-12 col-md-8">
+          <Mapahome />
+        </div>
+        <div className="col-12 col-md-4">
           {" "}
-          <center className="col-sm-12 col-md-12 col-xs-12 titulomapa">
+          <center className="titulomapa">
             ¡Encuentra animales sin hogar cerca de ti!
           </center>
         </div>

@@ -18,8 +18,8 @@ export const FormularioPets = () => {
   };
 
   return (
-    <div className="form-group formregister">
-      <div className="container-fluid bodyregistro fluidbody">
+    <div className="wrapper">
+      <div className="container-fluid">
         <div className="tamañoformulario ">
           <div className="form-outline mb-4 text-center">
             <div className="myform">
@@ -27,12 +27,6 @@ export const FormularioPets = () => {
                 ¡Registra a la mascota que necesite ayuda!
               </h4>
               <div className="input-group mb-3 " />
-              <label
-                className="input-group-text caracterlabel  casellalabel"
-                for="inputGroupFile01"
-              >
-                Subir
-              </label>
               <input
                 type="file"
                 onChange={PetPhoto}

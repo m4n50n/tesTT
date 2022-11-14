@@ -57,7 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             localStorage.setItem("rol", data.organizacion.rol);
             setStore({ isAuthenticate: data.loged });
             setStore({ organizacion: data.organizacion });
-            getActions().listaCasaAcogida();
+            getActions().casaacogida_list();
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);
@@ -179,7 +179,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
 
-      listaCasaAcogida: () => {
+      casaacogida_list: () => {
         const store = getStore();
 
         fetch(process.env.BACKEND_URL + "/api/card_casaacogida", {
@@ -189,11 +189,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
         })
           .then((resp) => {
-            return resp.json();
+            if (resp.ok) {
+              return resp.json();
+            }
           })
           .then((data) => {
             // console.log(data);
-            setStore({ casaacogida_list: data.list });
+            setStore({ casaacogida_list: data });
           })
           .catch((error) => {
             console.error("[ERROR IN LOGIN]", error);

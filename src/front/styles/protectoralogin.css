@@ -2,99 +2,56 @@
   background-color: endeded;
 }
 
-.home {
-  display: grid;
-}
-
-.responsiv {
-  display: grid;
-  min-height: 600px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px;
-  margin-right: 50px;
-}
-
 .in-flex {
   flex: 1;
 }
 
-.protectoraocasa {
-  color: #495969;
+.titulomascot {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #66829d;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
 }
-
-.buttonmpas {
-  text-align: right;
-}
-
-.buttoninicio {
-  align-items: left;
+.titulomascoto {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-bottom: 50px;
+  color: #66829d;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
 }
 
 .buttonregi {
   text-align: center;
 }
-#registerbutton {
-  text-align: left;
-}
 
-.ctitle {
-  background-color: rgb(187, 187, 58) !important;
-  color: rgb(48, 54, 95) !important;
-}
-
-.botonmascota {
-  background-color: #dbb839 !important;
-  color: rgb(36, 78, 155);
-  font: 30px fantasy;
-  width: 150px;
-  font-size: 20px;
-  text-align-last: center;
+.card-acogida {
   position: relative;
-  top: -230px;
-}
-
-.bcontactanos {
-  background-color: #dbb839 !important;
-  color: rgb(36, 78, 155);
-  font: 18px fantasy;
-  width: 205px;
-}
-
-.card-border {
-  border: solid #dead31dd 10px;
+  margin-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 50px;
   height: 250px;
-  flex: 1;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(221, 175, 36, 0.989);
 }
-
-.titlecard {
-  font-family: "Merriweather", serif;
-  font: 18px fantasy;
+.boton-casa {
+  background-color: #66829d;
+  border-color: #66829d;
+  border-radius: 200px;
+  margin-top: 20px;
 }
-
-.emailcard {
-  font-family: "Merriweather", serif;
-  font: 14px fantasy;
+.item-casa label {
+  font-weight: 600;
 }
-
-.ciudadcard {
-  font-family: "Merriweather", serif;
-  font: 14px fantasy;
-}
-
-.dispcard {
-  font-family: "Merriweather", serif;
-  font: 14px fantasy;
-}
-
-.animalcard {
-  font-family: "Merriweather", serif;
-  font: 14px fantasy;
-}
-
-.cardrespo {
-  flex: 1;
-}
-.card {
-  background-color: transparent;
-  border: 0px;
+.titulomapaprotectora {
+  color: rgba(221, 175, 36, 0.989);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }

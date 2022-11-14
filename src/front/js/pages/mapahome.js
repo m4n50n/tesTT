@@ -41,7 +41,7 @@ const Mapahome = () => {
       });
   });
   return (
-    <div>
+    <div className="col-8 mx-auto mt-4 mb-4">
       <div ref={mapContainer} className="map-container" />
     </div>
   );

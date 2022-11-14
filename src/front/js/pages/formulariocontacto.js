@@ -21,7 +21,11 @@ export const Contacto = () => {
           console.log(result);
           if (result.text === "OK") {
             setMensaje("Enviado con éxito");
-            navigate("/");
+            if (localStorage.getItem("rol") == 1) {
+              navigate("/protectoralogin");
+            } else if (localStorage.getItem("rol") == 2) {
+              navigate("/casaacogida");
+            }
           } else {
             setMensaje("El mensaje no ha sido enviado");
           }
@@ -32,7 +36,7 @@ export const Contacto = () => {
       );
   };
   return (
-    <>
+    <div className="wrapper">
       <form className="formulariocontacto" ref={form} onSubmit={sendEmail}>
         <div className="container containercontacto mb-6">
           <div className="card cardcontacto">
@@ -46,19 +50,19 @@ export const Contacto = () => {
             <div className="details">
               <div className="input-text">
                 <input
-                  className="inputcontacto"
+                  className="inputcontacto form-control"
                   type="text"
+                  placeholder="Email"
                   required="required"
                 />
-                <span>Email</span>
               </div>
               <div className="input-text">
-                <input
-                  className="inputcontacto"
+                <textarea
+                  className="inputcontacto form-control"
                   type="text"
                   required="required"
+                  placeholder="Mensaje"
                 />
-                <span>Mensaje</span>
               </div>
             </div>
             <div className="last">
@@ -67,6 +71,6 @@ export const Contacto = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };

@@ -72,10 +72,10 @@ def registro():
 @api.route('/roles', methods=['GET'])
 def rol():
     roles = Rol.query.all()
-    data = list(map(lambda rol: rol.serialize(), roles))
-    # data = [rol.serialize() for rol in roles]
+    # data = list(map(lambda rol: rol.serialize(), roles))
+    data = [rol.serialize() for rol in roles]
     print(data)
-    return jsonify(data)
+    return jsonify(data), 200
 
 
 @api.route('/pet', methods=['POST'])
@@ -228,19 +228,11 @@ def organizacion():
 
 
 @api.route('/card_casaacogida', methods=['GET'])
-def listaCasaAcogida():
-    try:
-        organizacion = Organizacion.query.filter_by(rol_id=2)
-        casas_list = list(
-            map(lambda organizacion: organizacion.serialize(), organizacion))
-        response = {
-            "list": casas_list
-        }
-        return jsonify(response), 200
-
-    except Exception as error:
-
-        return jsonify(f"message error: {error}"), 401
+def cardCasaAcogida():
+    organizaciones = Organizacion.query.all()
+    casaacogida_list = [organizacion.serialize()
+                        for organizacion in organizaciones]
+    return jsonify(casaacogida_list)
 
 
 @api.route('/formulariopets', methods=['GET'])

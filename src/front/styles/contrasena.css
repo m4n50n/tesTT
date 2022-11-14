@@ -36,12 +36,13 @@ body {
 }
 
 .wrapper .form-group:hover {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #66829d;
 }
 .botonrecuperacion {
   color: whitesmoke;
   border-color: #66829d;
   background-color: #66829d;
+  border-radius: 100px;
 }
 .wrapper .form-group .icon {
   color: #66829d;

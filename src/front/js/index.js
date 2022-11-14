@@ -14,4 +14,4 @@ root.render(
     <Layout />
   </StrictMode>
 );
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+// ReactDOM.render(<Layout />, document.querySelector("#app"));

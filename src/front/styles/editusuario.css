@@ -161,10 +161,10 @@ body {
   top: -12px;
   width: 80px;
   left: 39%;
-  text-align: center;
+  text-align: #66829d;
   color: #eee;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.315);
+  background-color: #66829d;
   background-color: #1f5588;
 }
 
@@ -174,6 +174,11 @@ body {
   list-style: none;
   display: flex;
   justify-content: space-around;
+}
+.botonaccesouser {
+  background-color: #66829d;
+  border-radius: 100px;
+  margin-left: 150px;
 }
 
 .wrapper .social-links li a {

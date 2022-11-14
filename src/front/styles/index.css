@@ -8,10 +8,23 @@
   height: 150px;
   margin-bottom: 400px;
 }
+.imagenportada {
+  width: 800px;
+  height: 300px;
+}
+
 .menu {
   background: rgba(248, 245, 156, 0.989);
   width: 100%;
   /* padding: 500px; */
+}
+.titulomapahome {
+  margin-top: 50px;
+  margin-left: 50px;
+  color: rgba(221, 175, 36, 0.989);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  margin-bottom: 0;
 }
 .buttonhome {
   color: #66829d;
@@ -23,14 +36,6 @@
 }
 .navbar-toggler {
   color: rgba(221, 175, 36, 0.989);
-}
-.footer {
-  background: rgba(221, 175, 36, 0.989);
-  padding: 1em 0;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 50%;
 }
 
 .mensajecontrasena {
@@ -58,11 +63,9 @@
   width: 75%;
 }
 
-.maps {
-  position: relative;
-  height: 50vh;
-  width: 300%;
-}
+/* .mapa-home {
+  margin-left: 150px;
+} */
 
 .cardpets {
   margin: 10px;
@@ -84,7 +87,7 @@
   height: 10rem;
   display: block;
   object-fit: cover;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 10px 10px;
 }
 .botonclose {
   background-color: rgba(248, 245, 156, 0.989);
@@ -96,9 +99,11 @@
     left: 32%;
   }
 }
-.imagenpet {
+.barnerprotectora {
   width: 700px;
   height: 350px;
+  border-radius: 15%;
+  margin-left: 20px;
 }
 .imagenpor1 {
   width: 100px;
@@ -108,10 +113,7 @@
   width: 100px;
   height: 500px;
 }
-.mapa-home {
-  margin-top: 100px;
-  margin-bottom: 50px;
-}
+
 .protectoraocasa {
   color: #66829d;
 }
@@ -135,10 +137,6 @@
   font-size: larger;
   color: #66829d;
 }
-.textologo {
-  left: 5px;
-}
-
 .colornavbar {
   color: rgba(248, 245, 156, 0.989);
 }
@@ -152,14 +150,11 @@
 
 footer {
   background-color: rgba(221, 175, 36, 0.989);
-  height: 50%;
-  color: white;
   padding: 15px;
-}
-
-.main1 {
-  display: flex;
-  margin: 0 auto;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
 }
 
 a img:hover {

@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import propTypes from "prop-types";
-import { navigate, useNavigate } from "react-router-dom";
+import { navigate, useNavigate, Link } from "react-router-dom";
 import "../../styles/card_protectora.css";
 
 export function Card_protectora(props) {
@@ -21,36 +20,34 @@ export function Card_protectora(props) {
             border: "0px",
           }}
         />
-        <div className="card-body col-6 protectoracard">
+        <div className="card-body col-6">
           <div className="list-group list-group-flush">
-            <h5 className="list-group-item titulocard">
-              <b>Protectora:</b> {props.organizacion.name}
+            <h5 className="titulocard mb-4">
+              <label>Protectora:</label> {props.organizacion.name}
             </h5>
-            <div>
-              <b>Email:</b> {props.organizacion.email}
+            <div className="item-protectora">
+              <label>Email:</label> {props.organizacion.email}
             </div>
-            <div>
-              <b> Ciudad:</b>
+            <div className="item-protectora">
+              <label> Ciudad:</label>
               {props.organizacion.city}
             </div>
-            <div>
-              <b>Teléfono:</b>
+            <div className="item-protectora">
+              <label>Teléfono:</label>
               {props.organizacion.phone}
             </div>
-            <div>
-              {" "}
-              <b>Instagram:</b> {props.organizacion.instagram}
+            <div className="item-protectora">
+              <label>Instagram:</label> {props.organizacion.instagram}
             </div>
-            <div>
-              {" "}
-              <button type="button" className="btn boton-contacto">
-                <div to={"/contacto"}>¡Contacta!</div>{" "}
-              </button>
+            <div className="mx-auto">
+              <Link
+                className="btn btn-warning boton-protectora text-white mt-4"
+                to={"/contacto"}
+              >
+                ¡Contacta!
+              </Link>
             </div>
           </div>
-          {/* <button type="button" className="btn btn-warning botoncontacto">
-          <Link to={"/contacto"}>¡Contacta con la protectora!</Link>{" "}
-        </button> */}
         </div>
       </div>
     </div>

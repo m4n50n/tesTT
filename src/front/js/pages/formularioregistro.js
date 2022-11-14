@@ -76,7 +76,7 @@ export const Registro = () => {
                   value={rol}
                   onChange={(e) => setRol(e.target.value)}
                 >
-                  {store.roles.map((value, index) => {
+                  {store.rol.map((value, index) => {
                     return (
                       <>
                         <option value={value.id} key={index}>

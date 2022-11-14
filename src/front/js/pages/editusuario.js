@@ -108,7 +108,7 @@ export const Editusuario = () => {
             defaultState();
             setDisabledinput(false);
           }}
-          className="btn  sub btn-secondary"
+          className="btn  sub btn-secondary botonaccesouser"
         >
           Editar
         </button>
