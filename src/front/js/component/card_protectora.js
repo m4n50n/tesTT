@@ -22,7 +22,7 @@ export function Card_protectora(props) {
         />
         <div className="card-body col-6">
           <div className="list-group list-group-flush">
-            <h5 className="list-group-item titulocard">
+            <h5 className="titulocard mb-4">
               <label>Protectora:</label> {props.organizacion.name}
             </h5>
             <div className="item-protectora">
@@ -41,7 +41,7 @@ export function Card_protectora(props) {
             </div>
             <div className="mx-auto">
               <Link
-                className="btn btn-warning boton-protectora text-white"
+                className="btn btn-warning boton-protectora text-white mt-4"
                 to={"/contacto"}
               >
                 ¡Contacta!

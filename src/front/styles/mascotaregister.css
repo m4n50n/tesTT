@@ -1,13 +1,18 @@
-.fluidbody{
-border: solid #dead31dd 10px;
-   
- 
-} 
+.fluidbody {
+  border: solid #dead31dd 10px;
+}
 
+.botonsubida {
+  color: burlywood;
+}
 
+.caractercontrol {
+  color: white;
+  background-color: #66829d;
+  display: inline-block;
+}
 
-
-
-.botonsubida{
-    color: burlywood;
+.caractercontrol:focus,
+.caractercontrol {
+  background-color: #66829d;
 }

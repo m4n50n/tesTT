@@ -36,9 +36,9 @@ export const Login = () => {
             action="#"
             className="d-flex flex-column"
           >
-            <div className="h3 text-center colorlogin">Login</div>
-            <div className="d-flex align-items-center input-field my-3 mb-4">
-              <span className="far fa-user p-2"></span>
+            <div className="h3 text-center mb-4 colorlogin">Login</div>
+            <div className="form-group d-flex align-items-center mb-4">
+              <span className="far fa-user p-2 iconologin"></span>
               <input
                 type="email"
                 id="form2Example1"
@@ -49,8 +49,8 @@ export const Login = () => {
                 onChange={(ev) => setEmail(ev.target.value)}
               />
             </div>
-            <div className="d-flex align-items-center input-field mb-4">
-              <span className="fas fa-lock p-2"></span>
+            <div className="form-group d-flex align-items-center mb-4">
+              <span className="fas fa-lock p-2 iconologin"></span>
               <input
                 type="password"
                 id="form2Example2"
@@ -80,7 +80,7 @@ export const Login = () => {
 
               buttonSubmit();
             }}
-            className="btn btn-primary btn-block mb-4"
+            className="btn botonlogin"
           >
             Acceder
           </button>

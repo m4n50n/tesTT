@@ -22,10 +22,10 @@ export function Cardperros(props) {
         <div className="card-body carta-perro">
           <img
             src={props.pet.photo}
-            className="card-img-top fotocard"
+            className="card-img-top mt-2 fotocard"
             alt="..."
           />
-          <div className="list-group list-group-flush">
+          <div className="list-group list-group-flush mt-4">
             <div className="item-pet">
               <label>Nombre:</label> {props.pet.name}
             </div>
@@ -49,7 +49,7 @@ export function Cardperros(props) {
             </div>
             <div className="mx-auto">
               <Link
-                className="btn btn-warning boton-contacta text-white"
+                className="btn btn-warning boton-contacta text-white mt-3"
                 to={"/contacto"}
               >
                 ¡Contacta!

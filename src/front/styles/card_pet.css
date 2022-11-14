@@ -15,7 +15,7 @@
   margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
-  height: 400px;
+  height: 425px;
   width: 300px;
   background: #ffffff;
   border-radius: 30px;
@@ -31,9 +31,7 @@
 .bodypet {
   height: 300px !important;
 }
-.carta-perro {
-  margin-top: 20px;
-}
+
 .boton-contacta {
   background-color: #66829d;
   border-color: #66829d;

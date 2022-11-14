@@ -12,7 +12,10 @@
   max-width: 20px;
   margin: 50px auto;
 }
-
+.botonacceso {
+  background-color: #66829d;
+  border-radius: 100px;
+}
 .wrapper .card {
   max-width: 300px;
   min-height: 15px;
@@ -44,16 +47,21 @@
 }
 
 .wrapper .card .option span.text-light-white:hover {
-  color: #495969;
+  color: #fff;
 }
 
 .wrapper .card .option:hover input ~ .checkmark {
   background-color: #495969;
 }
+.botonlogin {
+  background-color: #66829d;
+  color: #fff;
+  border-radius: 100px;
+}
 
 .wrapper .card .option input:checked ~ .checkmark {
   border: none;
-  background-color: #495969;
+  background-color: rgba(221, 175, 36, 0.989);
   transition: 300ms ease-in-out all;
 }
 
@@ -85,8 +93,9 @@
   object-fit: cover;
 }
 
-/* @media (max-width: 350px) {
-  .wrapper .card .line:after {
-    left: 27%;
-  }
-} */
+.colorlogin {
+  color: #66829d;
+}
+.iconologin {
+  color: #66829d;
+}

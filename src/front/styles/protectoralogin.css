@@ -48,3 +48,10 @@
 .item-casa label {
   font-weight: 600;
 }
+.titulomapaprotectora {
+  color: rgba(221, 175, 36, 0.989);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}

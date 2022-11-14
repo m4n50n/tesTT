@@ -92,7 +92,7 @@ export const Perfilprotectora = () => {
             defaultState();
             setDisabledinput(false);
           }}
-          className="btn  sub btn-secondary"
+          className="btn  sub btn-secondary botonaccesouser"
         >
           Editar
         </button>
@@ -102,7 +102,7 @@ export const Perfilprotectora = () => {
             defaultState();
             validate(email);
           }}
-          className="btn  sub btn-secondary"
+          className="btn  sub btn-secondary botonaccesouser"
         >
           Guardar
         </button>

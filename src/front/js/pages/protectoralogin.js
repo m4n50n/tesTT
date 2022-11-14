@@ -12,21 +12,23 @@ const Protectoralogin = () => {
   }, []);
   return (
     <div>
-      <div className="col-12 col-md-8">
-        <Mapahome />
-      </div>
-      <div className="col-12 col-md-4">
-        <center className="titulomapa">
-          Publica aquel animal que necesite hogar para que lo encuentren las
-          casas de acogida
-        </center>
-        <div className="mx-auto">
-          <Link
-            className="btn btn-warning boton-contacta text-white"
-            to={"/formulariopets"}
-          >
-            ¡Registra!
-          </Link>
+      <div className="row">
+        <div className="col-12 col-md-8">
+          <Mapahome />
+        </div>
+        <div className="col-12 col-md-4">
+          <center className="titulomapaprotectora justify-content-center d-flex">
+            Publica aquel animal que necesite hogar para que lo encuentren las
+            casas de acogida
+          </center>
+          <div className="justify-content-center d-flex">
+            <Link
+              className="btn btn-warning boton-contacta text-white"
+              to={"/formulariopets"}
+            >
+              ¡Registra!
+            </Link>
+          </div>
         </div>
       </div>
       <center className="titulomascot">

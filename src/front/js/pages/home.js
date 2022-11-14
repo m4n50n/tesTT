@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Barnerprotectora from "../../img/Barnerprotectora.png";
 import Barneracogida from "../../img/Barneracogida.png";
-import Portada2 from "../../img/Portada2.png";
+import Barnerviaje from "../../img/Barnerviaje.png";
 import Mapahome from "./mapahome";
 
 import "../../styles/index.css";
@@ -16,25 +16,25 @@ export const Home = () => {
           className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="carousel-inner col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <div className="carousel-item active justify-content-center">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <img
                 src={Barneracogida}
-                className="d-block imagenportada"
+                className="d-block imagenportada m-auto img-fluid"
                 alt="..."
               />
             </div>
             <div className="carousel-item">
               <img
                 src={Barnerprotectora}
-                className="d-block imagenportada"
+                className="d-block imagenportada m-auto img-fluid"
                 alt="..."
               />
             </div>
             <div className="carousel-item">
               <img
-                src={Barneracogida}
-                className="d-block imagenportada"
+                src={Barnerviaje}
+                className="d-block imagenportada m-auto img-fluid"
                 alt="..."
               />
             </div>

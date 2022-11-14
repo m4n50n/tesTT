@@ -37,7 +37,6 @@
 .titulocard {
   color: #66829d;
   max-height: 80px;
-  margin-left: 90px;
 }
 .card-protectora {
   position: relative;
@@ -52,12 +51,6 @@
   cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(221, 175, 36, 0.989);
 }
-.boton-protectora {
-  margin-top: 20px;
-  background-color: rgba(221, 175, 36, 0.989);
-  border-color: #66829d;
-  border-radius: 200px;
-}
 
 .botonmascota {
   margin-top: 200px;
@@ -70,4 +63,8 @@
   background-color: #66829d;
   border-color: #66829d;
   border-radius: 200px;
+  margin-top: 20px;
+  border-color: #66829d;
+  border-radius: 200px;
+  margin-left: 60px;
 }
