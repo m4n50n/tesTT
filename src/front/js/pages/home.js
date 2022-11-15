@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Barnerprotectora from "../../img/Barnerprotectora.png";
 import Barneracogida from "../../img/Barneracogida.png";
-import Barnerviaje from "../../img/Barnerviaje.png";
+import Barnerperro from "../../img/Barnerperro.png";
 import Mapahome from "./mapahome";
 
 import "../../styles/index.css";
@@ -33,7 +33,7 @@ export const Home = () => {
             </div>
             <div className="carousel-item">
               <img
-                src={Barnerviaje}
+                src={Barnerperro}
                 className="d-block imagenportada m-auto img-fluid"
                 alt="..."
               />

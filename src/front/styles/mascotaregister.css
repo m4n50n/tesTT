@@ -3,7 +3,9 @@
 }
 
 .botonsubida {
-  color: burlywood;
+  background-color: #66829d;
+  border-color: #66829d;
+  border-radius: 200px;
 }
 
 .caractercontrol {
