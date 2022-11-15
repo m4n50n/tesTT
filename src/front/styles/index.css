@@ -1,27 +1,170 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
-body {
-    background: rgba(221, 175, 36, 0.989);
-}
-.btn-primary {
-    background: rgba(221, 175, 36, 0.989);
-    
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 .logo {
-    width: 200px;
-    height: 150px;
+  width: 200px;
+  height: 150px;
+  margin-bottom: 400px;
 }
+.imagenportada {
+  width: 900px;
+  height: 300px;
+}
+
 .menu {
-    background: rgba(248, 245, 156, 0.989);
-    
+  background: rgba(248, 245, 156, 0.989);
+  width: 100%;
+  /* padding: 500px; */
 }
-.footer {
-    background: rgba(248, 245, 156, 0.989);
-    padding: 1em 0;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
+.titulomapahome {
+  margin-top: 50px;
+  margin-left: 50px;
+  color: rgba(221, 175, 36, 0.989);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.buttonhome {
+  color: #66829d;
+  font-size: x-large;
+  font-family: fantasy;
+}
+.nav-item :hover {
+  color: rgba(221, 175, 36, 0.989);
+}
+.navbar-toggler {
+  color: rgba(221, 175, 36, 0.989);
+}
+
+.mensajecontrasena {
+  margin-top: 10px;
+  color: #66829d;
+  font-size: medium;
+}
+
+.protectoraocasa {
+  color: #66829d;
+}
+.tituloregistrate {
+  color: #66829d;
+}
+.btn btn btn-lg {
+  background-color: rgba(221, 175, 36, 0.989);
+}
+
+.formulariopet {
+  align-content: center;
+}
+
+.formulariousuario {
+  border: 200px;
+  width: 75%;
+}
+
+/* .mapa-home {
+  margin-left: 150px;
+} */
+
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+
+.cardacogida {
+  height: 350px;
+  width: 350px;
+}
+
+.listacogida {
+  height: 350px;
+  width: 350px;
+}
+
+.fotocard {
+  width: 100%;
+  height: 10rem;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px 10px 10px 10px;
+}
+.botonclose {
+  background-color: rgba(248, 245, 156, 0.989);
+  border-radius: 50px;
+  align-content: center;
+}
+@media (max-width: 345px) {
+  .wrapper .connect::after {
+    left: 32%;
+  }
+}
+.barnerprotectora {
+  width: 700px;
+  height: 350px;
+  border-radius: 15%;
+  margin-left: 20px;
+}
+.imagenpor1 {
+  width: 100px;
+  height: 500px;
+}
+.imagenpor2 {
+  width: 100px;
+  height: 500px;
+}
+
+.protectoraocasa {
+  color: #66829d;
+}
+
+.buttonmpas {
+  text-align: right;
+}
+
+.buttoninicio {
+  align-items: left;
+}
+
+.buttonregi {
+  text-align: center;
+}
+#registerbutton {
+  text-align: left;
+}
+.textofondo {
+  margin-top: 30%;
+  font-size: larger;
+  color: #66829d;
+}
+.colornavbar {
+  color: rgba(248, 245, 156, 0.989);
+}
+
+.fa-bars {
+  color: #66829d;
+}
+.colorinput {
+  color: #66829d;
+}
+
+footer {
+  background-color: rgba(221, 175, 36, 0.989);
+  padding: 15px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+}
+
+a img:hover {
+  color: #fff;
+}
+a {
+  color: #66829d;
+}
+.kodutexto {
+  font-family: fantasy;
+  color: rgba(248, 245, 156, 0.989);
+  font-size: larger;
 }

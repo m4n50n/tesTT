@@ -1,0 +1,101 @@
+/* Importing fonts from Google */
+
+/* Reseting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  max-width: 20px;
+  margin: 50px auto;
+}
+.botonacceso {
+  background-color: #66829d;
+  border-radius: 100px;
+}
+.wrapper .card {
+  max-width: 300px;
+  min-height: 15px;
+  margin: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 0.8rem;
+}
+
+.wrapper .card a {
+  text-decoration: none;
+  color: #66829d;
+}
+
+.wrapper .card .input-field input::placeholder {
+  color: #eee;
+}
+
+.wrapper .card .option {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper .card .option span.text-light-white:hover {
+  color: #fff;
+}
+
+.wrapper .card .option:hover input ~ .checkmark {
+  background-color: #495969;
+}
+.botonlogin {
+  background-color: #66829d;
+  color: #fff;
+  border-radius: 100px;
+}
+
+.wrapper .card .option input:checked ~ .checkmark {
+  border: none;
+  background-color: rgba(221, 175, 36, 0.989);
+  transition: 300ms ease-in-out all;
+}
+
+.wrapper .card .option input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.wrapper .card .option .checkmark:after {
+  left: 3px;
+  top: -3px;
+  width: 5px;
+  height: 10px;
+}
+
+.wrapper .card .btn.btn-primary:hover {
+  color: #fff;
+  background: #333;
+}
+
+.wrapper .card .btn.btn-primary:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.wrapper .card .connections a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.colorlogin {
+  color: #66829d;
+}
+.iconologin {
+  color: #66829d;
+}

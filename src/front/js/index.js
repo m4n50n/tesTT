@@ -1,12 +1,17 @@
-//import react into the bundle
 import React from "react";
-import ReactDOM from "react-dom";
-
-//include your index.scss file into the bundle
+import { StrictMode, useRef, useState, useEffect } from "react";
+import { createRoot } from "react-dom/client";
 import "../styles/index.css";
-
-//import your own components
 import Layout from "./layout";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+const rootElement = document.getElementById("app");
+const root = createRoot(rootElement);
 
 //render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+root.render(
+  <StrictMode>
+    <Layout />
+  </StrictMode>
+);
+// ReactDOM.render(<Layout />, document.querySelector("#app"));

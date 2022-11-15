@@ -1,0 +1,62 @@
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+.testimonial-group > .row {
+  display: block;
+  white-space: nowrap;
+}
+.item-pet-l {
+  overflow: hidden;
+}
+
+.card-pets {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 425px;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(221, 175, 36, 0.989);
+}
+
+.casaacogidapet {
+  display: flex;
+  border: 20;
+  overflow-x: auto;
+  min-height: 550px;
+}
+.bodypet {
+  height: 300px !important;
+}
+
+.boton-contacta {
+  background-color: #66829d;
+  border-color: #66829d;
+  border-radius: 200px;
+}
+
+.item-pet label,
+.item-pet-l label {
+  font-weight: 600;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(221, 175, 36, 0.989);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(221, 175, 36, 0.989);
+  border-radius: 10px;
+}

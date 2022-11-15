@@ -2,35 +2,47 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 class Organizacion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     city = db.Column(db.String(80), unique=False, nullable=False)
-    phone = db.Column(db.Integer, unique=False, nullable=False)
-    instagram = db.Column(db.Integer, unique=True, nullable=True)
-    avaiability = db.Column(db.Integer, unique=False, nullable=True)
-    animals = db.Column(db.Integer, unique=False, nullable=True)
+    phone = db.Column(db.String(9), unique=False, nullable=False)
+    instagram = db.Column(db.String(80), unique=True, nullable=True)
+    avaiability = db.Column(db.String(30), unique=False, nullable=True)
+    animals = db.Column(db.String(30), unique=False, nullable=True)
     rol_id = db.Column(db.Integer, db.ForeignKey('rol.id'),
-        nullable=False)
+                       nullable=False)
     pets = db.relationship('Pets', backref='organizacion', lazy=True)
-  
-    
 
     def __repr__(self):
         return f'<Organizacion {self.email}>'
 
     def serialize(self):
+
         return {
             "id": self.id,
+            "name": self.name,
             "email": self.email,
+            "phone": self.phone,
+            "password": self.password,
+            "avaiability": self.avaiability,
+            "animals": self.animals,
+            "instagram": self.instagram,
+            "city": self.city,
+            "rol": self.rol_id
+
             # do not serialize the password, its a security breach
         }
+
+
 class Rol(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True, nullable=False)
     organizacion = db.relationship('Organizacion', backref='rol', lazy=True)
+
     def __repr__(self):
         return f'<Rol {self.name}>'
 
@@ -41,32 +53,37 @@ class Rol(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Pets(db.Model):
-    id= db.Column(db.Integer, primary_key=True)
-    name= db.Column(db.String(120), unique=True, nullable=False)
-    yearsofbirth= db.Column(db.String(120), unique=True, nullable=False)
-    photo= db.Column(db.String(250), nullable=True)
-    race= db.Column(db.String(120), unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), unique=False, nullable=False)
+    years = db.Column(db.String(120), unique=False, nullable=False)
+    convivencia = db.Column(db.String(120), unique=False, nullable=False)
+    adresses = db.Column(db.String(120), unique=False, nullable=False)
+    sexo = db.Column(db.String(120), unique=False, nullable=False)
+    photo = db.Column(db.String(250), nullable=True)
+    race = db.Column(db.String(120), unique=False, nullable=False)
     organizacion_id = db.Column(db.Integer, db.ForeignKey('organizacion.id'),
-        nullable=False)
+                                nullable=False)
 
     def __repr__(self):
         return '<Pets {self.name}>'
 
     def serialize(self):
-        return  {
+        organizacion = Organizacion.query.get(self.organizacion_id)
+        return {
             "id": self.id,
             "name": self.name,
-            "yearsofbirth": self.yearsofbirth,
+            "years": self.years,
+            "sexo": self.sexo,
             "race": self.race,
             "photo": self.photo,
+            "adresses": self.adresses,
+            "convivencia": self.convivencia,
+
+            "organizacion": self.organizacion.serialize(),
+
+
 
             # do not serialize the password, its a security breach
         }
-
-
-    
-    
-
-
-

@@ -1,0 +1,70 @@
+.cardpets {
+  margin: 10px;
+  display: flex;
+}
+.testimonial-group > .row {
+  display: block;
+
+  white-space: nowrap;
+}
+.organizacioncard {
+  display: flex;
+  border: 20;
+  overflow-x: auto;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.border-warning {
+  border-color: #66829d;
+  margin-right: 5%;
+  margin-left: 2%;
+  max-height: 300px;
+}
+.botoncontacto {
+  background-color: rgba(221, 175, 36, 0.989);
+  padding: 15px;
+  margin-left: 27px;
+  margin-top: 10px;
+}
+.protectoracard {
+  width: auto;
+  height: auto;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.titulocard {
+  color: #66829d;
+  max-height: 80px;
+}
+.card-protectora {
+  position: relative;
+  margin-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  height: 250px;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(221, 175, 36, 0.989);
+}
+
+.botonmascota {
+  margin-top: 200px;
+  color: beige;
+}
+.item-protectora label {
+  font-weight: 600;
+}
+.boton-protectora {
+  background-color: #66829d;
+  border-color: #66829d;
+  border-radius: 200px;
+  margin-top: 20px;
+  border-color: #66829d;
+  border-radius: 200px;
+  margin-left: 60px;
+}
