@@ -99,7 +99,7 @@ export const FormularioPets = () => {
                   setLogin("Imagen subida");
                 }}
                 type="submit"
-                className="registroboton btn  sub btn-secondary botonsubida"
+                className="btn  sub btn-secondary botonsubida"
               >
                 Guardar
               </button>
