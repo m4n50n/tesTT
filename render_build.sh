@@ -6,5 +6,5 @@ set -o errexit
 # npm run build
 
 pipenv install
-
+pip install geopandas
 pipenv run upgrade
