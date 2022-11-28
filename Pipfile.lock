@@ -179,14 +179,6 @@
             ],
             "version": "==1.52"
         },
-        "geopandas": {
-            "hashes": [
-                "sha256:0cf7f59a7b962bdbee09c1848b1715d1c445d5d27302f219f7f88b4484adef1c",
-                "sha256:917655f25ee3022809114d833d45969d38afe9f7e5ff2a3b875a85f9bf686819"
-            ],
-            "index": "pypi",
-            "version": "==0.12.1"
-        },
         "geopy": {
             "hashes": [
                 "sha256:58b7edf526b8c32e33126570b5f4fcdfaa29d4416506064777ae8d84cd103fdd",
